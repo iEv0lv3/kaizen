@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap" rel="stylesheet">
     <title>TuringSo</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +12,48 @@
   </head>
 
   <body>
-    <%= yield %>
+    <ul class ='nav'>
+      <li><%= link_to 'Turing :: SO', root_path %></li>
+      <li class="rightFloatNavLink"><%= link_to 'Register', new_user_registration_path %></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Forums</a>
+        <div class="dropdown-content">
+          <%= link_to 'Technical', root_path %>
+          <%= link_to 'Professional', root_path %>
+      </li>
+      <li><%= link_to 'Ask a Question', root_path %></li>
+      <li>
+        <div id="nav-bar-search">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </li>
+    </ul>
+    <div class="mainContentWrapper">
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <div class="mainContentContainer">
+      <%= yield %>
+    </div>
+
+    <section class="footer">
+      <div class="colorBar">
+        <div id="colorBarColor1"></div>
+        <div id="colorBarColor2"></div>
+        <div id="colorBarColor3"></div>
+      </div>
+      <p><%= link_to 'jordan', "https://github.com/iEv0lv3/", class: 'footerLink'%> | <%= link_to 'dave', "https://github.com/DavidHoltkamp1", class: 'footerLink'%> | 
+      <%= link_to 'sebastian', "https://github.com/sasloan", class: 'footerLink'%> | <%= link_to 'steve', "https://github.com/alerrian", class: 'footerLink'%>
+      </p>
+      <p>Made with ❤️ at Turing</p>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>

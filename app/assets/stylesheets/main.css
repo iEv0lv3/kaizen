@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+  text-decoration: underline;
+}
+
+a > p {
+  color: #12f1fc;
+}
+
+.mainContentWrapper {
+  padding: 0;
+  margin: 0;
+  margin-top: 90px;
+}
+.mainContentContainer {
+  max-width: 1200px;
+  margin: 45px auto;
+}
+
+.flexContainerColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flexBoxColumn {
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 95%;
+  text-align: center;
+  border-radius: 1em;
+  background-color: lightblue;
+}
+
+.flexContainerRow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flexBoxRow1 {
+  margin: 10px;
+  margin-right: 1%;
+  margin-left: 2.5%;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 20%;
+  border-radius: 1em;
+  background-color: lightblue;
+}
+
+.flexBoxRow2 {
+  margin: 10px;
+  width: 70%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 1em;
+  background-color: lightblue;
+}
+
+.footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  background: rgb(238, 238, 238);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer p {
+  /* display: inline; */
+}
+
+.footerLink {
+  text-decoration: none;
+  color: black;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+  color: #ef3852;
+}
+
+.colorBar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: .75em;
+}
+
+#colorBarColor1 {
+  background-color: #f9ae06;
+  height: .3em;
+  width: 33.33%;
+  margin-top: -15px;
+}
+
+#colorBarColor2 {
+  background-color: #ef3852;
+  height: .3em;
+  width: 33.33%;
+  margin-top: -15px;
+}
+
+#colorBarColor3 {
+  background-color: #12f1fc;
+  height: .3em;
+  width: 33.33%;
+  margin-top: -15px;
+}

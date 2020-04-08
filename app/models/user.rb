@@ -8,7 +8,10 @@ class User < ApplicationRecord
   validates_presence_of :cohort
   validates_presence_of :status
 
-  has_many :questions 
+  has_many :questions
+  has_many :answers
+
+  has_many :comments, as: :commentable
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,

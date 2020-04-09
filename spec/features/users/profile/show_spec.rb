@@ -4,6 +4,7 @@ RSpec.describe 'As a User' do
     describe 'When I visit my profile' do 
         before :each do 
             @user = create(:user)
+            @user.confirm
 
             allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
         end
@@ -23,7 +24,7 @@ RSpec.describe 'As a User' do
 
             click_on "Log in"
 
-            expect(current_path).to eq("/profile")
+            expect(current_path).to eq("/")
         end
     end
 end

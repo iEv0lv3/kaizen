@@ -1,5 +1,5 @@
 class Users::ProfileController < Users::BaseController
   def show
-    #or whatevs
+    # or whatevs
   end
 end

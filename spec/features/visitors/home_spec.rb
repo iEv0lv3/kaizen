@@ -51,5 +51,12 @@ RSpec.describe 'As a visitor' do
       expect(current_path).to eq(root_path)
       expect(page).to have_content('A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.')
     end
+
+    it 'I do not see a profile button in the nav bar' do 
+
+      visit root_path
+
+      expect(page).not_to have_button("Profile")
+    end
   end
 end

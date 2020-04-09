@@ -50,7 +50,6 @@ RSpec.describe 'As a visitor' do
 
       expect(current_path).to eq(root_path)
       expect(page).to have_content('A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.')
-      save_and_open_page
     end
   end
 end

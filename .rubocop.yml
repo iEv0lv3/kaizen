@@ -9,3 +9,6 @@ Style/EachWithObject:
 
 Style/EmptyMethod:
   Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false

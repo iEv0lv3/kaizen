@@ -2,10 +2,10 @@
 
 ## Type of change
 
-- [] New Feature
-- [] Bug Fix
-- [] Refactor
-- [] Breaking Change
+- [ ] New Feature
+- [ ] Bug Fix
+- [ ] Refactor
+- [ ] Breaking Change
 
 ## Notes
 

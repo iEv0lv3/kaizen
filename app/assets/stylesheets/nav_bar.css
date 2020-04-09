@@ -14,7 +14,11 @@ li {
   float: left;
 }
 
-#loginRight {
+#logInRight {
+  float: right;
+}
+
+#logOutRight {
   float: right;
 }
 
@@ -29,10 +33,7 @@ li a, .dropbtn {
 li a:hover, .dropdown:hover .dropbtn {
   background-color: #12f1fc;
   text-decoration: none;
-<<<<<<< HEAD
-=======
   color: rgb(88, 88, 88);
->>>>>>> master
 }
 
 li.dropdown {

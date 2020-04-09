@@ -12,7 +12,6 @@ RSpec.describe 'As a Visitor' do
 
             expect(current_path).to eq("/users/sign_up")
 
-            # save_and_open_page
             fill_in :user_email, with: "faker@fake.com"
             fill_in :user_password, with: "Fakeymcfackerson"
             fill_in :user_password_confirmation, with: "Fakeymcfackerson"

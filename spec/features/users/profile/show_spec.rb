@@ -2,8 +2,28 @@ require 'rails_helper'
 
 RSpec.describe 'As a User' do 
     describe 'When I visit my profile' do 
-        it 'By first logging in on the welcome page'
+        before :each do 
+            user = create(:user)
 
-        visit '/'
+            allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+        end
 
-        expect(page).to have_content("Login")
+        it 'By first logging in on the welcome page' do 
+
+            visit '/'
+
+            expect(page).to have_content("Login")
+
+            click_on "Login"
+
+            expect(current_path).to eq('/login')
+
+            fill_in :email, with: user.email
+            fill_in :password, with: user.password
+
+            click_on "Login"
+
+            expect(current_path).to eq("/profile")
+        end
+    end
+end

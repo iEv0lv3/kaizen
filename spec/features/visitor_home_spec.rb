@@ -27,7 +27,11 @@ RSpec.describe 'As a visitor' do
       visit root_path
 
       within '.nav' do
-        click_on 'Register'
+        within '#logInRight' do
+          within '.dropdown-content' do
+            click_on 'Register'
+          end
+        end
       end
 
       expect(current_path).to eq(new_user_registration_path)

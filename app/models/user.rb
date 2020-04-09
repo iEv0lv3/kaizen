@@ -13,6 +13,11 @@ class User < ApplicationRecord
 
   has_many :comments, as: :commentable
 
+  enum status: %i[
+    student
+    alumni
+  ]
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable

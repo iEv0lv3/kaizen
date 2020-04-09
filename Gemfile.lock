@@ -288,6 +288,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  factory_bot
   factory_bot_rails
   faker
   faraday

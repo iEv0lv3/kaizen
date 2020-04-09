@@ -46,6 +46,8 @@ group :development, :test do
   gem 'simplecov'
   gem 'vcr'
   gem 'webmock'
+  gem 'devise'
+  gem 'factory_bot'
 end
 
 group :development do
@@ -60,6 +62,7 @@ end
 group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -19,6 +19,9 @@ RSpec.describe 'As a Visitor' do
             click_on "Sign up"
 
             expect(current_path).to eq("/users")
+
+            # user = User.last
+            # require 'pry'; binding.pry
         end
     end
 end

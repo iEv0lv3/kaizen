@@ -12,45 +12,52 @@
   </head>
 
   <body>
-    <ul class ='nav'>
-      <li><%= link_to 'Turing :: SO', root_path %></li>
-      <li class="rightFloatNavLink"><%= link_to 'Register', new_user_registration_path %></li>
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Forums</a>
-        <div class="dropdown-content">
-          <%= link_to 'Technical', root_path %>
-          <%= link_to 'Professional', root_path %>
-      </li>
-      <li><%= link_to 'Ask a Question', root_path %></li>
-      <li>
-        <div id="nav-bar-search">
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </li>
-    </ul>
-    <div class="mainContentWrapper">
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <div class="mainContentContainer">
-      <%= yield %>
-    </div>
-
-    <section class="footer">
-      <div class="colorBar">
-        <div id="colorBarColor1"></div>
-        <div id="colorBarColor2"></div>
-        <div id="colorBarColor3"></div>
-      </div>
-      <p><%= link_to 'jordan', "https://github.com/iEv0lv3/", class: 'footerLink'%> | <%= link_to 'dave', "https://github.com/DavidHoltkamp1", class: 'footerLink'%> | 
-      <%= link_to 'sebastian', "https://github.com/sasloan", class: 'footerLink'%> | <%= link_to 'steve', "https://github.com/alerrian", class: 'footerLink'%>
-      </p>
-      <p>Made with ❤️ at Turing</p>
+    <section class="nav">
+      <ul>
+        <li><%= link_to 'Turing :: SO', root_path %></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Forums</a>
+          <div class="dropdown-content">
+            <%= link_to 'Technical', root_path %>
+            <%= link_to 'Professional', root_path %>
+          </div>
+        </li>
+        <li><%= link_to 'Ask a Question', root_path %></li>
+        <li>
+          <div id="nav-bar-search">
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </li>
+        <li class="dropdown" id="loginRight">
+          <a href="javascript:void(0)" class="dropbtn">Sign In :: Register</a>
+          <div class="dropdown-content">
+            <%= link_to 'Sign In', new_user_session_path %>
+            <%= link_to 'Register', new_user_registration_path %>
+          </div>
+        </li>
+      </ul>
     </section>
+
+    <div class="mainContentWrapper">
+      <div class="mainContentContainer">
+        <%= yield %>
+      </div>
+
+      <section class="footer">
+        <div class="colorBar">
+          <div id="colorBarColor1"></div>
+          <div id="colorBarColor2"></div>
+          <div id="colorBarColor3"></div>
+        </div>
+        <p><%= link_to 'jordan', "https://github.com/iEv0lv3/", class: 'footerLink'%> | <%= link_to 'dave', "https://github.com/DavidHoltkamp1", class: 'footerLink'%> | 
+        <%= link_to 'sebastian', "https://github.com/sasloan", class: 'footerLink'%> | <%= link_to 'steve', "https://github.com/alerrian", class: 'footerLink'%>
+        </p>
+        <p>Made with ❤️ at Turing</p>
+      </section>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

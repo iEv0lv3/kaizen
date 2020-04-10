@@ -26,8 +26,8 @@ RSpec.describe 'As a User' do
 
     describe 'When I am on my profile page' do 
         before :each do 
-            user = create(:user)
-            user.confirm
+            @user = create(:user)
+            @user.confirm
 
             visit '/'
 
@@ -37,8 +37,8 @@ RSpec.describe 'As a User' do
 
             expect(current_path).to eq('/users/sign_in')
 
-            fill_in :user_email, with: user.email
-            fill_in :user_password, with: user.password
+            fill_in :user_email, with: @user.email
+            fill_in :user_password, with: @user.password
             
 
             click_on "Log in"
@@ -52,5 +52,25 @@ RSpec.describe 'As a User' do
 
         it 'I can see all of my information' do 
 
-            
+            expect(page).to have_content(@user.avatar)
+            expect(page).to have_content(@user.first_name)
+            expect(page).to have_content(@user.last_name)
+            expect(page).to have_content(@user.cohort)
+            expect(page).to have_content(@user.status)
+            save_and_open_page
+
+        end 
+
+        xit 'I see a button to connect to my Github account if I am not already connected' do 
+
+            expect(page).to have_button("Connect to GitHub")
+
+            click_on "Connect to GitHub"
+
+            expect(current_path).to eq(profile_path)
+
+            expect(page).to have_css(".repos")
+
+        end
+    end 
 end

@@ -40,7 +40,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :gh_token
       t.string :so_token
       t.text :bio
-      t.string :avatar
+      t.string :avatar, default: "https://wiki.bravofleet.com/images/4/43/No-avatar.png"
 
       t.timestamps null: false
     end

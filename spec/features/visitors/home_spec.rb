@@ -6,7 +6,7 @@ RSpec.describe 'As a visitor' do
       visit root_path
 
       within '.nav' do
-        expect(page).to have_content('Turing :: SO')
+        expect(page).to have_content(':: Kaizen ::')
         expect(page).to have_content('Register')
         expect(page).to have_content('Forums')
         expect(page).to have_content('Ask a Question')
@@ -17,7 +17,7 @@ RSpec.describe 'As a visitor' do
       visit root_path
 
       within '.nav' do
-        click_on 'Turing :: SO'
+        click_on ':: Kaizen ::'
       end
 
       expect(current_path).to eq(root_path)

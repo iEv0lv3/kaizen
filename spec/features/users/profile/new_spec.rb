@@ -24,9 +24,11 @@ RSpec.describe 'As a User' do
 
             visit '/'
 
-            expect(page).to have_button("Profile")
+            within('#profileLink') do
+              expect(page).to have_link("Profile")
+              click_on "Profile"
+            end
 
-            click_on "Profile"
            
             expect(current_path).to eq(profile_path)
             expect(page).to have_content("Welcome!, you are currently logged in as #{@user.first_name} #{@user.last_name}.")

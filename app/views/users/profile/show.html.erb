@@ -5,7 +5,9 @@
 <p>Cohort: <%= @user.cohort %></p>
 <p>Program Status: <%= @user.status %></p>
 
-<p><%= link_to "Edit", "/profile/edit" %></p>%
+<p><%= link_to "Edit", "/profile/edit" %></p>
+
+<p><%= button_to "Change Password", "/profile/edit_password", method: :get %></p>
 
 
 

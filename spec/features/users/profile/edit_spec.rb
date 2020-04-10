@@ -44,5 +44,22 @@ RSpec.describe 'As a User' do
             expect(page).to have_content("McFakerson")
             expect(page).not_to have_content(@user.last_name)
         end
+
+        xit 'I can edit my password seperately from editing my profile' do 
+
+            expect(page).to have_button("Change Password")
+
+            click_on "Change Password"
+
+            expect(current_path).to eq("/profile/edit_password")
+
+            fill_in :password, with: "FakePassword"
+            fill_in :password_confirmation, with: "FakePassword"
+
+            click_on "Submit"
+
+            expect(current_path).to eq("/profile")
+            expect(page).to have_content('Successfully updated password.')
+        end
     end
 end

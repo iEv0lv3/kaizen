@@ -7,6 +7,10 @@ class Users::ProfileController < Users::BaseController
     @user = current_user
   end
 
+  def edit_password
+    @user = current_user
+  end
+
   def update
     user = current_user
     if user.update(user_params)
@@ -21,6 +25,7 @@ class Users::ProfileController < Users::BaseController
       redirect_back(fallback_location: "/profile")
     end
   end
+
 
   private 
 

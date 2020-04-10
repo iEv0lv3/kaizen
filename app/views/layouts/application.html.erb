@@ -41,9 +41,14 @@
             </div>
           </li>
         <% else %>
-          <li id="logOutRight">
-            <%= button_to "Profile", profile_path, method: :get %>
+          <li class="navLinkRight">
             <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+          </li>
+          <li class="navLinkRight", id='profileLink'>
+            <%= link_to 'Profile', profile_path %>
+            <%= link_to profile_path do %>
+                <%= image_tag 'logo', width: 20, height: 20, alt: 'Avatar'%>
+            <% end %>
           </li>
         <% end %>
       </ul>

@@ -57,20 +57,6 @@ RSpec.describe 'As a User' do
             expect(page).to have_content(@user.last_name)
             expect(page).to have_content(@user.cohort)
             expect(page).to have_content(@user.status)
-            save_and_open_page
-
         end 
-
-        xit 'I see a button to connect to my Github account if I am not already connected' do 
-
-            expect(page).to have_button("Connect to GitHub")
-
-            click_on "Connect to GitHub"
-
-            expect(current_path).to eq(profile_path)
-
-            expect(page).to have_css(".repos")
-
-        end
     end 
 end

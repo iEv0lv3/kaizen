@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_04_11_214455) do
     t.text "content"
     t.integer "upvotes"
     t.integer "awards"
-    t.integer "type"
+    t.integer "forum"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"

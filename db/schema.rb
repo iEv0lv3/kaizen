@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_04_08_225808) do
     t.string "gh_token"
     t.string "so_token"
     t.text "bio"
-    t.string "avatar", default: "https://wiki.bravofleet.com/images/4/43/No-avatar.png"
+    t.string "avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

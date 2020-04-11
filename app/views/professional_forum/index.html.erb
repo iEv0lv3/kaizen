@@ -1,0 +1,10 @@
+<h2>Professional Question Forum</h2>
+
+<% @questions.each do |question| %>
+  <section id='<%= question.id %>'>
+    <h4><%= question.subject %></h4>
+    <p><%= question.content %></p>
+    <p><%= question.upvotes %></p>
+    <p><%= question.user.email %></p>
+  </section>
+<% end %>

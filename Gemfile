@@ -27,6 +27,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'omniauth'
 gem 'omniauth-github'
+gem 'omniauth-stackexchange'
 gem 'devise'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

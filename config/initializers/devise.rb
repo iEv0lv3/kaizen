@@ -261,7 +261,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   config.omniauth :github, Figaro.env.gh_client_id, Figaro.env.gh_client_secret, scope: 'user:email'
-
+  config.omniauth :stackoverflow, Figaro.env.gh_client_id, Figaro.env.gh_client_secret, scope: 'user:email'
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   end
 
   root to: 'welcome#index'
+
+  get 'technical_forum', to: 'technical_forum#index'
+  get '/technical_forum/:question_id', to: 'technical_forum#show'
+  
+  get 'professional_forum', to: 'professional_forum#index'
+  get '/professional_forum/:question_id', to: 'professional_forum#show'
 end

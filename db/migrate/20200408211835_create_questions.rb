@@ -6,11 +6,11 @@ class CreateQuestions < ActiveRecord::Migration[6.0]
     t.text :content
     t.integer :upvotes
     t.integer :awards
-    t.integer :type
+    t.integer :forum
 
     t.timestamps
 
-    t.references :user, foreign_key: true 
+    t.references :user, foreign_key: true
     end
   end
 end

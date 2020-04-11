@@ -9,9 +9,4 @@ class Users::CallbacksController < Devise::OmniauthCallbacksController
 
     redirect_to profile_path, notice: 'Connected to GitHub!'
   end
-
-  def stackoverflow
-    so_auth = request.env["omniauth.auth"]
-    binding.pry
-  end
 end

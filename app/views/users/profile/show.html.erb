@@ -5,7 +5,7 @@
 <p>Cohort: <%= @user.cohort %></p>
 <p>Program Status: <%= @user.status %></p>
 
-<p><%= link_to "Edit", "/profile/edit" %></p>
+<p><%= link_to "Edit", "/profile/edit" %> | <%= link_to "Delete", destroy_user_path(@user), method: :delete, data: { confirm: "You sure?" } %></p>
 
 <p><%= link_to "Change your password", edit_user_registration_path %></p>
 

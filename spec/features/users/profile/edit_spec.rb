@@ -45,21 +45,21 @@ RSpec.describe 'As a User' do
             expect(page).not_to have_content(@user.last_name)
         end
 
-        xit 'I can edit my password seperately from editing my profile' do 
+        it 'I can edit my password seperately from editing my profile' do 
 
-            expect(page).to have_button("Change Password")
+            expect(page).to have_link("Change your password")
 
-            click_on "Change Password"
+            click_on "Change your password"
 
-            expect(current_path).to eq("/profile/edit_password")
+            expect(current_path).to eq("/users/edit")
 
-            fill_in :password, with: "FakePassword"
-            fill_in :password_confirmation, with: "FakePassword"
+            fill_in :user_password, with: "FakePassword"
+            fill_in :user_password_confirmation, with: "FakePassword"
+            fill_in :user_current_password, with: @user.password 
 
-            click_on "Submit"
+            click_on "Update"
 
-            expect(current_path).to eq("/profile")
-            expect(page).to have_content('Successfully updated password.')
+            expect(current_path).to eq("/")
         end
     end
 end

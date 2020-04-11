@@ -10,4 +10,12 @@ class Question < ApplicationRecord
   has_many :answers
 
   belongs_to :user
+
+  def self.technical_questions
+    select("questions.*").where(forum: 0).order(created_at: :DESC)
+  end
+
+  def self.professional_questions
+    select("questions.*").where(forum: 1).order(created_at: :DESC)
+  end
 end

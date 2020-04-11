@@ -5,7 +5,7 @@ RSpec.describe Question, type: :model do
     it { should validate_presence_of :subject }
     it { should validate_presence_of :content }
     it { should validate_presence_of :upvotes }
-    it { should validate_presence_of :type }
+    it { should validate_presence_of :forum }
   end
   describe 'relationships' do
     it { should belong_to :user }

@@ -1,12 +1,11 @@
 class CreateQuestions < ActiveRecord::Migration[6.0]
   def change
     create_table :questions do |t|
-
       t.string :subject
       t.text :content
       t.integer :upvotes
       t.integer :awards
-      t.integer :type
+      t.integer :forum
 
       t.timestamps
 

@@ -11,4 +11,10 @@ Rails.application.routes.draw do
     match 'users/:id' => 'users/profile#destroy', :via => :delete, :as => :destroy_user
     get 'questions/new', to: 'users/questions#new'
   end
+
+  get 'technical_forum', to: 'technical_forum#index'
+  get '/technical_forum/:question_id', to: 'technical_forum#show'
+
+  get 'professional_forum', to: 'professional_forum#index'
+  get '/professional_forum/:question_id', to: 'professional_forum#show'
 end

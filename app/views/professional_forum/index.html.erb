@@ -1,8 +1,8 @@
 <h2>Professional Question Forum</h2>
 
 <% @questions.each do |question| %>
-  <section id='<%= question.id %>'>
-    <h4><%= question.subject %></h4>
+  <section id='question-<%= question.id %>'>
+    <h4><%= link_to question.subject, "/professional_forum/#{question.id}" %></h4>
     <p><%= question.content %></p>
     <p><%= question.upvotes %></p>
     <p><%= question.user.email %></p>

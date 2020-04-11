@@ -17,6 +17,18 @@ RSpec.describe 'As a visitor' do
                                       upvotes: 1,
                                       forum: 1,
                                       user_id: user.id})
+
+      @question_3 = Question.create!({subject: "Ruby methods",
+                                      content: "What is attr_accessor?",
+                                      upvotes: 1,
+                                      forum: 0,
+                                      user_id: user.id})
+
+      @question_4 = Question.create!({subject: "Interviews",
+                                      content: "Best interview practices",
+                                      upvotes: 1,
+                                      forum: 1,
+                                      user_id: user.id})
     end
 
     it 'I click on a button I can navigate to the technical forums page' do
@@ -30,7 +42,7 @@ RSpec.describe 'As a visitor' do
 
       expect(page).to have_content(@question_1.subject)
       expect(page).to have_content(@question_1.content)
-      expect(page).to have_content(@question_1.upvote)
+      expect(page).to have_content(@question_1.upvotes)
     end
 
     it 'I click on a button I can navigate to the technical forums page and dont see professional quesitons' do
@@ -44,10 +56,9 @@ RSpec.describe 'As a visitor' do
 
       expect(page).not_to have_content(@question_2.subject)
       expect(page).not_to have_content(@question_2.content)
-      expect(page).not_to have_content(@question_2.upvote)
     end
 
-    xit 'I click on a button I can navigate to the professional forums page' do
+    it 'I click on a button I can navigate to the professional forums page' do
 
       visit '/'
 
@@ -58,10 +69,10 @@ RSpec.describe 'As a visitor' do
 
       expect(page).to have_content(@question_2.subject)
       expect(page).to have_content(@question_2.content)
-      expect(page).to have_content(@question_2.upvote)
+      expect(page).to have_content(@question_2.upvotes)
     end
 
-    xit 'I click on a button I can navigate to the professional forums page and dont see technical quesitons' do
+    it 'I click on a button I can navigate to the professional forums page and dont see technical quesitons' do
 
       visit '/'
 
@@ -72,7 +83,6 @@ RSpec.describe 'As a visitor' do
 
       expect(page).not_to have_content(@question_1.subject)
       expect(page).not_to have_content(@question_1.content)
-      expect(page).not_to have_content(@question_1.upvote)
     end
   end
 end

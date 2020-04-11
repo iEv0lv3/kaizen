@@ -58,5 +58,28 @@ RSpec.describe 'As a User' do
             expect(page).to have_content(@user.cohort)
             expect(page).to have_content(@user.status)
         end 
+
+        it 'I can delete my account if I really want to' do 
+
+            expect(page).to have_link("Delete") 
+
+            click_on "Delete"
+
+            expect(current_path).to eq("/")
+
+            expect(page).to have_content("User deleted.")
+            
+            click_on "Sign In"
+
+            expect(current_path).to eq('/users/sign_in')
+
+            fill_in :user_email, with: @user.email
+            fill_in :user_password, with: @user.password
+            
+
+            click_on "Log in"
+
+            expect(page).not_to have_link("Logout")
+        end
     end 
 end

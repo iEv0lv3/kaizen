@@ -1,0 +1,18 @@
+<h2> Edit Profile </h2>
+<section id='user_edit_form'>
+  <%= form_tag "/profile", method: :patch do %>
+    <%= label_tag :eamil %>
+    <%= text_field_tag :eamil, @user.email %>
+
+    <%= label_tag :first_name %>
+    <%= text_field_tag :first_name, @user.first_name %>
+
+    <%= label_tag :last_name %>
+    <%= text_field_tag :last_name, @user.last_name%>
+
+    <%= label_tag :cohort %>
+    <%= text_field_tag :cohort, @user.cohort %>
+
+    <%= submit_tag 'Submit' %>
+  <% end %>
+</section>

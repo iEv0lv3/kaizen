@@ -27,19 +27,18 @@ class Users::ProfileController < Users::BaseController
     @user.destroy
 
     if @user.destroy
-        redirect_to root_url, notice: "User deleted."
+      redirect_to root_url, notice: "User deleted."
     end
   end
 
-
-  private 
+  private
 
   def user_params
-  params.permit(
-    :email,
-    :first_name,
-    :last_name,
-    :cohort,
-  )
+    params.permit(
+      :email,
+      :first_name,
+      :last_name,
+      :cohort,
+    )
   end
 end

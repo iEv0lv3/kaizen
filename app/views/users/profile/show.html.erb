@@ -5,11 +5,12 @@
 <p>Cohort: <%= @user.cohort %></p>
 <p>Program Status: <%= @user.status %></p>
 
+<% if @user.gh_token.nil? %>
+  <div id='github_auth'>
+    <%= link_to 'Connect to GitHub', user_github_omniauth_authorize_path %>
+  </div>
+<% end %>
+
 <p><%= link_to "Edit", "/profile/edit" %> | <%= link_to "Delete", destroy_user_path(@user), method: :delete, data: { confirm: "You sure?" } %></p>
 
 <p><%= link_to "Change your password", edit_user_registration_path %></p>
-
-
-
-
-

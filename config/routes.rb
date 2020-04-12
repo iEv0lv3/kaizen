@@ -18,5 +18,6 @@ Rails.application.routes.draw do
 
 
   get '/questions/:id/answers/new', to: 'answers#new'
+  post '/questions/:id', to: 'answers#create'
   get '/answers/:id', to: 'answers#show'
 end

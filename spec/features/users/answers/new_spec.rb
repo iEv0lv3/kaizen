@@ -52,7 +52,7 @@ RSpec.describe 'As a User' do
             expect(current_path).to eq("/questions/#{@question_1.id}")
 
             expect(page).to have_content("An attr_reader is a method from a super class that allows other files to read the methods in the file the attr_reader is in.")
-            expect(page).to have_content("Your answer was successfully created! ")
+            expect(page).to have_content("Your answer was successfully created!")
         end
 
         it 'I can create a new answer to the question, but it will not post if the content is blank' do 
@@ -68,7 +68,7 @@ RSpec.describe 'As a User' do
             click_on "Submit"
 
             expect(page).not_to have_content("An attr_reader is a method from a super class that allows other files to read the methods in the file the attr_reader is in.")
-            expect(page).to have_content("Sorry, your answer was not created. Please make sure you filled in all fields.")
+            expect(page).to have_content("Content can't be blank")
         end
     end
 end

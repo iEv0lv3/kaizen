@@ -3,17 +3,17 @@ require 'rails_helper'
 RSpec.describe 'As a User' do 
     describe 'When I visit a questions show page' do 
         before :each do 
-            user = create(:user)
-            user.confirm
+            @user = create(:user)
+            @user.confirm
 
-            user_2 = create(:user)
-            user_2.confirm
+            @user_2 = create(:user)
+            @user_2.confirm
       
             @question_1 = Question.create!({subject: "Ruby methods",
                                             content: "What is attr_reader?",
                                             upvotes: 1,
                                             forum: 0,
-                                            user_id: user.id})
+                                            user_id: @user.id})
 
             visit '/'
 
@@ -71,3 +71,5 @@ RSpec.describe 'As a User' do
             expect(page).not_to have_content("An attr_reader is a method from a super class that allows other files to read the methods in the file the attr_reader is in.")
             expect(page).to have_content("Sorry, your answer was not created. Please make sure you filled in all fields.")
         end
+    end
+end

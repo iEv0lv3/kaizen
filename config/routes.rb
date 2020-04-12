@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'registrations', omniauth_callbacks: 'users/callbacks' }
-
-  root to: 'welcome#index'
+  devise_for :users, :controllers => { registrations: 'registrations' }
 
   devise_scope :user do
     get 'profile', to: 'users/profile#show'
@@ -10,7 +8,10 @@ Rails.application.routes.draw do
     patch 'profile', to: 'users/profile#update'
     match 'users/:id' => 'users/profile#destroy', :via => :delete, :as => :destroy_user
     get 'questions/new', to: 'users/questions#new'
+    post '/questions', to: 'users/questions#create'
   end
+
+  root to: 'welcome#index'
 
   get 'technical_forum', to: 'technical_forum#index'
   get '/technical_forum/:question_id', to: 'technical_forum#show'

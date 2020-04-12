@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   get 'professional_forum', to: 'professional_forum#index'
   get '/professional_forum/:question_id', to: 'professional_forum#show'
+
+  get '/answers/:id', to: 'answers#show'
 end

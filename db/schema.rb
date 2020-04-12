@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_04_11_214455) do
 
   create_table "answers", force: :cascade do |t|
     t.text "content"
-    t.integer "upvotes"
+    t.integer "upvotes", default: 1
     t.integer "awards"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

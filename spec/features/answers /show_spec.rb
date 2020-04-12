@@ -36,5 +36,53 @@ RSpec.describe 'As a Visitor' do
 
             expect(page).to have_content(@answer_1.content)
         end
+
+        it 'and if the answer is one that I made then I can delete it' do 
+
+            visit "/questions/#{@question_1.id}"
+
+            expect(current_path).to eq("/questions/#{@question_1.id}")
+
+            within "#answer-#{@answer_1.id}" do 
+                expect(page).to have_link("Delete")
+                click_on "Delete"
+            end
+
+            expect(current_path).to eq("/questions/#{@question_1.id}")
+
+            expect(page).not_to have_content(@answer_1.content)
+        end
+
+        it 'and if the answer is not one that I made then I can not delete it' do 
+
+            user_3 = create(:user)
+            user_3.confirm
+
+            visit '/'
+
+            expect(current_path).to eq("/")
+
+            expect(page).to have_content("Sign In")
+
+            click_on "Sign In"
+
+            expect(current_path).to eq('/users/sign_in')
+
+            fill_in :user_email, with: user_3.email
+            fill_in :user_password, with: user_3.password
+            
+
+            click_on "Log in"
+
+            expect(current_path).to eq("/")
+
+            visit "/questions/#{@question_1.id}"
+
+            expect(current_path).to eq("/questions/#{@question_1.id}")
+
+            within "#answer-#{@answer_1.id}" do 
+                expect(page).not_to have_link("Delete")
+            end
+        end
     end
 end

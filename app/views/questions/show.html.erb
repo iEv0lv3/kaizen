@@ -3,7 +3,9 @@
 <h4><%= @question.content %></h4>
 <p><%= @question.upvotes %></p>
 
+<% if current_user %>
 <h4><%= button_to "Answer Question", "/questions/#{@question.id}/answers/new", method: :get %>
+<% end %>
 
 <h3> Answers </h3>
 

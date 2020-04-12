@@ -12,6 +12,12 @@ class Users::CallbacksController < Devise::OmniauthCallbacksController
 
   def stackexchange
     so_auth = request.env["omniauth.auth"]
-    binding.pry
+
+    current_user.update(
+      so_token: so_auth['credentials']['token'],
+      so_uid: so_auth['uid']
+    )
+
+    redirect_to profile_path, notice: 'Connected to StackOverflow!'
   end
 end

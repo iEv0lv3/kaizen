@@ -17,6 +17,6 @@ Rails.application.routes.draw do
   get '/questions/:id', to: 'questions#show'
 
 
-  get 'questions/:id/answers/new', to: 'answers#new'
+  get '/questions/:id/answers/new', to: 'answers#new'
   get '/answers/:id', to: 'answers#show'
 end

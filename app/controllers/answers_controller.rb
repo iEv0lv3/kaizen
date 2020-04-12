@@ -5,6 +5,6 @@ class AnswersController < ApplicationController
     end
 
     def new 
-        @quesiton = Question.find(params[:id])
+        @question = Question.find(params[:id])
     end
 end

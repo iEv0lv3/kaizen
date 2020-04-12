@@ -44,10 +44,9 @@ RSpec.describe 'As a User' do
 
             click_on "Answer Question"
 
-            expect(current_path).to eq("/answers/new")
+            expect(current_path).to eq("/questions/#{@question_1.id}/answers/new")
 
-            fill_in :conent, with: "An attr_reader is a method from a super class that allows other files to read the methods in the file the attr_reader is in."
-
+            fill_in :content, with: "An attr_reader is a method from a super class that allows other files to read the methods in the file the attr_reader is in."
             click_on "Submit"
 
             expect(current_path).to eq("/questions/#{@question_1.id}")
@@ -62,9 +61,9 @@ RSpec.describe 'As a User' do
 
             click_on "Answer Question"
 
-            expect(current_path).to eq("/answers/new")
+            expect(current_path).to eq("/questions/#{@question_1.id}/answers/new")
 
-            fill_in :conent, with: " "
+            fill_in :content, with: " "
 
             click_on "Submit"
 

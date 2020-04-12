@@ -1,0 +1,10 @@
+<h2>What is your New Answer to the quesiton </h2>
+
+<p><%= @question.content %></p>
+
+<%= form_tag "/questions/#{@question.id}/answers/#{@answer.id}", method: :patch do %>
+    <%= label_tag :content %>
+    <%= text_field_tag :content, @answer.content %>
+
+    <%= submit_tag 'Submit'%>
+<% end %>

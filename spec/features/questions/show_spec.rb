@@ -43,7 +43,7 @@ RSpec.describe 'As a visitor' do
         click_on @question_1.subject
       end
 
-      expect(current_path).to eq("/technical_forum/#{@question_1.id}")
+      expect(current_path).to eq("/questions/#{@question_1.id}")
 
       expect(page).to have_content(@question_1.subject)
       expect(page).to have_content(@question_1.content)
@@ -64,7 +64,7 @@ RSpec.describe 'As a visitor' do
         click_on @question_2.subject
       end
 
-      expect(current_path).to eq("/professional_forum/#{@question_2.id}")
+      expect(current_path).to eq("/questions/#{@question_2.id}")
 
       expect(page).to have_content(@question_2.subject)
       expect(page).to have_content(@question_2.content)

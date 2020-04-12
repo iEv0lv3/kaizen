@@ -91,10 +91,10 @@ RSpec.describe 'As a User' do
 
             user_3 = create(:user)
             user_3.confirm
+            
+            expect(page).to have_link("Sign Out")
 
-            expect(page).to have_link("Logout")
-
-            click_on "Logout"
+            click_on "Sign Out"
 
             expect(current_path).to eq("/")
 

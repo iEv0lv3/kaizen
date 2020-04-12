@@ -31,7 +31,6 @@ RSpec.describe 'As a User' do
             fill_in :user_email, with: @user_2.email
             fill_in :user_password, with: @user_2.password
             
-
             click_on "Log in"
 
             expect(current_path).to eq("/")

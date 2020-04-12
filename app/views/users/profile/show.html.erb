@@ -1,9 +1,11 @@
 <p>Welcome <%= "#{@user.first_name}" %> <%= "#{@user.last_name}"%>! You successfully signed in.</p>
 
-<%= image_tag 'https://i.imgur.com/bdnuBf1.jpg', size: '300x150' %>
-<p><%= @user.first_name %> <%= @user.last_name %></p>
-<p>Cohort: <%= @user.cohort %></p>
-<p>Program Status: <%= @user.status %></p>
+<section class='profile-info''>
+  <div id='avatar'><%= image_tag 'https://i.imgur.com/bdnuBf1.jpg', size: '300x150' %></div>
+  <p><%= @user.first_name %> <%= @user.last_name %></p>
+  <p>Cohort: <%= @user.cohort %></p>
+  <p>Program Status: <%= @user.status %></p>
+</section>
 
 <% if @user.gh_token.nil? %>
 <div id='github_auth'>

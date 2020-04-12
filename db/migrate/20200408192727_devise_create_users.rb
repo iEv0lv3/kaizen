@@ -40,7 +40,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :gh_token
       t.string :so_token
       t.text :bio
-      t.string :avatar, default: "https://previews.123rf.com/images/nexusby/nexusby1810/nexusby181000286/111362910-default-avatar-placeholder-profile-icon-male.jpg"
+      t.string :avatar, default: 'https://i.imgur.com/bdnuBf1.jpg'
 
       t.timestamps null: false
     end

@@ -1,85 +1,80 @@
 require 'rails_helper'
 
-RSpec.describe 'As a User' do 
-    describe 'When I visit my profile' do
-        it 'By first logging in on the welcome page' do 
-            user = create(:user)
-            user.confirm
+RSpec.describe 'As a User' do
+  describe 'When I visit my profile' do
+    it 'By first logging in on the welcome page' do
+      user = create(:user)
+      user.confirm
 
-            visit '/'
+      visit '/'
 
-            expect(page).to have_content("Sign In")
+      expect(page).to have_content('Sign In')
 
-            click_on "Sign In"
+      click_on 'Sign In'
 
-            expect(current_path).to eq('/users/sign_in')
+      expect(current_path).to eq('/users/sign_in')
 
-            fill_in :user_email, with: user.email
-            fill_in :user_password, with: user.password
-            
+      fill_in :user_email, with: user.email
+      fill_in :user_password, with: user.password
 
-            click_on "Log in"
+      click_on 'Log in'
 
-            expect(current_path).to eq("/")
-        end
+      expect(current_path).to eq('/')
+    end
+  end
+
+  describe 'When I am on my profile page' do
+    before :each do
+      @user = create(:user)
+      @user.confirm
+
+      visit '/'
+
+      expect(page).to have_content('Sign In')
+
+      click_on 'Sign In'
+
+      expect(current_path).to eq('/users/sign_in')
+
+      fill_in :user_email, with: @user.email
+      fill_in :user_password, with: @user.password
+
+      click_on 'Log in'
+
+      expect(current_path).to eq('/')
+
+      click_on 'Profile'
+
+      expect(current_path).to eq(profile_path)
     end
 
-    describe 'When I am on my profile page' do 
-        before :each do 
-            @user = create(:user)
-            @user.confirm
+    it 'I can see all of my information' do
+      expect(page).to have_css('#avatar')
+      expect(page).to have_content(@user.first_name)
+      expect(page).to have_content(@user.last_name)
+      expect(page).to have_content(@user.cohort)
+      expect(page).to have_content(@user.status)
+    end
 
-            visit '/'
+    it 'I can delete my account if I really want to' do
+      expect(page).to have_link('Delete')
 
-            expect(page).to have_content("Sign In")
+      click_on 'Delete'
 
-            click_on "Sign In"
+      expect(current_path).to eq('/')
 
-            expect(current_path).to eq('/users/sign_in')
+      expect(page).to have_content('User deleted.')
 
-            fill_in :user_email, with: @user.email
-            fill_in :user_password, with: @user.password
-            
+      click_on 'Sign In'
 
-            click_on "Log in"
+      expect(current_path).to eq('/users/sign_in')
 
-            expect(current_path).to eq("/")
+      fill_in :user_email, with: @user.email
+      fill_in :user_password, with: @user.password
 
-            click_on "Profile"
+      click_on 'Log in'
 
-            expect(current_path).to eq(profile_path)
-        end
-
-        it 'I can see all of my information' do 
-
-            expect(page).to have_content(@user.avatar)
-            expect(page).to have_content(@user.first_name)
-            expect(page).to have_content(@user.last_name)
-            expect(page).to have_content(@user.cohort)
-            expect(page).to have_content(@user.status)
-        end 
-
-        it 'I can delete my account if I really want to' do 
-
-            expect(page).to have_link("Delete") 
-
-            click_on "Delete"
-
-            expect(current_path).to eq("/")
-
-            expect(page).to have_content("User deleted.")
-            
-            click_on "Sign In"
-
-            expect(current_path).to eq('/users/sign_in')
-
-            fill_in :user_email, with: @user.email
-            fill_in :user_password, with: @user.password
-            
-
-            click_on "Log in"
-
-            expect(page).not_to have_link("Logout")
-        end
-    end 
+      expect(page).not_to have_link('Logout')
+    end
+  end
 end

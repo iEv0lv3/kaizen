@@ -23,4 +23,10 @@ class User < ApplicationRecord
          :confirmable
 
   devise :omniauthable, omniauth_providers: %i[github stackexchange]
+
+  def award_count
+    kapi = KaizenApiService.new(self)
+    resp = JSON.parse(kapi.find_awards)
+    resp['items'].first['award_count']
+  end
 end

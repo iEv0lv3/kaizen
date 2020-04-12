@@ -56,12 +56,16 @@
 
     <div class="mainContentWrapper">
       <div class="mainContentContainer">
+
+        <% flash.each do |type, msg| %>
+        <% type = 'info' if type == 'notice' %>
+          <div class="alert alert-<%= type %>">
+            <%= msg %>
+          </div>
+        <% end %>
+
         <%= yield %>
       </div>
-
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-      <% end %>
 
       <section class="footer">
         <div class="colorBar">

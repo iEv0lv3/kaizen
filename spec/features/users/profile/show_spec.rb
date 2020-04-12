@@ -49,7 +49,7 @@ RSpec.describe 'As a User' do
     end
 
     it 'I can see all of my information' do
-      expect(page).to have_content(@user.avatar)
+      expect(page).to have_css('#avatar')
       expect(page).to have_content(@user.first_name)
       expect(page).to have_content(@user.last_name)
       expect(page).to have_content(@user.cohort)

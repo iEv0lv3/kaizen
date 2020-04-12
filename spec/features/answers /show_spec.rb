@@ -20,9 +20,9 @@ RSpec.describe 'As a Visitor' do
                 user_id: user_2.id
             })
 
-            visit "/technical_forum/#{@question_1.id}"
+            visit "/questions/#{@question_1.id}"
     
-            expect(current_path).to eq("/technical_forum/#{@question_1.id}")
+            expect(current_path).to eq("/questions/#{@question_1.id}")
 
         end
 

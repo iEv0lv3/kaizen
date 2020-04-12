@@ -50,9 +50,9 @@ RSpec.describe 'As a Visitor' do
         
         it 'I see a list of answers to that quesiton if it is a technical question' do 
 
-            visit "/technical_forum/#{@question_1.id}"
+            visit "/questions/#{@question_1.id}"
     
-            expect(current_path).to eq("/technical_forum/#{@question_1.id}")
+            expect(current_path).to eq("/questions/#{@question_1.id}")
 
             expect(page).to have_content(@answer_1.content)
             expect(page).to have_content(@answer_2.content)
@@ -61,9 +61,9 @@ RSpec.describe 'As a Visitor' do
 
         it 'I see a list of answers to that quesiton if it is a professional question. ' do 
 
-            visit "/professional_forum/#{@question_2.id}"
+            visit "/questions/#{@question_2.id}"
     
-            expect(current_path).to eq("/professional_forum/#{@question_2.id}")
+            expect(current_path).to eq("/questions/#{@question_2.id}")
 
            expect(page).not_to have_content(@answer_1.content)
            expect(page).not_to have_content(@answer_2.content)

@@ -31,9 +31,9 @@ RSpec.describe 'As a User' do
 
             expect(current_path).to eq("/")
 
-            visit "/technical_forum/#{@question_1.id}"
+            visit "/questions/#{@question_1.id}"
 
-            expect(current_path).to eq("/technical_forum/#{@question_1.id}")
+            expect(current_path).to eq("/questions/#{@question_1.id}")
 
         end
                                 
@@ -50,7 +50,7 @@ RSpec.describe 'As a User' do
 
             click_on "Submit"
 
-            expect(current_path).to eq("/technical_forum/#{@question_1.id}")
+            expect(current_path).to eq("/questions/#{@question_1.id}")
 
             expect(page).to have_content("An attr_reader is a method from a super class that allows other files to read the methods in the file the attr_reader is in.")
             expect(page).to have_content("Your answer was successfully created! ")

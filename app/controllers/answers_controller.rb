@@ -40,8 +40,15 @@ class AnswersController < ApplicationController
 			flash[:error] = answer.errors.full_messages.to_sentence
 			redirect_to "/questions/#{question.id}/answers/#{answer.id}/edit"
 		end
-	end
+    end
     
+    def destroy
+        question = Question.find(params[:question_id])
+		Answer.destroy(params[:answer_id])
+        redirect_to "/questions/#{question.id}"
+        flash[:notification] = "Your Answer was successfully deleted."
+	end
+  
     private 
 
     def answer_params

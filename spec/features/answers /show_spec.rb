@@ -6,8 +6,8 @@ RSpec.describe 'As a Visitor' do
             user = create(:user)
             user.confirm
 
-            user_2 = create(:user)
-            user_2.confirm
+            @user_2 = create(:user)
+            @user_2.confirm
       
             @question_1 = Question.create!({subject: "Ruby methods",
                                             content: "What is attr_reader?",
@@ -17,7 +17,7 @@ RSpec.describe 'As a Visitor' do
 
             @answer_1 = @question_1.answers.create!({content: "The attr_reader lets other read your code.",
                 upvotes: 1,
-                user_id: user_2.id
+                user_id: @user_2.id
             })
 
             visit "/questions/#{@question_1.id}"
@@ -38,6 +38,24 @@ RSpec.describe 'As a Visitor' do
         end
 
         it 'and if the answer is one that I made then I can delete it' do 
+
+            visit '/'
+
+            expect(current_path).to eq("/")
+
+            expect(page).to have_content("Sign In")
+
+            click_on "Sign In"
+
+            expect(current_path).to eq('/users/sign_in')
+
+            fill_in :user_email, with: @user_2.email
+            fill_in :user_password, with: @user_2.password
+            
+
+            click_on "Log in"
+
+            expect(current_path).to eq("/")
 
             visit "/questions/#{@question_1.id}"
 

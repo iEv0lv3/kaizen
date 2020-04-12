@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   get '/answers/:id', to: 'answers#show'
   get '/questions/:question_id/answers/:answer_id/edit', to: 'answers#edit'
   patch '/questions/:question_id/answers/:answer_id', to: 'answers#update'
+  delete '/questions/:question_id/answers/:answer_id/delete', to: 'answers#destroy'
 end

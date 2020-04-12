@@ -16,7 +16,8 @@
     <p><%= answer.user.email %></p>
     <% if current_user %>
       <% if current_user.id == answer.user.id %>
-        <%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/edit"%>
+        <p><%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/edit"%> |
+          <%= link_to "Delete", "/questions/#{@question.id}/answers/#{answer.id}/delete", method: :delete %>
       <% end %>
     <% end %>
   </section>

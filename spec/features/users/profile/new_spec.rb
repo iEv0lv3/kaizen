@@ -31,7 +31,7 @@ RSpec.describe 'As a User' do
 
            
             expect(current_path).to eq(profile_path)
-            expect(page).to have_content("Welcome!, you are currently logged in as #{@user.first_name} #{@user.last_name}.")
+            expect(page).to have_content("Welcome #{@user.first_name} #{@user.last_name}! You successfully signed in.")
         end
     end
 end

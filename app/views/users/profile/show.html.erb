@@ -1,20 +1,26 @@
-<p>Welcome!, you are currently logged in as <%= "#{@user.first_name}" %> <%= "#{@user.last_name}"%>.</p>
+<p>Welcome <%= "#{@user.first_name}" %> <%= "#{@user.last_name}"%>! You successfully signed in.</p>
 
-<h1><%= @user.avatar %></h1>
+<%= image_tag 'https://i.imgur.com/bdnuBf1.jpg', size: '300x150' %>
 <p><%= @user.first_name %> <%= @user.last_name %></p>
 <p>Cohort: <%= @user.cohort %></p>
 <p>Program Status: <%= @user.status %></p>
 
 <% if @user.gh_token.nil? %>
-  <div id='github_auth'>
-    <%= link_to 'Connect to GitHub', user_github_omniauth_authorize_path %>
-  </div>
+<div id='github_auth'>
+  <%= link_to 'Connect to GitHub', user_github_omniauth_authorize_path %>
+</div>
 <% end %>
 
 <% if @user.so_token.nil? %>
-  <div id='stackoverflow_auth'>
-    <%= link_to 'Connect to StackOverflow', user_stackexchange_omniauth_authorize_path %>
-  </div>
+<div id='stackoverflow_auth'>
+  <%= link_to 'Connect to StackOverflow', user_stackexchange_omniauth_authorize_path %>
+</div>
+<% elsif !@user.award_count.zero? %>
+<div id='so_badges'>
+  <p>StackOverflow Award Count: <%= @user.award_count %></p>
+</div>
+<% else %>
+<p>You have no awards!</p>
 <% end %>
 
 <p><%= link_to "Edit", "/profile/edit" %> | <%= link_to "Delete", destroy_user_path(@user), method: :delete, data: { confirm: "You sure?" } %></p>

@@ -20,5 +20,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable, :omniauthable
+         :confirmable
+
+  devise :omniauthable, omniauth_providers: %i[github stackexchange]
 end

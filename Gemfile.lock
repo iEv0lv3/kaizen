@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/nashby/omniauth-stackexchange.git
+  revision: 11b776d79db4c86cdf585f6806eda3d1e0fe5aee
+  specs:
+    omniauth-stackexchange (0.2.1)
+      omniauth (~> 1.0)
+      omniauth-oauth2 (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -148,9 +156,6 @@ GEM
     omniauth-oauth2 (1.6.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
-    omniauth-stackexchange (0.2.1)
-      omniauth (~> 1.0)
-      omniauth-oauth2 (~> 1.0)
     orm_adapter (0.5.0)
     pg (1.2.3)
     pry (0.13.0)
@@ -300,7 +305,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   omniauth
   omniauth-github
-  omniauth-stackexchange
+  omniauth-stackexchange!
   pg (>= 0.18, < 2.0)
   pry
   puma (~> 4.1)

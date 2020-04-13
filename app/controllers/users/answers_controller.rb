@@ -26,14 +26,13 @@ class Users::AnswersController < Users::BaseController
     question = Question.find(params[:question_id])
     answer = Answer.find(params[:answer_id])
     answer.update(answer_params)
-
     if answer.save
       flash[:success] = 'Your Answer was successfully updated!!'
       redirect_to "/questions/#{question.id}"
     else
       flash[:error] = answer.errors.full_messages.to_sentence
       redirect_to "/questions/#{question.id}/answers/#{answer.id}/edit"
-  end
+    end
   end
 
   def destroy

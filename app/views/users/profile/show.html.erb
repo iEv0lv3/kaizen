@@ -45,3 +45,13 @@
 <p><%= link_to "Edit", "/profile/edit" %> | <%= link_to "Delete", destroy_user_path(@user), method: :delete, data: { confirm: "You sure?" } %></p>
 
 <p><%= link_to "Change your password", edit_user_registration_path %></p>
+
+<h4>Your Recent Activity</h4>
+
+<% @user.ordered_questions.each do |question| %>
+    <div id="question-<%= question.id %>">
+      <h5>Question: <%= link_to question.subject, "/questions/#{question.id}" %></h5>
+      <p>Upvotes: <%= question.upvotes %></p>
+      <p>Last Updated: <%= question.updated_at.to_date %></p>
+    </div>
+<% end %>

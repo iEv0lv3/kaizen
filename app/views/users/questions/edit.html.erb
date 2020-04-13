@@ -1,6 +1,6 @@
-<h2>Post a Question:</h2>
+<h2>Edit a Question:</h2>
 
-<%= form_for(@question, url: '/questions') do |f| %>
+<%= form_for(@question, url: edit_question_path(@question)) do |f| %>
 
   <div class="field">
       <%= f.radio_button :forum, 0 %> Technical Question? <br />
@@ -18,6 +18,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Submit Question" %>
+    <%= f.submit "Update Question" %>
   </div>
 <% end %>

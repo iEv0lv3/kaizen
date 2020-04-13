@@ -4,8 +4,7 @@
   <section id='question-<%= question.id %>'>
     <h4><%= link_to question.subject, "/questions/#{question.id}" %></h4>
     <p><%= question.content %></p>
-    <p><%= question.upvotes %></p>
+    <p>Upvotes: <%= question.upvotes %></p>
     <p><%= question.user.email %></p>
   </section>
 <% end %>
-

@@ -1,10 +1,18 @@
 <h2><%= @question.subject %></h2>
+<% if current_user %>
+  <% if current_user.id == @question.user.id %>
+    <div class="question-modification">
+      <p><%= link_to 'Update Question', "/questions/#{@question.id}/edit", method: :get %> |
+        <%= link_to 'Delete Question', "/questions/#{@question.id}", method: :delete, data: {confirm: "Are you sure?"} %></p>
+    </div>
+  <% end %>
+<% end %>
 
 <h4><%= @question.content %></h4>
 <p><%= @question.upvotes %></p>
 
 <% if current_user %>
-<h4><%= button_to "Answer Question", "/questions/#{@question.id}/answers/new", method: :get %>
+  <h4><%= button_to "Answer Question", "/questions/#{@question.id}/answers/new", method: :get %>
 <% end %>
 
 <h3> Answers </h3>
@@ -15,7 +23,7 @@
     <p><%= answer.upvotes %></p>
     <p><%= answer.user.email %></p>
     <% if current_user %>
-      <% if current_user.id == answer.user.id %>
+      <% if current_user.id == answer.user_id %>
         <p><%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/edit"%> |
           <%= link_to "Delete", "/questions/#{@question.id}/answers/#{answer.id}/delete", method: :delete %>
       <% end %>

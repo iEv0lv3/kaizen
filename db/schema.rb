@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_04_11_214455) do
   create_table "questions", force: :cascade do |t|
     t.string "subject"
     t.text "content"
-    t.integer "upvotes"
+    t.integer "upvotes", default: 1
     t.integer "awards"
     t.integer "forum"
     t.datetime "created_at", precision: 6, null: false

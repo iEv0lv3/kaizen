@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe 'As a Visitor' do 
-    describe 'When I visit a questions show page' do 
-        before :each do 
+RSpec.describe 'As a Visitor' do
+    describe 'When I visit a questions show page' do
+        before :each do
             user = create(:user)
             user.confirm
 
             user_2 = create(:user)
             user_2.confirm
-      
+
             @question_1 = Question.create!({subject: "Ruby methods",
                                             content: "What is attr_reader?",
                                             upvotes: 1,
@@ -20,7 +20,7 @@ RSpec.describe 'As a Visitor' do
                                             upvotes: 1,
                                             forum: 1,
                                             user_id: user.id})
-            
+
             @answer_1 = @question_1.answers.create!({content: "The attr_reader lets other read your code.",
                                                      upvotes: 1,
                                                      user_id: user_2.id
@@ -46,12 +46,12 @@ RSpec.describe 'As a Visitor' do
             })
 
         end
-        
-        
-        it 'I see a list of answers to that quesiton if it is a technical question' do 
+
+
+        it 'I see a list of answers to that quesiton if it is a technical question' do
 
             visit "/questions/#{@question_1.id}"
-    
+
             expect(current_path).to eq("/questions/#{@question_1.id}")
 
             expect(page).to have_content(@answer_1.content)
@@ -62,7 +62,7 @@ RSpec.describe 'As a Visitor' do
         it 'I see a list of answers to that quesiton if it is a professional question. ' do 
 
             visit "/questions/#{@question_2.id}"
-    
+
             expect(current_path).to eq("/questions/#{@question_2.id}")
 
            expect(page).not_to have_content(@answer_1.content)

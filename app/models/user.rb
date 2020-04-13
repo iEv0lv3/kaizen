@@ -29,4 +29,8 @@ class User < ApplicationRecord
     resp = JSON.parse(kapi.find_awards)
     resp['items'].first['award_count']
   end
+
+  def ordered_questions
+    questions.order(updated_at: :desc).limit(3)
+  end
 end

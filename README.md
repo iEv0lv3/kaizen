@@ -1,4 +1,4 @@
-# Turing :: SO
+<h1> align= center>Turing :: SO</h1>
 
 An internal forum to ask questions and provide answers for students, alumni, and staff of
 the ***Turing School of Software and Design***. The goal of this community is to provide a

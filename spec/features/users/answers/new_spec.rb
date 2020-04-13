@@ -38,7 +38,7 @@ RSpec.describe 'As a User' do
     end
 
     it 'I can create a new answer to the question' do
-      expect(page).to have_button('Answer Question')
+      expect(page).to have_link('Answer Question')
 
       click_on 'Answer Question'
 
@@ -54,7 +54,7 @@ RSpec.describe 'As a User' do
     end
 
     it 'I can create a new answer to the question, but it will not post if the content is blank' do
-      expect(page).to have_button('Answer Question')
+      expect(page).to have_link('Answer Question')
 
       click_on 'Answer Question'
 

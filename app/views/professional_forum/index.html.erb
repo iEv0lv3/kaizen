@@ -1,12 +1,22 @@
-<h2>Professional Question Forum</h2>
+<h1>Professional Question Forum</h1>
 
 <% @questions.each do |question| %>
-  <section id='question-<%= question.id %>'>
+<div id='question-<%= question.id %>' class='row mb-3'>
+  <div class="col-sm-3 themed-grid-col activityBox">
+    <p>Upvotes: <%= question.upvotes %></p>
+    <p>Answers: <%= question.answers.count %></p>
+    <p>Date Posted: <%= question.created_at.to_date %></p>
+    <p>Verified Answered: </p>
+  </div>
+
+  <div class="col-md-8 themed-grid-col questionBox">
     <h4><%= link_to question.subject, "/questions/#{question.id}" %></h4>
-    <p><%= question.content %></p>
-    <p><%= question.upvotes %></p>
-    <p><%= question.user.email %></p>
-  </section>
+    <div class="questionContent">:: <%= question.content.first(50) + "..." %></div>
+    <div class="questionBoxInfo">Posted By :: <%= question.user.first_name %></div>
+    <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer' %></div>
+    <div class="questionBoxInfo">Cohort :: <%= question.user.cohort %></div>
+    <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer' %></div>
+    Comments :: <%= question.comments.count %>
+  </div>
+</div>
 <% end %>
-
-

@@ -10,12 +10,12 @@ class Users::QuestionsController < Users::BaseController
     question = Question.new(question_params)
     question.user_id = current_user.id
     if question.save
-      if question.forum == "technical"
+      if question.forum == 'technical'
         redirect_to '/technical_forum'
-        flash[:success] = "Your question was successfully submitted!"
+        flash[:success] = 'Your question was successfully submitted!'
       else
         redirect_to '/professional_forum'
-        flash[:success] = "Your question was successfully submitted!"
+        flash[:success] = 'Your question was successfully submitted!'
       end
     else
       redirect_to '/questions/new'
@@ -34,7 +34,7 @@ class Users::QuestionsController < Users::BaseController
     question = Question.find(params[:id])
     question.update(question_params)
     if question.save
-      flash[:success] = "Your question was successfully updated!"
+      flash[:success] = 'Your question was successfully updated!'
       redirect_to "/questions/#{question.id}"
     else
       flash[:error] = question.errors.full_messages.to_sentence
@@ -47,13 +47,12 @@ class Users::QuestionsController < Users::BaseController
     forum = question.forum
     Question.destroy(params[:id])
     redirect_to "/#{forum}_forum"
-    flash[:success] = "Your question was successfully deleted."
+    flash[:success] = 'Your question was successfully deleted.'
   end
-
 
   private
 
-    def question_params
-      params.require(:question).permit(:subject, :content, :forum)
-    end
+  def question_params
+    params.require(:question).permit(:subject, :content, :forum)
+  end
 end

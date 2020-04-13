@@ -36,6 +36,10 @@
     <p><%= answer.upvotes %></p>
     <p><%= answer.user.email %></p>
     <p> Comments </p>
+      <% if current_user %>
+        <%= link_to "Leave a Comment", "/questions/#{@question.id}/answers/#{answer.id}/comments/new" %>
+      <% end %>
+
       <% answer.comments.each do |answer_comment| %>
         <section id='answer_comment-<%= answer_comment.id %>'>
           <%= answer_comment.content %>

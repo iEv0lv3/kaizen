@@ -54,9 +54,9 @@ RSpec.describe 'As a user' do
 
         click_on "Submit"
 
-        expect(current_path).to eq("/quesitons/#{@question_1.id}")
+        expect(current_path).to eq("/questions/#{@question_1.id}")
         expect(page).to have_content("I think this is a good start but also I know there is more to it. ")
-        expect(page).to have_content("Your Comment was successfully created!")
+        expect(page).to have_content("Your comment was successfully created!")
       end
 
       it 'I can not add comments to the answer if my information is blank' do 

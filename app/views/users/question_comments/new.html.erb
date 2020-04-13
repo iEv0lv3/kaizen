@@ -1,0 +1,10 @@
+<h2> Question: <%= @question.content %> </h2>
+
+<p> Leave your comment here </p>
+
+<%= form_tag "/questions/#{@question.id}/comments", method: :post do %>
+  <%= label_tag :content %>
+  <%= text_field_tag :content %>
+
+  <%= submit_tag 'Submit'%>
+<% end %>

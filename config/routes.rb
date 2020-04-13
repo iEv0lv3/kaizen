@@ -22,6 +22,8 @@ Rails.application.routes.draw do
         get '/:question_id/answers/:answer_id/edit', to: 'answers#edit', as: 'edit_answer'
         patch '/:question_id/answers/:answer_id', to: 'answers#update', as: 'update_answer'
         delete '/:question_id/answers/:answer_id/delete', to: 'answers#destroy', as: 'delete_answer'
+        get '/:question_id/comments/new', to: 'question_comments#new', as: 'new_comment' 
+        post '/:question_id/comments', to: 'question_comments#create', as: 'create_new_comment'
       end
     end
   end

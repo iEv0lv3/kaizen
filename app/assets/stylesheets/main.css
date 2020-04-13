@@ -115,3 +115,12 @@ a > p {
   width: 33.33%;
   margin-top: -15px;
 }
+
+#signUpButton {
+  margin-top: 1em;
+}
+
+#radioButtonsInput {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}

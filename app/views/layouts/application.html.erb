@@ -59,6 +59,7 @@
 
         <% flash.each do |type, msg| %>
         <% type = 'info' if type == 'notice' %>
+        <% type = 'warning' if type == 'alert' %>
           <div class="alert alert-<%= type %>">
             <%= msg %>
           </div>
@@ -66,19 +67,21 @@
 
         <%= yield %>
       </div>
+    </div>
 
-      <section class="footer">
-        <div class="colorBar">
-          <div id="colorBarColor1"></div>
-          <div id="colorBarColor2"></div>
-          <div id="colorBarColor3"></div>
-        </div>
+    <footer class="footer mt-auto py-3">
+      <div class="colorBar">
+        <div id="colorBarColor1"></div>
+        <div id="colorBarColor2"></div>
+        <div id="colorBarColor3"></div>
+      </div>
+      <div class="container">
         <p><%= link_to 'jordan', "https://github.com/iEv0lv3/", class: 'footerLink'%> | <%= link_to 'dave', "https://github.com/DavidHoltkamp1", class: 'footerLink'%> |
         <%= link_to 'sebastian', "https://github.com/sasloan", class: 'footerLink'%> | <%= link_to 'steve', "https://github.com/alerrian", class: 'footerLink'%>
         </p>
         <p>Made with ❤️ at Turing</p>
-      </section>
-    </div>
+      </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

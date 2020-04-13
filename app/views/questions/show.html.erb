@@ -2,6 +2,15 @@
   <h4><%= @question.content %></h4>
   <p><%= @question.upvotes %></p>
 
+  <h4> Question Comments </h4>
+
+  <% @comments.each do |comment| %>
+    <section id='comment-<%= comment.id %>'>
+      <%= comment.content %>
+      <%= comment.upvotes %>
+    </section>
+  <% end %>
+
   <% if current_user && current_user.id == @question.user.id %>
     <div class="question-modification">
       <p>

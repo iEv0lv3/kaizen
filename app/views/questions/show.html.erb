@@ -4,10 +4,10 @@
 
   <h4> Question Comments </h4>
 
-  <% @comments.each do |comment| %>
-    <section id='comment-<%= comment.id %>'>
-      <%= comment.content %>
-      <%= comment.upvotes %>
+  <% @question_comments.each do |question_comment| %>
+    <section id='question_comment-<%= question_comment.id %>'>
+      <%= question_comment.content %>
+      <%= question_comment.upvotes %>
     </section>
   <% end %>
 
@@ -31,6 +31,13 @@
     <h4><%= answer.content %></h4>
     <p><%= answer.upvotes %></p>
     <p><%= answer.user.email %></p>
+    <p> Comments </p>
+      <% answer.comments.each do |answer_comment| %>
+        <section id='answer_comment-<%= answer_comment.id %>'>
+          <%= answer_comment.content %>
+          <%= answer_comment.upvotes %>
+        </section>
+      <% end %>
     <% if current_user %>
       <% if current_user.id == answer.user_id %>
         <p><%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/edit"%> |

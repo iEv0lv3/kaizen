@@ -1,0 +1,24 @@
+<h2><%= @question.subject %></h2>
+
+<h4><%= @question.content %></h4>
+<p><%= @question.upvotes %></p>
+
+<% if current_user %>
+<h4><%= button_to "Answer Question", "/questions/#{@question.id}/answers/new", method: :get %>
+<% end %>
+
+<h3> Answers </h3>
+
+<% @answers.each do |answer| %>
+  <section id='answer-<%= answer.id %>'>
+    <h4><%= link_to answer.content, "/answers/#{answer.id}" %></h4>
+    <p><%= answer.upvotes %></p>
+    <p><%= answer.user.email %></p>
+    <% if current_user %>
+      <% if current_user.id == answer.user.id %>
+        <p><%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/edit"%> |
+          <%= link_to "Delete", "/questions/#{@question.id}/answers/#{answer.id}/delete", method: :delete %>
+      <% end %>
+    <% end %>
+  </section>
+<% end %>

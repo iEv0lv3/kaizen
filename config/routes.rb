@@ -13,8 +13,14 @@ Rails.application.routes.draw do
   end
 
   get 'technical_forum', to: 'technical_forum#index'
-  get '/technical_forum/:question_id', to: 'technical_forum#show'
-
   get 'professional_forum', to: 'professional_forum#index'
-  get '/professional_forum/:question_id', to: 'professional_forum#show'
+  get '/questions/:id', to: 'questions#show'
+
+
+  get '/questions/:id/answers/new', to: 'answers#new'
+  post '/questions/:id', to: 'answers#create'
+  get '/answers/:id', to: 'answers#show'
+  get '/questions/:question_id/answers/:answer_id/edit', to: 'answers#edit'
+  patch '/questions/:question_id/answers/:answer_id', to: 'answers#update'
+  delete '/questions/:question_id/answers/:answer_id/delete', to: 'answers#destroy'
 end

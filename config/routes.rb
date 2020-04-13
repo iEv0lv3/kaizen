@@ -7,8 +7,11 @@ Rails.application.routes.draw do
     get 'profile/edit_password', to: 'users/profile#edit_password'
     patch 'profile', to: 'users/profile#update'
     match 'users/:id' => 'users/profile#destroy', :via => :delete, :as => :destroy_user
-    get 'questions/new', to: 'users/questions#new'
+    get '/questions/new', to: 'users/questions#new'
     post '/questions', to: 'users/questions#create'
+    get '/questions/:id/edit', to: 'users/questions#edit', as: :edit_question
+    patch '/questions/:id/edit', to: 'users/questions#update'
+    delete '/questions/:id', to: 'users/questions#destroy'
   end
 
   root to: 'welcome#index'

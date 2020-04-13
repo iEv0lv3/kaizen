@@ -23,6 +23,33 @@ class Users::QuestionsController < Users::BaseController
     end
   end
 
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    forum = params[:question][:forum].to_i
+    params[:question][:forum] = forum
+
+    question = Question.find(params[:id])
+    question.update(question_params)
+    if question.save
+      flash[:success] = "Your question was successfully updated!"
+      redirect_to "/questions/#{question.id}"
+    else
+      flash[:error] = question.errors.full_messages.to_sentence
+      redirect_to "/questions/#{question.id}/edit"
+    end
+  end
+
+  def destroy
+    question = Question.find(params[:id])
+    forum = question.forum
+    Question.destroy(params[:id])
+    redirect_to "/#{forum}_forum"
+    flash[:success] = "Your question was successfully deleted."
+  end
+
 
   private
 

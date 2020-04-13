@@ -1,14 +1,10 @@
-class AnswersController < ApplicationController
-  def show
-    @answer = Answer.find(params[:id])
-  end
-
+class Users::AnswersController < Users::BaseController
   def new
-    @question = Question.find(params[:id])
+    @question = Question.find(params[:question_id])
   end
 
   def create
-    question = Question.find(params[:id])
+    question = Question.find(params[:question_id])
     answer = question.answers.new(answer_params)
     answer.user_id = current_user.id
 
@@ -17,7 +13,7 @@ class AnswersController < ApplicationController
       flash[:success] = 'Your answer was successfully created! '
     else
       redirect_to "/questions/#{question.id}/answers/new"
-      flash[:error] = answer.errors.full_messages.to_sentence
+      flash[:warning] = answer.errors.full_messages.to_sentence
     end
   end
 

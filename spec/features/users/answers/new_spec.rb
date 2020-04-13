@@ -1,74 +1,71 @@
 require 'rails_helper'
 
-RSpec.describe 'As a User' do 
-    describe 'When I visit a questions show page' do 
-        before :each do 
-            @user = create(:user)
-            @user.confirm
+RSpec.describe 'As a User' do
+  describe 'When I visit a questions show page' do
+    before :each do
+      @user = create(:user)
+      @user.confirm
 
-            @user_2 = create(:user)
-            @user_2.confirm
-      
-            @question_1 = Question.create!({subject: "Ruby methods",
-                                            content: "What is attr_reader?",
-                                            upvotes: 1,
-                                            forum: 0,
-                                            user_id: @user.id})
+      @user_2 = create(:user)
+      @user_2.confirm
 
-            visit '/'
+      @question_1 = Question.create!(
+        { subject: 'Ruby methods',
+          content: 'What is attr_reader?',
+          upvotes: 1,
+          forum: 0,
+          user_id: @user.id }
+      )
 
-            expect(page).to have_content("Sign In")
+      visit '/'
 
-            click_on "Sign In"
+      expect(page).to have_content('Sign In')
 
-            expect(current_path).to eq('/users/sign_in')
+      click_on 'Sign In'
 
-            fill_in :user_email, with: @user_2.email
-            fill_in :user_password, with: @user_2.password
-            
+      expect(current_path).to eq('/users/sign_in')
 
-            click_on "Log in"
+      fill_in :user_email, with: @user_2.email
+      fill_in :user_password, with: @user_2.password
 
-            expect(current_path).to eq("/")
+      click_on 'Log in'
 
-            visit "/questions/#{@question_1.id}"
+      expect(current_path).to eq('/')
 
-            expect(current_path).to eq("/questions/#{@question_1.id}")
+      visit "/questions/#{@question_1.id}"
 
-        end
-                                
-            
-        it 'I can create a new answer to the question' do 
-
-            expect(page).to have_button("Answer Question")
-
-            click_on "Answer Question"
-
-            expect(current_path).to eq("/questions/#{@question_1.id}/answers/new")
-
-            fill_in :content, with: "An attr_reader is a method from a super class that allows other files to read the methods in the file the attr_reader is in."
-            click_on "Submit"
-
-            expect(current_path).to eq("/questions/#{@question_1.id}")
-
-            expect(page).to have_content("An attr_reader is a method from a super class that allows other files to read the methods in the file the attr_reader is in.")
-            expect(page).to have_content("Your answer was successfully created!")
-        end
-
-        it 'I can create a new answer to the question, but it will not post if the content is blank' do 
-
-            expect(page).to have_button("Answer Question")
-
-            click_on "Answer Question"
-
-            expect(current_path).to eq("/questions/#{@question_1.id}/answers/new")
-
-            fill_in :content, with: " "
-
-            click_on "Submit"
-
-            expect(page).not_to have_content("An attr_reader is a method from a super class that allows other files to read the methods in the file the attr_reader is in.")
-            expect(page).to have_content("Content can't be blank")
-        end
+      expect(current_path).to eq("/questions/#{@question_1.id}")
     end
+
+    it 'I can create a new answer to the question' do
+      expect(page).to have_link('Answer Question')
+
+      click_on 'Answer Question'
+
+      expect(current_path).to eq("/questions/#{@question_1.id}/answers/new")
+
+      fill_in :content, with: 'An attr_reader is a method from a super class that allows other files to read the methods in the file the attr_reader is in.'
+      click_on 'Submit'
+
+      expect(current_path).to eq("/questions/#{@question_1.id}")
+
+      expect(page).to have_content('An attr_reader is a method from a super class that allows other files to read the methods in the file the attr_reader is in.')
+      expect(page).to have_content('Your answer was successfully created!')
+    end
+
+    it 'I can create a new answer to the question, but it will not post if the content is blank' do
+      expect(page).to have_link('Answer Question')
+
+      click_on 'Answer Question'
+
+      expect(current_path).to eq("/questions/#{@question_1.id}/answers/new")
+
+      fill_in :content, with: ' '
+
+      click_on 'Submit'
+
+      expect(page).not_to have_content('An attr_reader is a method from a super class that allows other files to read the methods in the file the attr_reader is in.')
+      expect(page).to have_content("Content can't be blank")
+    end
+  end
 end

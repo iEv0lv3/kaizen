@@ -1,28 +1,45 @@
-<p>Welcome <%= "#{@user.first_name}" %> <%= "#{@user.last_name}"%>! You successfully signed in.</p>
+<p>Welcome <%= "#{@user.first_name}" %> <%= "#{@user.last_name}"%>!</p>
 
 <section class='profile-info''>
   <div id='avatar'><%= image_tag 'https://i.imgur.com/bdnuBf1.jpg', size: '300x150' %></div>
-  <p><%= @user.first_name %> <%= @user.last_name %></p>
-  <p>Cohort: <%= @user.cohort %></p>
-  <p>Program Status: <%= @user.status %></p>
+  <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+  <h4>Cohort: <%= @user.cohort %></h4>
+  <div>
+    <%= image_tag 'turing_logo', width: 50, height: 50 %>
+    Turing Status: <%= @user.status %>
+  </div>
 </section>
 
 <% if @user.gh_token.nil? %>
-<div id='github_auth'>
-  <%= link_to 'Connect to GitHub', user_github_omniauth_authorize_path %>
-</div>
+  <div id='github_auth'>
+    <%= link_to 'Connect to GitHub', user_github_omniauth_authorize_path %>
+  </div>
+<% else %>
+  <div>
+    <%= image_tag 'github-logo-lg', width: 50, height: 50 %>
+    GitHub Account Connected
+  </div>
 <% end %>
 
 <% if @user.so_token.nil? %>
-<div id='stackoverflow_auth'>
-  <%= link_to 'Connect to StackOverflow', user_stackexchange_omniauth_authorize_path %>
-</div>
+  <div id='stackoverflow_auth'>
+    <%= link_to 'Connect to StackOverflow', user_stackexchange_omniauth_authorize_path %>
+  </div>
 <% elsif !@user.award_count.zero? %>
-<div id='so_badges'>
-  <p>StackOverflow Award Count: <%= @user.award_count %></p>
-</div>
+  <div>
+    <%= image_tag 'so-icon-lg', width: 50, height: 50 %>
+    StackOverflow Account Connected
+  </div>
+  <div id='so_badges'>
+    <%= image_tag 'medal', width: 50, height: 50 %>
+    StackOverflow Award Count: <%= @user.award_count %>
+  </div>
 <% else %>
-<p>You have no awards!</p>
+  <div>
+    <%= image_tag 'so-icon-lg', width: 50, height: 50 %>
+    StackOverflow Account Connected
+  </div>
+  <p>You have no awards!</p>
 <% end %>
 
 <p><%= link_to "Edit", "/profile/edit" %> | <%= link_to "Delete", destroy_user_path(@user), method: :delete, data: { confirm: "You sure?" } %></p>

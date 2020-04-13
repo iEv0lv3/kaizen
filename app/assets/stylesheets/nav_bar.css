@@ -73,4 +73,5 @@ li.dropdown {
 #nav-bar-search {
   margin-top: .4em;
   margin-left: 1em;
+  z-index: 1;
 }

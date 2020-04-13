@@ -2,8 +2,8 @@
 
 <section class='profile-info''>
   <div id='avatar'><%= image_tag 'https://i.imgur.com/bdnuBf1.jpg', size: '300x150' %></div>
-  <p><%= @user.first_name %> <%= @user.last_name %></p>
-  <p>Cohort: <%= @user.cohort %></p>
+  <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+  <h4>Cohort: <%= @user.cohort %></h4>
   <div>
     <%= image_tag 'turing_logo', width: 50, height: 50 %>
     Turing Status: <%= @user.status %>

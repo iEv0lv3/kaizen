@@ -15,10 +15,10 @@ class Users::ProfileController < Users::BaseController
     user = current_user
     if user.update(user_params)
       flash[:notice] = 'Profile information updated successfully!'
-      redirect_to "/profile"
+      redirect_to '/profile'
     else
       flash[:notice] = user.errors.full_messages.to_sentence
-      redirect_back(fallback_location: "/profile")
+      redirect_back(fallback_location: '/profile')
     end
   end
 
@@ -26,9 +26,7 @@ class Users::ProfileController < Users::BaseController
     @user = User.find(params[:id])
     @user.destroy
 
-    if @user.destroy
-      redirect_to root_url, notice: "User deleted."
-    end
+    redirect_to root_url, notice: 'User deleted.' if @user.destroy
   end
 
   private
@@ -38,7 +36,7 @@ class Users::ProfileController < Users::BaseController
       :email,
       :first_name,
       :last_name,
-      :cohort,
+      :cohort
     )
   end
 end

@@ -11,14 +11,9 @@ a > p {
   color: #12f1fc;
 }
 
-.mainContentWrapper {
-  padding: 0;
-  margin: 0;
-  margin-top: 90px;
-}
-.mainContentContainer {
-  max-width: 1200px;
-  margin: 45px auto;
+#so_badges {
+  margin-top: .5em;
+  /* display: inline; */
 }
 
 .flexContainerColumn {
@@ -64,29 +59,6 @@ a > p {
   background-color: lightblue;
 }
 
-.footer {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  text-align: center;
-  background: rgb(238, 238, 238);
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.footer p {
-  /* display: inline; */
-}
-
-.footerLink {
-  text-decoration: none;
-  color: black;
-}
-
-.footerLink:hover {
-  text-decoration: underline;
-  color: #ef3852;
-}
 
 .colorBar {
   display: flex;
@@ -114,4 +86,47 @@ a > p {
   height: .3em;
   width: 33.33%;
   margin-top: -15px;
+}
+
+#signUpButton {
+  margin-top: 1em;
+}
+
+#radioButtonsInput {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+#customContainer1 {
+  padding-top: 5em;
+  padding-bottom: 10em;
+  padding-left: 0;
+  padding-right: 0;
+  z-index: 0;
+}
+
+#customFooter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: rgba(244, 244, 244, 1);
+}
+
+.footerLink {
+  text-decoration: none;
+  color: black;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+  color: #ef3852;
+}
+
+#footerLinksPosition {
+  text-align: center;
+}
+
+.footerP {
+  margin-top: 1em;
 }

@@ -1,6 +1,6 @@
 class Users::CallbacksController < Devise::OmniauthCallbacksController
   def github
-    gh_auth = request.env["omniauth.auth"]
+    gh_auth = request.env['omniauth.auth']
 
     current_user.update(
       gh_token: gh_auth['credentials']['token'],
@@ -11,7 +11,7 @@ class Users::CallbacksController < Devise::OmniauthCallbacksController
   end
 
   def stackexchange
-    so_auth = request.env["omniauth.auth"]
+    so_auth = request.env['omniauth.auth']
 
     current_user.update(
       so_token: so_auth['credentials']['token'],

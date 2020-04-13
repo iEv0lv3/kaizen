@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe 'As a user' do
   describe 'I can update a professional or technical question' do
     before :each do
+      Question.destroy_all
       @user = create(:user)
       @user.confirm
 
@@ -46,15 +47,48 @@ RSpec.describe 'As a user' do
                                       user_id: @user.id})
     end
 
-  end
+    it "I can update a question" do
+      visit '/profile'
+      within "#question-#{@question_2.id}" do
+        click_on @question_2.subject
+      end
 
-  it "I can update a question" do
-    visit '/profile'
+      expect(current_path).to eq("/questions/#{@question_2.id}")
 
-    within "#question-#{@question_1}" do
-      click_on @question_1.subject
+      within ".question-modification" do
+        click_on "Update Question"
+      end
+
+      expect(current_path).to eq("/questions/#{@question_2.id}/edit")
+
+      fill_in :question_subject, with: "Career advice"
+
+      click_on "Update Question"
+
+      expect(current_path).to eq("/questions/#{@question_2.id}")
+      expect(page).to have_content("Career advice")
     end
 
-    expect(current_path).to eq("/questions/#{@question_1.id}")
+    it "I cannot leave a field blank when updating a question" do
+      visit '/profile'
+      within "#question-#{@question_2.id}" do
+        click_on @question_2.subject
+      end
+
+      expect(current_path).to eq("/questions/#{@question_2.id}")
+
+      within ".question-modification" do
+        click_on "Update Question"
+      end
+
+      expect(current_path).to eq("/questions/#{@question_2.id}/edit")
+
+      fill_in :question_subject, with: ""
+
+      click_on "Update Question"
+
+      expect(current_path).to eq("/questions/#{@question_2.id}/edit")
+      expect(page).to have_content("Subject can't be blank")
+    end
   end
 end

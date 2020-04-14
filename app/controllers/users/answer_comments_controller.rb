@@ -48,6 +48,18 @@ class Users::AnswerCommentsController < Users::BaseController
     flash[:notification] = 'Your Comment was successfully deleted!'
   end
 
+  def upvote
+    comment = Comment.find(params[:id].to_i)
+    answer = Answer.find(comment.commentable_id)
+    question = Question.find(answer.question_id)
+    vote = comment.votes.new
+    vote.user_id = current_user.id
+    vote.save
+
+    comment.update_column(:upvotes, comment.upvotes += 1)
+    redirect_to "/questions/#{question.id}"
+  end
+
   private
 
   def comment_params

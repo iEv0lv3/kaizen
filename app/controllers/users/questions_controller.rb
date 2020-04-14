@@ -48,6 +48,16 @@ class Users::QuestionsController < Users::BaseController
     flash[:success] = 'Your question was successfully deleted.'
   end
 
+  def upvote
+    question = Question.find(params[:id].to_i)
+    vote = question.votes.new
+    vote.user_id = current_user.id
+    vote.save
+
+    question.update_column(:upvotes, question.upvotes += 1)
+    redirect_to "/questions/#{question.id}"
+  end
+
   private
 
   def question_params

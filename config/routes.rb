@@ -24,6 +24,8 @@ Rails.application.routes.draw do
         delete '/:question_id/answers/:answer_id/delete', to: 'answers#destroy', as: 'delete_answer'
         get '/:question_id/comments/new', to: 'question_comments#new', as: 'new_question_comment' 
         post '/:question_id/comments', to: 'question_comments#create', as: 'create_new_question_comment'
+        get '/:question_id/comments/:comment_id/edit', to: 'question_comments#edit', as: 'edit_question_comment'
+        patch '/:question_id/comments/:comment_id', to: 'question_comments#update', as: 'update_question_comment'
         get '/:question_id/answers/:answer_id/comments/new', to: 'answer_comments#new', as: 'new_answer_comment'
         post '/:question_id/answers/:answer_id/comments', to: 'answer_comments#create', as: 'create_new_answer_comment'
       end

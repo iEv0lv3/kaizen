@@ -49,6 +49,7 @@ RSpec.describe 'As a User' do
       click_on "Submit"
 
       expect(current_path).to eq("/questions/#{@question_1.id}")
+      expect(Comment.last.user_id).to eq(@user_2.id)
       expect(page).to have_content("Your comment was successfully created!")
       expect(page).to have_content("Yes I herd my instructor say that in class but I also have no idea what that is.")
     end

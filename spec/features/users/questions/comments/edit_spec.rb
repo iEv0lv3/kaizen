@@ -19,6 +19,7 @@ RSpec.describe 'As a User' do
 
       @comment_1 = @question_1.comments.create!(
         {content: "Yes I herd my instructor say that in class but I also have no idea what that is.",
+        user_id: @user_2.id
       })
 
       visit '/'
@@ -46,14 +47,14 @@ RSpec.describe 'As a User' do
         click_on "Edit"
       end
       
-      expect(current_path).to eq("/questions/#{@question_1.id}/comments/edit")
+      expect(current_path).to eq("/questions/#{@question_1.id}/comments/#{@comment_1.id}/edit")
 
       fill_in :content, with: "I am in mod one and I herd my instructor say this in class."
 
       click_on "Submit"
       
       expect(current_path).to eq("/questions/#{@question_1.id}")
-      expect(page).to have_content("Your Comment has been successfully updated!")
+      expect(page).to have_content("Your Comment was successfully updated!!")
       expect(page).to have_content("I am in mod one and I herd my instructor say this in class.")
       expect(page).not_to have_content(@comment_1.content)
     end

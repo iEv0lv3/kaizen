@@ -9,6 +9,7 @@ class Users::AnswerCommentsController < Users::BaseController
     question = Question.find(params[:question_id])
     answer = Answer.find(params[:answer_id])
     comment = answer.comments.new(comment_params)
+    comment.user_id = current_user.id 
 
     if comment.save
       redirect_to "/questions/#{question.id}"

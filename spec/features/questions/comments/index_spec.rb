@@ -19,10 +19,12 @@ RSpec.describe 'As a Visitor' do
 
       @comment_1 = @question_1.comments.create!(
         {content: "Yes I herd my instructor say that in class but I also have no idea what that is.",
+        user_id: user_2.id
       })
 
       @comment_2 = @question_1.comments.create!(
         {content: "In parcial to my before Comment, is there anyone who might be able to pair with me on this?",
+        user_id: user_2.id
       })
     end
 

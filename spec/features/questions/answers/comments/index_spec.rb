@@ -9,6 +9,9 @@ RSpec.describe 'As a Visitor' do
       @user_2 = create(:user)
       @user_2.confirm
 
+      @user_3 = create(:user)
+      @user_3.confirm
+
       @question_1 = Question.create!(
         {subject: "Ruby methods",
         content: "What is attr_reader?",
@@ -25,11 +28,13 @@ RSpec.describe 'As a Visitor' do
         })
 
       @comment_1 = @answer_1.comments.create!(
-        {content: "I think this is a good start but also I know there is more to it. "
+        {content: "I think this is a good start but also I know there is more to it. ",
+        user_id: @user_3.id
         })
 
       @comment_2 = @answer_1.comments.create!(
-        {content: "You might want to ask your mentor to explain it in greater detail."
+        {content: "You might want to ask your mentor to explain it in greater detail.",
+        user_id: @user_3.id
         })
     end
 

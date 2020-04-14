@@ -8,73 +8,55 @@ RSpec.describe 'As a User' do
 
       visit '/'
 
-      expect(page).to have_content("Sign In")
+      expect(page).to have_content('Sign In')
 
-      click_on "Sign In"
+      click_on 'Sign In'
 
       expect(current_path).to eq('/users/sign_in')
 
       fill_in :user_email, with: @user.email
       fill_in :user_password, with: @user.password
 
+      click_on 'Log in'
 
-      click_on "Log in"
+      expect(current_path).to eq('/')
 
-      expect(current_path).to eq("/")
-
-      click_on "Profile"
+      click_on 'Profile'
 
       expect(current_path).to eq(profile_path)
     end
 
     it 'I can edit my profile' do
+      expect(page).to have_link('Edit')
 
-        expect(page).to have_link("Edit")
+      click_on 'Edit'
 
-        click_on "Edit"
+      expect(current_path).to eq('/profile/edit')
 
-        expect(current_path).to eq("/profile/edit")
+      fill_in :last_name, with: 'McFakerson'
 
-        fill_in :last_name, with: "McFakerson"
+      click_on 'Submit'
 
-        click_on "Submit"
+      expect(current_path).to eq('/profile')
 
-        expect(current_path).to eq("/profile")
-
-        expect(page).to have_content("McFakerson")
-        expect(page).not_to have_content(@user.last_name)
+      expect(page).to have_content('McFakerson')
+      expect(page).not_to have_content(@user.last_name)
     end
 
     it 'I can edit my password seperately from editing my profile' do
+      expect(page).to have_link('Change your password')
 
-      expect(page).to have_link("Change your password")
+      click_on 'Change your password'
 
-      click_on "Change your password"
+      expect(current_path).to eq('/users/edit')
 
-      expect(current_path).to eq("/users/edit")
-
-      fill_in :user_password, with: "FakePassword"
-      fill_in :user_password_confirmation, with: "FakePassword"
+      fill_in :user_password, with: 'FakePassword'
+      fill_in :user_password_confirmation, with: 'FakePassword'
       fill_in :user_current_password, with: @user.password
 
-      click_on "Update"
+      click_on 'Update'
 
-      expect(current_path).to eq("/")
-    end
-
-    it 'I cannot update profile without all fields filled in' do
-      expect(page).to have_link("Edit")
-
-      click_on "Edit"
-
-      expect(current_path).to eq("/profile/edit")
-
-      fill_in :last_name, with: ""
-
-      click_on "Submit"
-
-      expect(current_path).to eq("/profile/edit")
-      expect(page).to have_content("Last name can't be blank")
+      expect(current_path).to eq('/')
     end
   end
 end

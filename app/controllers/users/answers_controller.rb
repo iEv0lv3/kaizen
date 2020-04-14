@@ -39,7 +39,7 @@ class Users::AnswersController < Users::BaseController
     question = Question.find(params[:question_id])
     Answer.destroy(params[:answer_id])
     redirect_to "/questions/#{question.id}"
-    flash[:notification] = 'Your Answer was successfully deleted.'
+    flash[:success] = 'Your Answer was successfully deleted.'
   end
 
   private

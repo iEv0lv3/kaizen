@@ -43,9 +43,9 @@ RSpec.describe 'As a User' do
 
     it 'I can edit an answer that I posted' do
       within "#answer-#{@answer_1.id}" do
-        expect(page).to have_link('Edit')
+        expect(page).to have_link('Update Answer')
 
-        click_on 'Edit'
+        click_on 'Update Answer'
       end
 
       expect(current_path).to eq("/questions/#{@question_1.id}/answers/#{@answer_1.id}/edit")
@@ -66,9 +66,9 @@ RSpec.describe 'As a User' do
 
     it 'I can edit an answer that I posted, but it will not edit if I leave the content blank.' do
       within "#answer-#{@answer_1.id}" do
-        expect(page).to have_link('Edit')
+        expect(page).to have_link('Update Answer')
 
-        click_on 'Edit'
+        click_on 'Update Answer'
       end
 
       expect(current_path).to eq("/questions/#{@question_1.id}/answers/#{@answer_1.id}/edit")
@@ -112,7 +112,7 @@ RSpec.describe 'As a User' do
       expect(page).to have_content(@answer_1.content)
 
       within "#answer-#{@answer_1.id}" do
-        expect(page).not_to have_link('Edit')
+        expect(page).not_to have_link('Update Answer')
       end
     end
   end

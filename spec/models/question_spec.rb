@@ -17,29 +17,29 @@ RSpec.describe Question, type: :model do
       user = create(:user)
       user.confirm
 
-      @question_1 = Question.create!({subject: "Ruby methods",
-                                      content: "What is attr_reader?",
-                                      upvotes: 1,
-                                      forum: 0,
-                                      user_id: user.id})
+      @question_1 = Question.create!({ subject: 'Ruby methods',
+                                       content: 'What is attr_reader?',
+                                       upvotes: 1,
+                                       forum: 0,
+                                       user_id: user.id })
 
-      @question_2 = Question.create!({subject: "Jobs",
-                                      content: "Why can't I get a job?",
-                                      upvotes: 1,
-                                      forum: 1,
-                                      user_id: user.id})
+      @question_2 = Question.create!({ subject: 'Jobs',
+                                       content: "Why can't I get a job?",
+                                       upvotes: 1,
+                                       forum: 1,
+                                       user_id: user.id })
 
-      @question_3 = Question.create!({subject: "Ruby methods",
-                                      content: "What is attr_accessor?",
-                                      upvotes: 1,
-                                      forum: 0,
-                                      user_id: user.id})
+      @question_3 = Question.create!({ subject: 'Ruby methods',
+                                       content: 'What is attr_accessor?',
+                                       upvotes: 1,
+                                       forum: 0,
+                                       user_id: user.id })
 
-      @question_4 = Question.create!({subject: "Interviews",
-                                      content: "Best interview practices",
-                                      upvotes: 1,
-                                      forum: 1,
-                                      user_id: user.id})
+      @question_4 = Question.create!({ subject: 'Interviews',
+                                       content: 'Best interview practices',
+                                       upvotes: 1,
+                                       forum: 1,
+                                       user_id: user.id })
     end
 
     it 'technical questions' do

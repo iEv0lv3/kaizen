@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20_200_414_000_618) do
 
   create_table 'comments', force: :cascade do |t|
     t.text 'content'
-    t.integer 'upvotes'
+    t.integer 'upvotes', default: 1
     t.integer 'awards'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false

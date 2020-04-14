@@ -26,6 +26,7 @@ Rails.application.routes.draw do
         post '/:question_id/comments', to: 'question_comments#create', as: 'create_new_question_comment'
         get '/:question_id/comments/:comment_id/edit', to: 'question_comments#edit', as: 'edit_question_comment'
         patch '/:question_id/comments/:comment_id', to: 'question_comments#update', as: 'update_question_comment'
+        delete '/:question_id/comments/:comment_id/delete', to: 'question_comments#destroy', as: 'delete_question_comment'
         get '/:question_id/answers/:answer_id/comments/new', to: 'answer_comments#new', as: 'new_answer_comment'
         post '/:question_id/answers/:answer_id/comments', to: 'answer_comments#create', as: 'create_new_answer_comment'
         get '/:question_id/answers/:answer_id/comments/:comment_id/edit', to: 'answer_comments#edit', as: 'edit_answer_comment'

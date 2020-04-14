@@ -55,7 +55,7 @@ RSpec.describe 'As a user' do
 
       expect(current_path).to eq("/questions/#{@question_2.id}")
 
-      within ".question-modification" do
+      within ".questionModification" do
         click_on "Update Question"
       end
 
@@ -77,7 +77,7 @@ RSpec.describe 'As a user' do
 
       expect(current_path).to eq("/questions/#{@question_2.id}")
 
-      within ".question-modification" do
+      within ".questionModification" do
         click_on "Update Question"
       end
 

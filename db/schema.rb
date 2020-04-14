@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_181702) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
-    t.integer "upvotes"
+    t.integer "upvotes", default: 1
     t.integer "awards"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_181702) do
 
   create_table "votes", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "upvote", default: 1
+    t.integer "upvote", default: 0
     t.string "voteable_type"
     t.bigint "voteable_id"
     t.datetime "created_at", precision: 6, null: false

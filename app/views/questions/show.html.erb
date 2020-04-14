@@ -1,32 +1,71 @@
-<h2><%= @question.subject %></h2>
-  <h4><%= @question.content %></h4>
-  <p><%= @question.upvotes %></p>
+<div class="row mb-3">
+  <div class="col-md-8 themed-grid-col question"><%= @question.subject %> :: <%= @question.upvotes %></div>
+  <div class="col-sm-2 themed-grid-col sigBox">
+  <p><%= @question.user.first_name %> :: 
+     <%= @question.user.cohort %></p>
+     <p>Level: </p>
+     <p>Awards: </p>
+  </div>
+</div>
 
+<div class='row mb-3'>
+  <div class="col-lg-10 questionBox"><%= @question.content %></div>
+</div>
+
+<div class='row mb-3'>
   <% if current_user && current_user.id == @question.user.id %>
-    <div class="question-modification">
-      <p>
-        <%= link_to 'Update Question', "/questions/#{@question.id}/edit", method: :get %> |
-        <%= link_to 'Delete Question', "/questions/#{@question.id}", method: :delete, data: {confirm: "Are you sure?"} %>
-      </p>
+    <div class="col-sm-8 themed-grid-col"></div>
+    <div class="col-md-2 themed-grid-col questionModification">
+      <%= link_to 'Update Question', "/questions/#{@question.id}/edit", method: :get %> |
+      <%= link_to 'Delete Question', "/questions/#{@question.id}", method: :delete, data: {confirm: "Are you sure?"} %>
     </div>
   <% end %>
+</div>
 
-<% if current_user %>
-  <h4><%= link_to "Answer Question", "/questions/#{@question.id}/answers/new", method: :get %>
-<% end %>
+<div class="row mb-3">
+  <div class='col-sm-1 themed-grid-col'></div>
+  <div class="col-md-6 themed-grid-col commentBox">comment</div>
+  <div class="col-sm-2 themed-grid-col commSigBox">
+  <p><%= @question.user.first_name %></p>
+  <p>LEVEL :: AWARDS </p>
+  </div>
+</div>
 
-<h3> Answers </h3>
+<div class="row mb-3 answerSig">
+  <div class="col-md-8 themed-grid-col"></div>
+  <div class="col-sm-2 themed-grid-col sigBox">Answer Signature</div>
+</div>
 
-<% @answers.each do |answer| %>
+<div class='row mb-3'>
+  <div class="col-lg-10 questionBox">Answer</div>
+</div>
+
+<div class="row mb-3">
+  <div class='col-sm-1 themed-grid-col'></div>
+  <div class="col-md-6 themed-grid-col commentBox">Answer comment</div>
+  <div class="col-sm-2 themed-grid-col commSigBox">
+  <p><%= @question.user.first_name %></p>
+  <p>LEVEL :: AWARDS </p>
+  </div>
+</div>
+
+  <% if current_user %>
+    <h4><%= link_to "Answer Question", "/questions/#{@question.id}/answers/new", method: :get %>
+  <% end %>
+
+  <h3> Answers </h3>
+
+  <% @answers.each do |answer| %>
   <section id='answer-<%= answer.id %>'>
     <h4><%= answer.content %></h4>
     <p><%= answer.upvotes %></p>
     <p><%= answer.user.email %></p>
+
     <% if current_user %>
-      <% if current_user.id == answer.user_id %>
-        <p><%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/edit"%> |
-          <%= link_to "Delete", "/questions/#{@question.id}/answers/#{answer.id}/delete", method: :delete %>
+    <% if current_user.id == answer.user_id %>
+    <p><%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/edit"%> |
+      <%= link_to "Delete", "/questions/#{@question.id}/answers/#{answer.id}/delete", method: :delete %>
       <% end %>
-    <% end %>
+      <% end %>
   </section>
-<% end %>
+  <% end %>

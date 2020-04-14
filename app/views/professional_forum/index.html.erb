@@ -1,12 +1,3 @@
-<h2>Professional Question Forum</h2>
+<h1><span class='forum-name'>Professional</span> Question Forum</h1>
 
-<% @questions.each do |question| %>
-  <section id='question-<%= question.id %>'>
-    <h4><%= link_to question.subject, "/questions/#{question.id}" %></h4>
-    <p><%= question.content %></p>
-    <p><%= question.upvotes %></p>
-    <p><%= question.user.email %></p>
-  </section>
-<% end %>
-
-
+<%= render 'partials/forum' %>

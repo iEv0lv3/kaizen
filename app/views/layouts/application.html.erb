@@ -46,9 +46,8 @@
             <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
           </li>
           <li class="navLinkRight", id='profileLink'>
-            <%= link_to 'Profile', profile_path %>
             <%= link_to profile_path do %>
-                <%= image_tag 'logo', width: 20, height: 20, alt: 'Avatar'%>
+                :: Profile ::
             <% end %>
           </li>
         <% end %>

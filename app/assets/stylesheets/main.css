@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
+  color: #343a40;
 }
 
 a {
@@ -115,7 +116,7 @@ a > p {
 
 .footerLink {
   text-decoration: none;
-  color: black;
+  color: #343a40;
 }
 
 .footerLink:hover {

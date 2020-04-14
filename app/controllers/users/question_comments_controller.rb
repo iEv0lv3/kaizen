@@ -1,13 +1,13 @@
 class Users::QuestionCommentsController < Users::BaseController
   def new
-    @question = Question.find(params[:question_id])  
+    @question = Question.find(params[:question_id])
   end
-  
+
   def create
     question = Question.find(params[:question_id])
     comment = question.comments.new(comment_params)
     comment.user_id = current_user.id
-    
+
     if comment.save
       redirect_to "/questions/#{question.id}"
       flash[:success] = 'Your comment was successfully created! '
@@ -16,9 +16,9 @@ class Users::QuestionCommentsController < Users::BaseController
       flash[:warning] = comment.errors.full_messages.to_sentence
     end
   end
-  
+
   def edit
-    @question = Question.find(params[:question_id])   
+    @question = Question.find(params[:question_id])
     @comment = Comment.find(params[:comment_id])
   end
 
@@ -43,11 +43,9 @@ class Users::QuestionCommentsController < Users::BaseController
     flash[:notification] = 'Your Comment was successfully deleted!'
   end
 
+  private
 
-  private 
-  
   def comment_params
     params.permit(:content)
   end
-  
 end

@@ -5,6 +5,10 @@ h1 {
   width: fit-content;
 }
 
+.forum-name {
+  color: #12f1fc;
+}
+
 .activityBox {
   background-color: white;
   border-radius: .5em;

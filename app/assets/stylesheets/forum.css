@@ -5,6 +5,10 @@ h1 {
   width: fit-content;
 }
 
+.rowSpace {
+  margin-bottom: 2em !important;
+}
+
 .forum-name {
   color: #12f1fc;
 }
@@ -13,8 +17,8 @@ h1 {
   background-color: white;
   border-radius: .5em;
   margin-right: 2em;
-  padding-top: .3em;
-  padding-bottom: .3em;
+  padding: .3em;
+  padding-top: .9em;
   text-align: center;
   box-shadow: 0 0 5px 3px rgba(211, 211, 211, 0.5);
 }

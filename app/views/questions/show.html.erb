@@ -32,7 +32,7 @@
 <% if current_user %>
   <div class="row mb-3">
     <div class="col-md-8 themed-grid-col"></div>
-    <div class='col-sm-2 themed-grid-col questionModification'>
+    <div class='col-sm-2 themed-grid-col leave-comment'>
       <%= link_to "Leave a Comment", "/questions/#{@question.id}/comments/new" %>
     </div>
   </div>
@@ -96,7 +96,7 @@
     <% if current_user %>
       <div class="row mb-3">
         <div class="col-md-8 themed-grid-col"></div>
-        <div class='col-sm-2 themed-grid-col questionModification'>
+        <div class='col-sm-2 themed-grid-col leave-comment'>
           <%= link_to "Leave a Comment", "/questions/#{@question.id}/answers/#{answer.id}/comments/new" %>
         </div>
       </div>
@@ -128,7 +128,8 @@
           <div class="col-sm-2 themed-grid-col"></div>
         </div>
       </section>
-  <% end %>
+    <% end %>
+  </div>
 <% end %>
 
   

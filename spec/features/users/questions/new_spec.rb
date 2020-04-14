@@ -8,24 +8,24 @@ RSpec.describe 'As a user' do
 
       visit '/'
 
-      expect(page).to have_content("Sign In")
+      expect(page).to have_content('Sign In')
 
-      click_on "Sign In"
+      click_on 'Sign In'
 
       expect(current_path).to eq('/users/sign_in')
 
       fill_in :user_email, with: @user.email
       fill_in :user_password, with: @user.password
 
-      click_on "Log in"
+      click_on 'Log in'
 
-      expect(current_path).to eq("/")
+      expect(current_path).to eq('/')
     end
 
-    it "I can navigate from welcome page to post a new technical question" do
+    it 'I can navigate from welcome page to post a new technical question' do
       visit '/questions/new'
 
-      expect(page).to have_content("Post a Question:")
+      expect(page).to have_content('Post a Question:')
 
       subject = 'Ruby methods'
       content = 'What is reduce good for?'
@@ -40,14 +40,13 @@ RSpec.describe 'As a user' do
       expect(current_path).to eq('/technical_forum')
       expect(page).to have_content(subject)
       expect(page).to have_content(content)
-      expect(page).to have_content("Your question was successfully submitted!")
+      expect(page).to have_content('Your question was successfully submitted!')
     end
 
-    it "I can navigate from welcome page to post a new professional question" do
-
+    it 'I can navigate from welcome page to post a new professional question' do
       visit '/questions/new'
 
-      expect(page).to have_content("Post a Question:")
+      expect(page).to have_content('Post a Question:')
 
       subject = 'Jobs'
       content = 'How do I get one?'
@@ -62,7 +61,7 @@ RSpec.describe 'As a user' do
       expect(current_path).to eq('/professional_forum')
       expect(page).to have_content(subject)
       expect(page).to have_content(content)
-      expect(page).to have_content("Your question was successfully submitted!")
+      expect(page).to have_content('Your question was successfully submitted!')
     end
   end
 end

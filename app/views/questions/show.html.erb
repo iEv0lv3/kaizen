@@ -16,7 +16,7 @@
   <% if current_user && current_user.id == @question.user.id %>
     <div class="col-sm-8 themed-grid-col"></div>
     <div class="col-md-2 themed-grid-col questionModification">
-      <%= link_to 'Update Question', "/questions/#{@question.id}/edit", method: :get %> |
+      <%= link_to 'Update Question', "/questions/#{@question.id}/edit", method: :get %> ::
       <%= link_to 'Delete Question', "/questions/#{@question.id}", method: :delete, data: {confirm: "Are you sure?"} %>
     </div>
   <% end %>

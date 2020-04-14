@@ -56,7 +56,7 @@ RSpec.describe 'As a user' do
 
       expect(current_path).to eq("/questions/#{@question_2.id}")
 
-      within ".question-modification" do
+      within "#question-crud-#{@question_2.id}" do
         click_on "Delete Question"
       end
 

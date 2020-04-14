@@ -1,0 +1,12 @@
+<h2> Question: <%= @question.content %></h2>
+<h3> Answer: <%= @answer.content %> </h3>
+
+
+<p> Leave your comment here </p>
+
+<%= form_tag "/questions/#{@question.id}/answers/#{@answer.id}/comments/#{@comment.id}", method: :patch do %>
+  <%= label_tag :content %>
+  <%= text_field_tag :content %>
+
+  <%= submit_tag 'Submit'%>
+<% end %>

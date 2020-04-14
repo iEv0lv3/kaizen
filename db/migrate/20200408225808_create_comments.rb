@@ -3,7 +3,7 @@ class CreateComments < ActiveRecord::Migration[6.0]
     create_table :comments do |t|
 
     t.text :content
-    t.integer :upvotes
+    t.integer :upvotes, default: 1
     t.integer :awards
 
     t.timestamps

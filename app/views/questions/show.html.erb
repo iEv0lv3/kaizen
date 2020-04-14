@@ -2,6 +2,25 @@
   <h4><%= @question.content %></h4>
   <p><%= @question.upvotes %></p>
 
+  <h4> Question Comments </h4>
+
+  <% if current_user %>
+  <%= link_to "Leave a Comment", "/questions/#{@question.id}/comments/new" %>
+  <% end %>
+
+  <% @question_comments.each do |question_comment| %>
+    <section id='question_comment-<%= question_comment.id %>'>
+      <%= question_comment.content %>
+      <%= question_comment.upvotes %>
+      <% if current_user %>
+        <% if current_user.id == question_comment.user_id %>
+          <p><%= link_to "Edit", "/questions/#{@question.id}/comments/#{question_comment.id}/edit"%> |
+            <%= link_to "Delete", "/questions/#{@question.id}/comments/#{question_comment.id}/delete", method: :delete %>
+        <% end %>
+      <% end %>
+    </section>
+  <% end %>
+
   <% if current_user && current_user.id == @question.user.id %>
     <div class="question-modification">
       <p>
@@ -24,9 +43,29 @@
     <p><%= answer.user.email %></p>
     <% if current_user %>
       <% if current_user.id == answer.user_id %>
-        <p><%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/edit"%> |
-          <%= link_to "Delete", "/questions/#{@question.id}/answers/#{answer.id}/delete", method: :delete %>
+        <p><%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/edit" %> |
+        <%= link_to "Delete", "/questions/#{@question.id}/answers/#{answer.id}/delete", method: :delete %>
       <% end %>
     <% end %>
+
+    <p> Comments </p>
+      <% if current_user %>
+        <%= link_to "Leave a Comment", "/questions/#{@question.id}/answers/#{answer.id}/comments/new" %>
+      <% end %>
+
+      <% answer.comments.each do |answer_comment| %>
+        <section id='answer_comment-<%= answer_comment.id %>'>
+          <%= answer_comment.content %>
+          <%= answer_comment.upvotes %>
+          <% if current_user %>
+            <% if current_user.id == answer_comment.user_id %>
+              <p><%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/comments/#{answer_comment.id}/edit"%> |
+              <%= link_to "Delete", "/questions/#{@question.id}/answers/#{answer.id}/comments/#{answer_comment.id}/delete", method: :delete %>
+            <% end %>
+          <% end %>
+        </section>
+      <% end %>
   </section>
 <% end %>
+
+  

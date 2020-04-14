@@ -1,10 +1,9 @@
 <h2>Post a Question:</h2>
 
 <%= form_for(@question, url: '/questions') do |f| %>
-
   <div class="field">
-      <%= f.radio_button :forum, 0 %> Technical Question? <br />
-      <%= f.radio_button :forum, 1 %> Professional Question? <br />
+    <%= f.radio_button :forum, 'technical' %> Technical Question? <br />
+    <%= f.radio_button :forum, 'professional' %> Professional Question? <br />
   </div>
 
   <div class="field">

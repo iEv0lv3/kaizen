@@ -7,11 +7,15 @@ Rails.application.routes.draw do
     get '/profile/edit_password', to: 'users/profile#edit_password'
     patch '/profile', to: 'users/profile#update'
     match '/users/:id' => 'users/profile#destroy', :via => :delete, :as => :destroy_user
-    # delete '/users/:id', to: 'users#destroy'
+
     get '/questions/new', to: 'users/questions#new'
     post '/questions', to: 'users/questions#create'
     get '/questions/:id/edit', to: 'users/questions#edit', as: :edit_question
     patch '/questions/:id/edit', to: 'users/questions#update'
+    patch '/questions/:id', to: 'users/questions#upvote', as: 'question_upvote'
+    patch '/questions/:id/answers/:id', to: 'users/answers#upvote', as: 'answer_upvote'
+    patch '/questions/:id/comments/:id', to: 'users/question_comments#upvote', as: 'question_comment_upvote'
+    patch '/questions/:id/answers/:id/comments/:id', to: 'users/answer_comments#upvote', as: 'answer_comment_upvote'
     delete '/questions/:id', to: 'users/questions#destroy'
 
     scope module: :users do

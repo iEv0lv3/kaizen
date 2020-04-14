@@ -39,4 +39,8 @@ class User < ApplicationRecord
   def ordered_questions
     questions.order(updated_at: :desc).limit(3)
   end
+
+  def upvoted?(resource)
+    !resource.votes.find_by(user_id: self.id).nil?
+  end
 end

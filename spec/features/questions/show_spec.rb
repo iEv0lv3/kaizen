@@ -72,5 +72,84 @@ RSpec.describe 'As a visitor' do
       expect(page).not_to have_content(@question_4.subject)
       expect(page).not_to have_content(@question_4.content)
     end
+
+  describe 'As a User' do 
+    describe 'I can delete any question comments that I made' do 
+      before :each do 
+        user = create(:user)
+      user.confirm
+
+      @question_1 = Question.create!(
+        {subject: "Ruby methods",
+        content: "What is attr_reader?",
+        upvotes: 1,
+        forum: 0,
+        user_id: user.id
+      })
+
+      @user_2 = create(:user)
+      @user_2.confirm
+
+      @comment_1 = @question_1.comments.create!(
+        {content: "Yes I herd my instructor say that in class but I also have no idea what that is.",
+        user_id: @user_2.id
+      })
+
+      visit '/'
+
+      expect(page).to have_content("Sign In")
+
+      click_on "Sign In"
+
+      expect(current_path).to eq('/users/sign_in')
+
+      fill_in :user_email, with: @user_2.email
+      fill_in :user_password, with: @user_2.password
+
+      click_on "Log in"
+
+      expect(current_path).to eq("/")
+
+      visit "/questions/#{@question_1.id}"
+    end
+
+    it 'within the questions show page' do 
+
+      within "#question_comment-#{@comment_1.id}" do 
+        expect(page).to have_link("Delete")
+        click_on "Delete"
+      end
+
+      expect(page).to eq("/questions/#{@question_1.id}")
+
+      expect(page).not_to have_content(@comment_1.content)
+      expect(page).to have_content("Your comment has been successfully deleted!")
+    end
+
+    it 'within the questions show page, unless I did not make the comment then I cannot see the link' do 
+      user_3 = create(:user)
+      user_3.confirm
+
+      click_on "Sign Out"
+
+      expect(current_path).to eq("/")
+
+      click_on "Sign In"
+
+      expect(current_path).to eq('/users/sign_in')
+
+      fill_in :user_email, with: user_3.email
+      fill_in :user_password, with: user_3.password
+
+      click_on "Log in"
+
+      expect(current_path).to eq("/")
+
+      visit "/questions/#{@question_1.id}"
+
+      within "#question_comment-#{@comment_1.id}" do 
+        expect(page).not_to have_link("Delete")
+      end
+    end
   end
 end

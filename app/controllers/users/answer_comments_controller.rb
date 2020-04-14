@@ -20,6 +20,29 @@ class Users::AnswerCommentsController < Users::BaseController
     end
   end
 
+  def edit
+    @question = Question.find(params[:question_id])
+    @answer = Answer.find(params[:answer_id])
+    @comment = Comment.find(params[:comment_id])
+  end
+
+  def update
+    question = Question.find(params[:question_id])
+    answer = Answer.find(params[:answer_id])
+    comment = Comment.find(params[:comment_id])
+    comment.update(comment_params)
+
+    if comment.save
+      flash[:success] = 'Your Comment was successfully updated!!'
+      redirect_to "/questions/#{question.id}"
+    else
+      flash[:error] = comment.errors.full_messages.to_sentence
+      redirect_to "/questions/#{question.id}/answers/#{answer.id}/comments/#{comment.id}/edit"
+    end
+  end
+
+
+
   private 
   
   def comment_params

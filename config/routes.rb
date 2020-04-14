@@ -28,6 +28,8 @@ Rails.application.routes.draw do
         patch '/:question_id/comments/:comment_id', to: 'question_comments#update', as: 'update_question_comment'
         get '/:question_id/answers/:answer_id/comments/new', to: 'answer_comments#new', as: 'new_answer_comment'
         post '/:question_id/answers/:answer_id/comments', to: 'answer_comments#create', as: 'create_new_answer_comment'
+        get '/:question_id/answers/:answer_id/comments/:comment_id/edit', to: 'answer_comments#edit', as: 'edit_answer_comment'
+        patch '/:question_id/answers/:answer_id/comments/:comment_id', to: 'answer_comments#update', as: 'update_answer_comment'
       end
     end
   end

@@ -6,6 +6,7 @@ class Question < ApplicationRecord
   enum forum: %i[technical professional]
 
   has_many :comments, as: :commentable
+  has_many :votes, as: :voteable
   has_many :answers, dependent: :destroy
 
   belongs_to :user

@@ -63,5 +63,24 @@ RSpec.describe 'As a user' do
       expect(page).to have_content(content)
       expect(page).to have_content('Your question was successfully submitted!')
     end
+
+    it "I cannot create a question without filling out proper information" do
+      visit '/questions/new'
+
+      expect(page).to have_content("Post a Question:")
+
+      subject = 'Jobs'
+      content = 'How do I get one?'
+
+      within '.new_question' do
+        choose 'question_forum_1'
+        fill_in :question_subject, with: ""
+        fill_in :question_content, with: content
+        click_on 'Submit Question'
+      end
+
+      expect(current_path).to eq("/questions/new")
+      expect(page).to have_content("Subject can't be blank")
+    end
   end
 end

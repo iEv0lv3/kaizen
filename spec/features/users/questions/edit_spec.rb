@@ -57,6 +57,7 @@ RSpec.describe 'As a user' do
 
     it 'I can update a question' do
       visit '/profile'
+
       within "#question-#{@question_2.id}" do
         click_on @question_2.subject
       end
@@ -75,6 +76,29 @@ RSpec.describe 'As a user' do
 
       expect(current_path).to eq("/questions/#{@question_2.id}")
       expect(page).to have_content('Career advice')
+    end
+
+    it 'I can update a technical question' do
+      visit '/profile'
+
+      within "#question-#{@question_3.id}" do
+        click_on @question_3.subject
+      end
+
+      expect(current_path).to eq("/questions/#{@question_3.id}")
+
+      within "#question-crud-#{@question_3.id}" do
+        click_on 'Update Question'
+      end
+
+      expect(current_path).to eq("/questions/#{@question_3.id}/edit")
+
+      fill_in :question_subject, with: 'Ruby ruby'
+
+      click_on 'Update Question'
+
+      expect(current_path).to eq("/questions/#{@question_3.id}")
+      expect(page).to have_content('Ruby ruby')
     end
 
     it 'I cannot leave a field blank when updating a question' do
@@ -97,6 +121,28 @@ RSpec.describe 'As a user' do
 
       expect(current_path).to eq("/questions/#{@question_2.id}/edit")
       expect(page).to have_content("Subject can't be blank")
+    end
+
+    it 'I cannot leave a field blank when updating a question' do
+      visit '/profile'
+      within "#question-#{@question_2.id}" do
+        click_on @question_2.subject
+      end
+
+      expect(current_path).to eq("/questions/#{@question_2.id}")
+
+      within "#question-crud-#{@question_2.id}" do
+        click_on 'Update Question'
+      end
+
+      expect(current_path).to eq("/questions/#{@question_2.id}/edit")
+
+      fill_in :question_content, with: ''
+
+      click_on 'Update Question'
+
+      expect(current_path).to eq("/questions/#{@question_2.id}/edit")
+      expect(page).to have_content("Content can't be blank")
     end
   end
 end

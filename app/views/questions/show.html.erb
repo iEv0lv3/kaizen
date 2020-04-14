@@ -18,7 +18,7 @@
 <div class='row mb-3'>
   <% if current_user && current_user.id == @question.user.id %>
     <div class="col-md-8 themed-grid-col"></div>
-    <div class="col-sm-2 themed-grid-col questionModification">
+    <div class="col-sm-2 themed-grid-col questionModification" id='question-crud-<%= @question.id %>'>
       <%= link_to 'Update Question', "/questions/#{@question.id}/edit", method: :get %> :: 
       <%= link_to 'Delete Question', "/questions/#{@question.id}", method: :delete, data: {confirm: "Are you sure?"} %>
     </div>
@@ -40,87 +40,95 @@
 
 <%#This is the start of the question comment section %>
 <% @question_comments.each do |question_comment| %>
-  <div class="row mb-3 commentTextBox">
-    <div class='col-sm-1 themed-grid-col'></div>
-    <div class="col-md-6 themed-grid-col commentBox">
-      <section id='question_comment-<%= question_comment.id %>'>
-        <%= question_comment.content %>
-      </section>
+  <section id='question-comment-<%= question_comment.id %>'>
+    <div class="row mb-3 commentTextBox">
+      <div class='col-sm-1 themed-grid-col'></div>
+      <div class="col-md-6 themed-grid-col commentBox">
+          <%= question_comment.content %>
+      </div>
+
+      <div class="col-sm-2 themed-grid-col commSigBox">
+        <p><%= @question.user.first_name %></p>
+        <p>LEVEL :: AWARDS </p>
+      </div>
     </div>
 
-    <div class="col-sm-2 themed-grid-col commSigBox">
-      <p><%= @question.user.first_name %></p>
-      <p>LEVEL :: AWARDS </p>
+    <div class='row mb-3'>
+      <div class="col-sm-1 themed-grid-col "></div>
+      <div class="col-md-6 themed-grid-col commentModification">
+        <% if current_user && current_user.id == question_comment.user_id %>
+          <%= link_to "Edit", "/questions/#{@question.id}/comments/#{question_comment.id}/edit"%> ::
+          <%= link_to "Delete", "/questions/#{@question.id}/comments/#{question_comment.id}/delete", method: :delete %>
+        <% end %>
+      </div>
+      <div class="col-sm-2 themed-grid-col"></div>
     </div>
-  </div>
-
-  <div class='row mb-3'>
-    <div class="col-sm-1 themed-grid-col "></div>
-    <div class="col-md-6 themed-grid-col commentModification">
-      <% if current_user && current_user.id == question_comment.user_id %>
-        <%= link_to "Edit", "/questions/#{@question.id}/comments/#{question_comment.id}/edit"%> ::
-        <%= link_to "Delete", "/questions/#{@question.id}/comments/#{question_comment.id}/delete", method: :delete %>
-      <% end %>
-    </div>
-    <div class="col-sm-2 themed-grid-col"></div>
-  </div>
+  </section>
 <% end %>
 
 <%# This is the start of the answers section %>
 <% @answers.each do |answer| %>
-  <div class="row mb-3 answerSig">
-    <div class="col-md-8 themed-grid-col answer">Answer :: <%= answer.upvotes %></div>
-    <div class="col-sm-2 themed-grid-col sigBox">
-      <p><%= answer.user.first_name %> :: 
-        <%= answer.user.cohort %></p>
-      <p>Level: </p>
-      <p>Awards: </p>
+  <div id="answer-<%= answer.id %>">
+    <div class="row mb-3 answerSig">
+      <div class="col-md-8 themed-grid-col answer">Answer :: <%= answer.upvotes %></div>
+      <div class="col-sm-2 themed-grid-col sigBox">
+        <p><%= answer.user.first_name %> :: 
+          <%= answer.user.cohort %></p>
+        <p>Level: </p>
+        <p>Awards: </p>
+      </div>
     </div>
-  </div>
 
-  <div class='row mb-3'>
-    <% if current_user && current_user.id == answer.user_id %>
-      <div class="col-md-8 themed-grid-col"></div>
-      <div class="col-sm-2 themed-grid-col questionModification">
-        <%= link_to "Update Answer", "/questions/#{@question.id}/answers/#{answer.id}/edit" %> ::
-        <%= link_to "Delete Answer", "/questions/#{@question.id}/answers/#{answer.id}/delete", method: :delete %>
+    <div class='row mb-3' id='question-links-<%= answer.id %>'>
+      <% if current_user && current_user.id == answer.user_id %>
+        <div class="col-md-8 themed-grid-col"></div>
+        <div class="col-sm-2 themed-grid-col questionModification">
+          <%= link_to "Update Answer", "/questions/#{@question.id}/answers/#{answer.id}/edit" %> ::
+          <%= link_to "Delete Answer", "/questions/#{@question.id}/answers/#{answer.id}/delete", method: :delete %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class='row mb-3'>
+      <div class="col-lg-10 questionBox"><%= answer.content %></div>
+    </div>
+
+    <% if current_user %>
+      <div class="row mb-3">
+        <div class="col-md-8 themed-grid-col"></div>
+        <div class='col-sm-2 themed-grid-col questionModification'>
+          <%= link_to "Leave a Comment", "/questions/#{@question.id}/answers/#{answer.id}/comments/new" %>
+        </div>
       </div>
     <% end %>
-  </div>
 
-  <div class='row mb-3'>
-    <div class="col-lg-10 questionBox"><%= answer.content %></div>
-  </div>
+    <% answer.comments.each do |answer_comment| %>
+      <section id='answer-comment-<%= answer_comment.id %>'>
+        <div class="row mb-3 commentTextBox">
+          <div class='col-sm-1 themed-grid-col'></div>
+          <div class="col-md-6 themed-grid-col commentBox">
+            <section id='answer_comment-<%= answer_comment.id %>'>
+              <%= answer_comment.content %>
+            </section>
+          </div>
+          <div class="col-sm-2 themed-grid-col commSigBox">
+            <p><%= @question.user.first_name %></p>
+            <p>LEVEL :: AWARDS </p>
+          </div>
+        </div>
 
-  <div class="row mb-3">
-    <div class='col-sm-1 themed-grid-col'></div>
-    <div class="col-md-6 themed-grid-col commentBox">
-
-    </div>
-    <div class="col-sm-2 themed-grid-col commSigBox">
-      <p><%= @question.user.first_name %></p>
-      <p>LEVEL :: AWARDS </p>
-    </div>
-  </div>
-
-
-    <p> Comments </p>
-      <% if current_user %>
-        <%= link_to "Leave a Comment", "/questions/#{@question.id}/answers/#{answer.id}/comments/new" %>
-      <% end %>
-
-      <% answer.comments.each do |answer_comment| %>
-        <section id='answer_comment-<%= answer_comment.id %>'>
-          <%= answer_comment.content %>
-          <%= answer_comment.upvotes %>
-          <% if current_user %>
-            <% if current_user.id == answer_comment.user_id %>
-              <p><%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/comments/#{answer_comment.id}/edit"%> |
+        <div class='row mb-3'>
+          <div class="col-sm-1 themed-grid-col "></div>
+          <div class="col-md-6 themed-grid-col commentModification">
+            <% if current_user && current_user.id == answer_comment.user_id %>
+              <%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/comments/#{answer_comment.id}/edit"%> :: 
               <%= link_to "Delete", "/questions/#{@question.id}/answers/#{answer.id}/comments/#{answer_comment.id}/delete", method: :delete %>
             <% end %>
-          <% end %>
-        </section>
-      <% end %>
+          </div>
+          <div class="col-sm-2 themed-grid-col"></div>
+        </div>
+      </section>
   <% end %>
+<% end %>
 
   

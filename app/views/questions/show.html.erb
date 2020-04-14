@@ -60,7 +60,7 @@
           <% if current_user %>
             <% if current_user.id == answer_comment.user_id %>
               <p><%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/comments/#{answer_comment.id}/edit"%> |
-              <%= link_to "Delete", "/questions/#{@question.id}/answers/#{answer.id}/delete", method: :delete %>
+              <%= link_to "Delete", "/questions/#{@question.id}/answers/#{answer.id}/comments/#{answer_comment.id}/delete", method: :delete %>
             <% end %>
           <% end %>
         </section>

@@ -41,8 +41,13 @@ class Users::AnswerCommentsController < Users::BaseController
     end
   end
 
- 
-
+  def destroy
+    question = Question.find(params[:question_id])
+    answer = Answer.find(params[:answer_id])
+    Comment.destroy(params[:comment_id])
+    redirect_to "/questions/#{question.id}"
+    flash[:notification] = 'Your Comment was successfully deleted!'
+  end
 
   private 
   

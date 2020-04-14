@@ -1,5 +1,4 @@
-class Users::AnswerCommentsController < Users::BaseController 
-
+class Users::AnswerCommentsController < Users::BaseController
   def new
     @question = Question.find(params[:question_id])
     @answer = Answer.find(params[:answer_id])
@@ -9,7 +8,7 @@ class Users::AnswerCommentsController < Users::BaseController
     question = Question.find(params[:question_id])
     answer = Answer.find(params[:answer_id])
     comment = answer.comments.new(comment_params)
-    comment.user_id = current_user.id 
+    comment.user_id = current_user.id
 
     if comment.save
       redirect_to "/questions/#{question.id}"
@@ -49,8 +48,8 @@ class Users::AnswerCommentsController < Users::BaseController
     flash[:notification] = 'Your Comment was successfully deleted!'
   end
 
-  private 
-  
+  private
+
   def comment_params
     params.permit(:content)
   end

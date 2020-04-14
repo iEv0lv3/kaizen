@@ -9,45 +9,53 @@ RSpec.describe 'As a user' do
 
       visit '/'
 
-      expect(page).to have_content("Sign In")
+      expect(page).to have_content('Sign In')
 
-      click_on "Sign In"
+      click_on 'Sign In'
 
       expect(current_path).to eq('/users/sign_in')
 
       fill_in :user_email, with: @user.email
       fill_in :user_password, with: @user.password
 
-      click_on "Log in"
+      click_on 'Log in'
 
-      expect(current_path).to eq("/")
+      expect(current_path).to eq('/')
 
-      @question_1 = Question.create!({subject: "Ruby methods",
-                                      content: "What is attr_reader?",
-                                      upvotes: 1,
-                                      forum: 0,
-                                      user_id: @user.id})
+      @question_1 = Question.create!(
+        { subject: 'Ruby methods',
+          content: 'What is attr_reader?',
+          upvotes: 1,
+          forum: 0,
+          user_id: @user.id }
+      )
 
-      @question_2 = Question.create!({subject: "Jobs",
-                                      content: "Why can't I get a job?",
-                                      upvotes: 1,
-                                      forum: 1,
-                                      user_id: @user.id})
+      @question_2 = Question.create!(
+        { subject: 'Jobs',
+          content: "Why can't I get a job?",
+          upvotes: 1,
+          forum: 1,
+          user_id: @user.id }
+      )
 
-      @question_3 = Question.create!({subject: "Ruby methods",
-                                      content: "What is attr_accessor?",
-                                      upvotes: 1,
-                                      forum: 0,
-                                      user_id: @user.id})
+      @question_3 = Question.create!(
+        { subject: 'Ruby methods',
+          content: 'What is attr_accessor?',
+          upvotes: 1,
+          forum: 0,
+          user_id: @user.id }
+      )
 
-      @question_4 = Question.create!({subject: "Interviews",
-                                      content: "Best interview practices",
-                                      upvotes: 1,
-                                      forum: 1,
-                                      user_id: @user.id})
+      @question_4 = Question.create!(
+        { subject: 'Interviews',
+          content: 'Best interview practices',
+          upvotes: 1,
+          forum: 1,
+          user_id: @user.id }
+      )
     end
 
-    it "I can update a question" do
+    it 'I can update a question' do
       visit '/profile'
       within "#question-#{@question_2.id}" do
         click_on @question_2.subject
@@ -55,21 +63,21 @@ RSpec.describe 'As a user' do
 
       expect(current_path).to eq("/questions/#{@question_2.id}")
 
-      within ".questionModification" do
-        click_on "Update Question"
+      within "#question-crud-#{@question_2.id}" do
+        click_on 'Update Question'
       end
 
       expect(current_path).to eq("/questions/#{@question_2.id}/edit")
 
-      fill_in :question_subject, with: "Career advice"
+      fill_in :question_subject, with: 'Career advice'
 
-      click_on "Update Question"
+      click_on 'Update Question'
 
       expect(current_path).to eq("/questions/#{@question_2.id}")
-      expect(page).to have_content("Career advice")
+      expect(page).to have_content('Career advice')
     end
 
-    it "I cannot leave a field blank when updating a question" do
+    it 'I cannot leave a field blank when updating a question' do
       visit '/profile'
       within "#question-#{@question_2.id}" do
         click_on @question_2.subject
@@ -77,15 +85,15 @@ RSpec.describe 'As a user' do
 
       expect(current_path).to eq("/questions/#{@question_2.id}")
 
-      within ".questionModification" do
-        click_on "Update Question"
+      within "#question-crud-#{@question_2.id}" do
+        click_on 'Update Question'
       end
 
       expect(current_path).to eq("/questions/#{@question_2.id}/edit")
 
-      fill_in :question_subject, with: ""
+      fill_in :question_subject, with: ''
 
-      click_on "Update Question"
+      click_on 'Update Question'
 
       expect(current_path).to eq("/questions/#{@question_2.id}/edit")
       expect(page).to have_content("Subject can't be blank")

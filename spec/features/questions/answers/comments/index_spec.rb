@@ -40,10 +40,8 @@ RSpec.describe 'As a Visitor' do
     it 'And that question has an answer, I can then see all the comments for that answer' do
       visit "/questions/#{@question_1.id}"
 
-      within "#answer-#{@answer_1.id}" do
-        expect(page).to have_content(@comment_1.content)
-        expect(page).to have_content(@comment_2.content)
-      end
+      expect(page).to have_content(@comment_1.content)
+      expect(page).to have_content(@comment_2.content)
     end
   end
 end

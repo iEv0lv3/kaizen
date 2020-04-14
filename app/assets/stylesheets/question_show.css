@@ -45,8 +45,7 @@ h1 {
 .questionBox {
   background-color: white;
   border-radius: .5em;
-  padding-top: .3em;
-  padding-bottom: .3em;
+  padding: 1em;
   box-shadow: 0 0 5px 3px rgba(211, 211, 211, .5);
 }
 
@@ -54,7 +53,7 @@ h1 {
   background-color: rgba(244, 244, 244, 1);
   border-radius: .5em;
   padding: .5em;
-  font-size: .5em;
+  font-size: .7em;
 }
 
 .questionInfo {
@@ -91,8 +90,12 @@ h1 {
   font-size: .5em;
 }
 
+.leave-comment > a {
+  font-size: .7em;
+}
+
 .commentModification > a {
-  font-size: .5em;
+  font-size: .7em;
 }
 
 .commentTextBox {

@@ -18,4 +18,8 @@ class Question < ApplicationRecord
   def self.professional_questions
     select('questions.*').where(forum: 1).order(created_at: :DESC)
   end
+
+  def increment_upvotes
+    update_column(:upvotes, self.upvotes += 1)
+  end
 end

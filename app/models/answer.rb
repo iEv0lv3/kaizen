@@ -6,4 +6,8 @@ class Answer < ApplicationRecord
 
   belongs_to :user
   belongs_to :question
+
+  def increment_upvotes
+    update_column(:upvotes, self.upvotes += 1)
+  end
 end

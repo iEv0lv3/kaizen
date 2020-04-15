@@ -50,5 +50,13 @@ RSpec.describe Question, type: :model do
     it 'professional questions' do
       expect(Question.professional_questions).to eq([@question_4, @question_2])
     end
+
+    it 'can increment upvotes' do
+      expect(@question_1.upvotes).to eq(1)
+
+      @question_1.increment_upvotes
+
+      expect(@question_1.upvotes).to eq(2)
+    end
   end
 end

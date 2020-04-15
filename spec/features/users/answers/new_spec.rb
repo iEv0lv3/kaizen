@@ -67,5 +67,20 @@ RSpec.describe 'As a User' do
       expect(page).not_to have_content('An attr_reader is a method from a super class that allows other files to read the methods in the file the attr_reader is in.')
       expect(page).to have_content("Content can't be blank")
     end
+
+    it 'I cannot make an answer if its content is higher than 200.' do
+      expect(page).to have_link('Answer Question')
+
+      click_on 'Answer Question'
+
+      expect(current_path).to eq("/questions/#{@question_1.id}/answers/new")
+
+      fill_in :content, with: "mommy" * 200
+
+      click_on 'Submit'
+
+      expect(page).not_to have_content('An attr_reader is a method from a super class that allows other files to read the methods in the file the attr_reader is in.')
+      expect(page).to have_content("Content 200 characters is the maximum allowed")
+    end
   end
 end

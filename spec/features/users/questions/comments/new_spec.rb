@@ -67,5 +67,20 @@ RSpec.describe 'As a User' do
       expect(page).to have_content("Content can't be blank")
       expect(page).not_to have_content('Yes I herd my instructor say that in class but I also have no idea what that is.')
     end
+
+    it 'I cannot make a question if I use to many characters' do 
+      expect(page).to have_link('Leave a Comment')
+
+      click_on 'Leave a Comment'
+
+      expect(current_path).to eq("/questions/#{@question_1.id}/comments/new")
+
+      fill_in :content, with: "but why" * 100
+
+      click_on 'Submit'
+
+      expect(page).to have_content("Content 200 characters is the maximum allowed")
+      expect(page).not_to have_content('Yes I herd my instructor say that in class but I also have no idea what that is.')
+    end
   end
 end

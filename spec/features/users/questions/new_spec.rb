@@ -82,5 +82,23 @@ RSpec.describe 'As a user' do
       expect(current_path).to eq('/questions/new')
       expect(page).to have_content("Subject can't be blank")
     end
+
+    it 'I cannot make a question the is to long' do 
+      visit '/questions/new'
+
+      expect(page).to have_content('Post a Question:')
+
+      subject = 'Ruby methods'
+      content = 'What is reduce good for?'
+
+      within '.new_question' do
+        choose 'question_forum_technical'
+        fill_in :question_subject, with: "why" * 91
+        fill_in :question_content, with: content
+        click_on 'Submit Question'
+      end
+
+      expect(page).to have_content("Subject 90 characters is the maximum allowed")
+    end
   end
 end

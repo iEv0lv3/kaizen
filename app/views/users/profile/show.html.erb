@@ -5,7 +5,7 @@
   <h2><%= @user.first_name %> <%= @user.last_name %></h2>
   <h4>Cohort: <%= @user.cohort %></h4>
   <div>
-    <%= image_tag 'turing_logo', width: 50, height: 50 %>
+    <%= image_tag 'turing_logo.png', width: 50, height: 50 %>
     Turing Status: <%= @user.status %>
   </div>
 </section>
@@ -16,7 +16,7 @@
   </div>
 <% else %>
   <div>
-    <%= image_tag 'github-logo-lg', width: 50, height: 50 %>
+    <%= image_tag 'github-logo-lg.png', width: 50, height: 50 %>
     GitHub Account Connected
   </div>
 <% end %>
@@ -27,16 +27,16 @@
   </div>
 <% elsif !@user.award_count.zero? %>
   <div>
-    <%= image_tag 'so-icon-lg', width: 50, height: 50 %>
+    <%= image_tag 'so-icon-lg.png', width: 50, height: 50 %>
     StackOverflow Account Connected
   </div>
   <div id='so_badges'>
-    <%= image_tag 'medal', width: 50, height: 50 %>
+    <%= image_tag 'medal.png', width: 50, height: 50 %>
     StackOverflow Award Count: <%= @user.award_count %>
   </div>
 <% else %>
   <div>
-    <%= image_tag 'so-icon-lg', width: 50, height: 50 %>
+    <%= image_tag 'so-icon-lg.png', width: 50, height: 50 %>
     StackOverflow Account Connected
   </div>
   <p>You have no awards!</p>

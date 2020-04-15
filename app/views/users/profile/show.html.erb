@@ -12,6 +12,7 @@
 
 <% if @user.gh_token.nil? %>
   <div id='github_auth'>
+    <%= image_tag 'github-logo-lg.png', width: 50, height: 50 %>
     <%= link_to 'Connect to GitHub', user_github_omniauth_authorize_path %>
   </div>
 <% else %>
@@ -23,6 +24,7 @@
 
 <% if @user.so_token.nil? %>
   <div id='stackoverflow_auth'>
+    <%= image_tag 'so-icon-lg.png', width: 50, height: 50 %>
     <%= link_to 'Connect to StackOverflow', user_stackexchange_omniauth_authorize_path %>
   </div>
 <% elsif !@user.award_count.zero? %>

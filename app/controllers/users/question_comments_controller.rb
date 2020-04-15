@@ -31,7 +31,7 @@ class Users::QuestionCommentsController < Users::BaseController
       flash[:success] = 'Your Comment was successfully updated!!'
       redirect_to "/questions/#{question.id}"
     else
-      flash[:error] = comment.errors.full_messages.to_sentence
+      flash[:warning] = comment.errors.full_messages.to_sentence
       redirect_to "/questions/#{question.id}/comments/#{comment.id}/edit"
     end
   end

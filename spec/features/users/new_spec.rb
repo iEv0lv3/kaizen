@@ -16,11 +16,12 @@ RSpec.describe 'As a Visitor' do
       fill_in :user_last_name, with: 'McFakerson'
       fill_in :user_cohort, with: '1911'
       fill_in :user_email, with: 'faker@fake.com'
+      fill_in :user_user_name, with: 'fakerson'
       fill_in :user_password, with: 'Fakeymcfackerson'
       fill_in :user_password_confirmation, with: 'Fakeymcfackerson'
 
       click_on 'Sign up'
-
+  
       expect(current_path).to eq('/')
       expect(User.last.first_name).to eq('Fakey')
     end

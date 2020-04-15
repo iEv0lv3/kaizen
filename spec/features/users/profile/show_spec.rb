@@ -54,6 +54,7 @@ RSpec.describe 'As a User' do
       expect(page).to have_content(@user.last_name)
       expect(page).to have_content(@user.cohort)
       expect(page).to have_content(@user.status)
+      expect(page).to have_content(@user.user_name)
     end
 
     it 'I can delete my account if I really want to' do

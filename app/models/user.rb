@@ -3,10 +3,20 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable, :trackable and :omniauthable
   validates_uniqueness_of :email
+  validates :email, confirmation: true
+  validates :email, confirmation: { case_sensitive: false }
+  validates_presence_of :user_name
+  validates_uniqueness_of :user_name
+  validates :user_name, confirmation: true
+  validates :user_name, confirmation: { case_sensitive: false }
+  validates :user_name, length: { maximum: 10 }
   validates_presence_of :encrypted_password
   validates_presence_of :first_name
   validates_presence_of :last_name
   validates_presence_of :cohort
+  validates :cohort, length: { maximum: 4 }
+  validates :cohort, length: { minimum: 4 }
+  validates :cohort, numericality: true
   validates_presence_of :status
 
   has_many :questions
@@ -31,7 +41,7 @@ class User < ApplicationRecord
     resp = JSON.parse(kapi.find_awards)
 
     if resp['items'].empty?
-      return 0
+      0
     else
       resp['items'].first['award_count']
     end
@@ -42,6 +52,6 @@ class User < ApplicationRecord
   end
 
   def upvoted?(resource)
-    !resource.votes.find_by(user_id: self.id).nil?
+    !resource.votes.find_by(user_id: id).nil?
   end
 end

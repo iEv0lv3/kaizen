@@ -15,6 +15,7 @@ class RegistrationsController < Devise::RegistrationsController
       :cohort,
       :status,
       :email,
+      :user_name, 
       :password,
       :password_confirmation
     )

@@ -30,6 +30,7 @@ class Users::ProfileController < Users::BaseController
   def user_params
     params.permit(
       :email,
+      :user_name,
       :first_name,
       :last_name,
       :cohort

@@ -6,6 +6,7 @@ class Question < ApplicationRecord
   enum forum: %i[technical professional]
 
   has_many :comments, as: :commentable
+  has_many :votes, as: :voteable
   has_many :answers, dependent: :destroy
 
   belongs_to :user
@@ -16,5 +17,9 @@ class Question < ApplicationRecord
 
   def self.professional_questions
     select('questions.*').where(forum: 1).order(created_at: :DESC)
+  end
+
+  def increment_upvotes
+    update_column(:upvotes, self.upvotes += 1)
   end
 end

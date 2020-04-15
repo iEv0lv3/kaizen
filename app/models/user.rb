@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :answers
 
   has_many :comments
+  has_many :votes
 
   enum status: %i[
     student
@@ -37,5 +38,9 @@ class User < ApplicationRecord
 
   def ordered_questions
     questions.order(updated_at: :desc).limit(3)
+  end
+
+  def upvoted?(resource)
+    !resource.votes.find_by(user_id: self.id).nil?
   end
 end

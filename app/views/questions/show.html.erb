@@ -15,7 +15,7 @@
     <% end %>
   </div>
   <div class="col-sm-2 themed-grid-col sigBox">
-  <p><%= @question.user.user_name %> :: 
+  <p><%= link_to @question.user.user_name, "/users/#{@question.user.id}" %> :: 
      <%= @question.user.cohort %></p>
      <p>Level: </p>
      <p>Awards: </p>

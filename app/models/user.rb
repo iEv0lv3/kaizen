@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  before_create :skip_confirmation!
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable, :trackable and :omniauthable
   validates_uniqueness_of :email

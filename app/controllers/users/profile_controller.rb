@@ -1,10 +1,10 @@
 class Users::ProfileController < Users::BaseController
   def show
-    @user = current_user
+    @profile = UsersProfileFacade.new(current_user)
   end
 
   def edit
-    @user = current_user
+    @profile = UsersProfileFacade.new(current_user)
   end
 
   def update

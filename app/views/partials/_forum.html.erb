@@ -10,7 +10,7 @@
     <div class="col-md-8 themed-grid-col questionBox">
       <h4><%= link_to question.subject, "/questions/#{question.id}" %></h4>
       <div class="questionContent">:: <%= question.content.first(50) + "..." %></div>
-      <div class="questionBoxInfo">Posted By :: <%= question.user.first_name %></div>
+      <div class="questionBoxInfo">Posted By :: <%= question.user.user_name %></div>
       <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
       <div class="questionBoxInfo">Cohort :: <%= question.user.cohort %></div>
       <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>

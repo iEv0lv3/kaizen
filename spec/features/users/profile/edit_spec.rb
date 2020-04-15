@@ -76,10 +76,6 @@ RSpec.describe 'As a User' do
 
       expect(current_path).to eq('/profile/edit')
 
-      # within '#first_name' do
-      #   expect(page).to have_content("Luther")
-      # end
-
       expect(page).to have_content("First name can't be blank")
     end
 
@@ -96,7 +92,6 @@ RSpec.describe 'As a User' do
 
       expect(current_path).to eq('/profile/edit')
 
-      # expect(page).to have_content('Van Draws')
       expect(page).to have_content("Last name can't be blank")
     end
 
@@ -112,8 +107,7 @@ RSpec.describe 'As a User' do
       click_on 'Submit'
 
       expect(current_path).to eq('/profile/edit')
-
-      # expect(page).to have_content('1811')
+      
       expect(page).to have_content("Cohort can't be blank")
     end
   end

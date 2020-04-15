@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   before_create :skip_confirmation!
-  # Include default devise modules. Others available are:
-  # :lockable, :timeoutable, :trackable and :omniauthable
+
   validates_uniqueness_of :email
   validates :email, confirmation: true
   validates :email, confirmation: { case_sensitive: false }
@@ -34,7 +33,6 @@ class User < ApplicationRecord
   def award_count
     kapi = KaizenApiService.new(self)
     resp = JSON.parse(kapi.find_awards)
-
     if resp['items'].empty?
       0
     else
@@ -42,11 +40,39 @@ class User < ApplicationRecord
     end
   end
 
-  def ordered_questions
+  def recent_questions
     questions.order(updated_at: :desc).limit(3)
   end
 
   def upvoted?(resource)
     !resource.votes.find_by(user_id: id).nil?
+  end
+
+  def my_medals
+    if total_activity >= 3
+      'kaizen_award_yellow.png'
+    elsif total_activity >= 2
+      'kaizen_award_red.png'
+    elsif total_activity >= 1
+      'kaizen_award_blue.png'
+    else
+      'kaizen_award_green.png'
+    end
+  end
+
+  def total_activity
+    my_answers + my_questions + my_comments
+  end
+
+  def my_answers
+    answers.count
+  end
+
+  def my_questions
+    questions.count
+  end
+
+  def my_comments
+    comments.count
   end
 end

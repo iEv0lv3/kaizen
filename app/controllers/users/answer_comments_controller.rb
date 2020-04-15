@@ -35,7 +35,7 @@ class Users::AnswerCommentsController < Users::BaseController
       flash[:success] = 'Your Comment was successfully updated!!'
       redirect_to "/questions/#{question.id}"
     else
-      flash[:error] = comment.errors.full_messages.to_sentence
+      flash[:warning] = comment.errors.full_messages.to_sentence
       redirect_to "/questions/#{question.id}/answers/#{answer.id}/comments/#{comment.id}/edit"
     end
   end
@@ -45,19 +45,7 @@ class Users::AnswerCommentsController < Users::BaseController
     answer = Answer.find(params[:answer_id])
     Comment.destroy(params[:comment_id])
     redirect_to "/questions/#{question.id}"
-    flash[:notification] = 'Your Comment was successfully deleted!'
-  end
-
-  def upvote
-    comment = Comment.find(params[:id].to_i)
-    answer = Answer.find(comment.commentable_id)
-    question = Question.find(answer.question_id)
-    vote = comment.votes.new
-    vote.user_id = current_user.id
-    vote.save
-
-    comment.update_column(:upvotes, comment.upvotes += 1)
-    redirect_to "/questions/#{question.id}"
+    flash[:warning] = 'Your Comment was successfully deleted!'
   end
 
   private

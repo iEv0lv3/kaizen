@@ -8,7 +8,8 @@ RSpec.describe 'As a User' do
                             first_name: "Luther",
                             last_name: "Van Draws",
                             cohort: "1811",
-                            status: 1})
+                            status: 1,
+                            user_name: "Luther123"})
       @user.confirm
 
       visit '/'

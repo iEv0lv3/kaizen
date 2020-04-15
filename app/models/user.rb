@@ -31,7 +31,7 @@ class User < ApplicationRecord
     resp = JSON.parse(kapi.find_awards)
 
     if resp['items'].empty?
-      return 0
+      0
     else
       resp['items'].first['award_count']
     end
@@ -42,6 +42,6 @@ class User < ApplicationRecord
   end
 
   def upvoted?(resource)
-    !resource.votes.find_by(user_id: self.id).nil?
+    !resource.votes.find_by(user_id: id).nil?
   end
 end

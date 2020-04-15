@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'registrations', omniauth_callbacks: 'users/callbacks' }
+  devise_for :users, controllers: {
+    registrations: 'registrations',
+    omniauth_callbacks: 'users/callbacks',
+    sessions: 'sessions'
+  }
 
   devise_scope :user do
     get '/profile', to: 'users/profile#show'

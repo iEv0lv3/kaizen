@@ -23,7 +23,7 @@ RSpec.describe 'As a User' do
     end
   end
 
-  describe 'When I am on my profile page' do
+  describe 'When I am on my profile page', :vcr do
     before :each do
       @user = create(:user)
       @user.confirm
@@ -48,12 +48,14 @@ RSpec.describe 'As a User' do
       expect(current_path).to eq(profile_path)
     end
 
-    it 'I can see all of my information' do
+    it 'I can see all of my information', :vcr do
       expect(page).to have_css('#avatar')
       expect(page).to have_content(@user.first_name)
       expect(page).to have_content(@user.last_name)
       expect(page).to have_content(@user.cohort)
       expect(page).to have_content(@user.status)
+
+      expect(page).to have_css("img[alt='kaizen_medal']")
     end
 
     it 'I can delete my account if I really want to' do

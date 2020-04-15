@@ -55,7 +55,7 @@ RSpec.describe 'As a user' do
       )
     end
 
-    it 'I can update a question' do
+    it 'I can update a question', :vcr do
       visit '/profile'
 
       within "#question-#{@question_2.id}" do
@@ -78,7 +78,7 @@ RSpec.describe 'As a user' do
       expect(page).to have_content('Career advice')
     end
 
-    it 'I can update a technical question' do
+    it 'I can update a technical question', :vcr do
       visit '/profile'
 
       within "#question-#{@question_3.id}" do
@@ -101,7 +101,7 @@ RSpec.describe 'As a user' do
       expect(page).to have_content('Ruby ruby')
     end
 
-    it 'I cannot leave a field blank when updating a question' do
+    it 'I cannot leave a field blank when updating a question', :vcr do
       visit '/profile'
       within "#question-#{@question_2.id}" do
         click_on @question_2.subject
@@ -123,7 +123,7 @@ RSpec.describe 'As a user' do
       expect(page).to have_content("Subject can't be blank")
     end
 
-    it 'I cannot leave a field blank when updating a question' do
+    it 'I cannot leave a field blank when updating a question', :vcr do
       visit '/profile'
       within "#question-#{@question_2.id}" do
         click_on @question_2.subject

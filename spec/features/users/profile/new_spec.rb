@@ -20,7 +20,7 @@ RSpec.describe 'As a User' do
       expect(current_path).to eq('/')
     end
 
-    it 'I can go anywhere in the site and see a profile button on the nav bar that will take me to my profile' do
+    it 'I can go anywhere in the site and see a profile button on the nav bar that will take me to my profile', :vcr do
       visit '/'
 
       within('#profileLink') do

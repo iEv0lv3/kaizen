@@ -15,7 +15,7 @@
     <% end %>
   </div>
   <div class="col-sm-2 themed-grid-col sigBox">
-  <p><%= @question.user.first_name %> :: 
+  <p><%= link_to @question.user.user_name, "/users/#{@question.user.id}" %> :: 
      <%= @question.user.cohort %></p>
      <p>Level: </p>
      <p>Awards: </p>
@@ -55,7 +55,7 @@
       </div>
 
       <div class="col-sm-2 themed-grid-col commSigBox">
-        <p><%= question_comment.user.first_name %></p>
+        <p><%= link_to question_comment.user.user_name, "/users/#{question_comment.user.id}" %></p>
         <p>LEVEL :: AWARDS </p>
       </div>
     </div>
@@ -97,7 +97,7 @@
       </div>
 
       <div class="col-sm-2 themed-grid-col sigBox">
-        <p><%= answer.user.first_name %> :: 
+        <p><%= link_to answer.user.user_name, "/users/#{answer.user.id}" %> :: 
           <%= answer.user.cohort %></p>
         <p>Level: </p>
         <p>Awards: </p>
@@ -137,7 +137,7 @@
             </section>
           </div>
           <div class="col-sm-2 themed-grid-col commSigBox">
-            <p><%= answer_comment.user.first_name %></p>
+            <p><%= link_to answer_comment.user.user_name, "/users/#{answer_comment.user.id}" %></p>
             <p>LEVEL :: AWARDS </p>
           </div>
         </div>

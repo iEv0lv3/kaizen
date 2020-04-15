@@ -4,9 +4,9 @@
 
 <p> Leave your comment here </p>
 
-<%= form_tag "/questions/#{@question.id}/answers/#{@answer.id}/comments/#{@comment.id}", method: :patch do %>
+<%= form_with(url: update_answer_comment_path, method: :patch, local: true) do %>
   <%= label_tag :content %>
   <%= text_field_tag :content %>
 
-  <%= submit_tag 'Submit'%>
+  <%= submit_tag 'Submit' %>
 <% end %>

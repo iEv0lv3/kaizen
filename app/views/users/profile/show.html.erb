@@ -1,16 +1,17 @@
-<p>Welcome <%= "#{@user.first_name}" %> <%= "#{@user.last_name}"%>!</p>
+<p>Welcome <%= "#{@profile.user.first_name}" %> <%= "#{@profile.user.last_name}"%>!</p>
 
-<section class='profile-info''>
+<section class='profile-info'>
   <div id='avatar'><%= image_tag 'https://i.imgur.com/bdnuBf1.jpg', size: '300x150' %></div>
-  <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-  <h4>Cohort: <%= @user.cohort %></h4>
+  <h2><%= @profile.user.first_name %> <%= @profile.user.last_name %></h2>
+  <h4>Cohort: <%= @profile.user.cohort %></h4>
+  <h5 id="<%= @profile.kaizen_medals %>">:: Kaizen Medals :: <%= image_tag @profile.kaizen_medals, alt: 'kaizen_medal' %></h5>
   <div>
     <%= image_tag 'turing_logo.png', width: 50, height: 50 %>
-    Turing Status: <%= @user.status %>
+    Turing Status: <%= @profile.user.status %>
   </div>
 </section>
 
-<% if @user.gh_token.nil? %>
+<% if @profile.gh_token.nil? %>
   <div id='github_auth'>
     <%= image_tag 'github-logo-lg.png', width: 50, height: 50 %>
     <%= link_to 'Connect to GitHub', user_github_omniauth_authorize_path %>
@@ -21,20 +22,19 @@
     GitHub Account Connected
   </div>
 <% end %>
-
-<% if @user.so_token.nil? %>
+<% if @profile.so_token.nil? %>
   <div id='stackoverflow_auth'>
     <%= image_tag 'so-icon-lg.png', width: 50, height: 50 %>
     <%= link_to 'Connect to StackOverflow', user_stackexchange_omniauth_authorize_path %>
   </div>
-<% elsif !@user.award_count.zero? %>
+<% elsif !@profile.so_awards.zero? %>
   <div>
     <%= image_tag 'so-icon-lg.png', width: 50, height: 50 %>
     StackOverflow Account Connected
   </div>
   <div id='so_badges'>
     <%= image_tag 'medal.png', width: 50, height: 50 %>
-    StackOverflow Award Count: <%= @user.award_count %>
+    StackOverflow Award Count: <%= @profile.so_awards %>
   </div>
 <% else %>
   <div>
@@ -44,13 +44,13 @@
   <p>You have no awards!</p>
 <% end %>
 
-<p><%= link_to "Edit", "/profile/edit" %> | <%= link_to "Delete", destroy_user_path(@user), method: :delete, data: { confirm: "You sure?" } %></p>
+<p><%= link_to "Edit", "/profile/edit" %> | <%= link_to "Delete", destroy_user_path(@profile.user), method: :delete, data: { confirm: "You sure?" } %></p>
 
 <p><%= link_to "Change your password", edit_user_registration_path %></p>
 
 <h4>Your Recent Activity</h4>
 
-<% @user.ordered_questions.each do |question| %>
+<% @profile.recent_questions.each do |question| %>
     <div id="question-<%= question.id %>">
       <h5>Question: <%= link_to question.subject, "/questions/#{question.id}" %></h5>
       <p>Upvotes: <%= question.upvotes %></p>

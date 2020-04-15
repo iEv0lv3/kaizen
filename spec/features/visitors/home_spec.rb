@@ -40,7 +40,7 @@ RSpec.describe 'As a visitor' do
         choose 'user_status_1'
         fill_in :user_first_name, with: 'firstname'
         fill_in :user_last_name, with: 'lastname'
-        fill_in :user_cohort, with: 'cohort'
+        fill_in :user_cohort, with: '1911'
         fill_in 'Email', with: 'email@example.com'
         fill_in 'Password', with: 'newpass'
         fill_in 'Password confirmation', with: 'newpass'

@@ -58,7 +58,7 @@ RSpec.describe 'As a User' do
       expect(page).not_to have_content(@comment_1.content)
     end
 
-    it 'I cannot edit a comment if I have left the comment' do
+    it 'I cannot edit a comment if I have not left the comment' do
       user_3 = create(:user)
       user_3.confirm
 
@@ -84,6 +84,21 @@ RSpec.describe 'As a User' do
       within "#question-comment-#{@comment_1.id}" do
         expect(page).not_to have_link('Edit')
       end
+    end
+
+    it "When I go to edit a comment I cannot leave the comment field blank or I will see an error message" do
+
+      within "#question-comment-#{@comment_1.id}" do
+        expect(page).to have_link('Edit')
+        click_on 'Edit'
+      end
+
+      expect(current_path).to eq("/questions/#{@question_1.id}/comments/#{@comment_1.id}/edit")
+
+      click_on 'Submit'
+
+      expect(current_path).to eq("/questions/#{@question_1.id}/comments/#{@comment_1.id}/edit")
+      expect(page).to have_content("Content can't be blank")
     end
   end
 end

@@ -1,6 +1,6 @@
 class Users::ProfileController < Users::BaseController
   def show
-    @user = current_user || User.find([params[:user_id]])
+    @user = current_user
   end
 
   def edit

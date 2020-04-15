@@ -35,7 +35,7 @@ class Users::QuestionsController < Users::BaseController
       flash[:success] = 'Your question was successfully updated!'
       redirect_to "/questions/#{question.id}"
     else
-      flash[:error] = question.errors.full_messages.to_sentence
+      flash[:warning] = question.errors.full_messages.to_sentence
       redirect_to "/questions/#{question.id}/edit"
     end
   end

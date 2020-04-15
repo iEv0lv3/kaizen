@@ -1,9 +1,8 @@
 <h2>Sign up</h2>
 
-<%= devise_error_messages! %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "/shared/error_messages", resource: resource %>
+  <%= devise_error_messages! %>
 
   <div class="field" id="radioButtonsInput">
     <p><%= f.radio_button :status, 1 %> Turing Alumni?</p>

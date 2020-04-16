@@ -97,7 +97,7 @@ RSpec.describe 'As a User' do
     visit "/questions/#{@question_1.id}"
 
     within "#answer-comment-upvote-#{@answer_comment.id}" do
-      click_on 'upvote'
+      click_on 'Upvote'
     end
 
     expect(current_path).to eq("/questions/#{@question_1.id}")

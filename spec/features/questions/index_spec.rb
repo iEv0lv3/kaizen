@@ -34,7 +34,6 @@ RSpec.describe 'As a visitor' do
     it 'I click on a button I can navigate to the technical forums page' do
       visit '/'
 
-      expect(page).to have_link('Technical')
       click_on 'Technical'
 
       expect(current_path).to eq('/technical_forum')
@@ -47,7 +46,6 @@ RSpec.describe 'As a visitor' do
     it 'I click on a button I can navigate to the technical forums page and dont see professional quesitons' do
       visit '/'
 
-      expect(page).to have_link('Technical')
       click_on 'Technical'
 
       expect(current_path).to eq('/technical_forum')
@@ -59,7 +57,6 @@ RSpec.describe 'As a visitor' do
     it 'I click on a button I can navigate to the professional forums page' do
       visit '/'
 
-      expect(page).to have_link('Professional')
       click_on 'Professional'
 
       expect(current_path).to eq('/professional_forum')
@@ -72,13 +69,34 @@ RSpec.describe 'As a visitor' do
     it 'I click on a button I can navigate to the professional forums page and dont see technical quesitons' do
       visit '/'
 
-      expect(page).to have_link('Professional')
       click_on 'Professional'
 
       expect(current_path).to eq('/professional_forum')
 
       expect(page).not_to have_content(@question_1.subject)
       expect(page).not_to have_content(@question_1.content)
+    end
+
+    it 'can see a question has a verified answer' do
+      new_user = create(:user)
+
+      question = Question.create!(
+        subject: 'Ruby methods',
+        content: 'What is attr_reader?',
+        upvotes: 1,
+        forum: 0,
+        user_id: new_user.id
+      )
+
+      visit root_path
+
+      click_on 'Technical'
+
+      within "#question-#{question.id}" do
+        within '.activityBox' do
+          expect(page).to have_content('Verified Answer :: NO ::')
+        end
+      end
     end
   end
 end

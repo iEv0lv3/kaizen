@@ -8,7 +8,7 @@
   <h5 id="<%= @profile.kaizen_medals %>">:: Kaizen Medals :: <%= image_tag @profile.kaizen_medals, alt: 'kaizen_medal' %></h5>
   <div>
     <%= image_tag 'turing_logo.png', width: 50, height: 50 %>
-    Turing Status: <%= @profile.user.status %>
+    Turing Status: <%= @profile.user.status.capitalize %>
   </div>
 </section>
 

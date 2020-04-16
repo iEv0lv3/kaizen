@@ -31,7 +31,7 @@ RSpec.describe 'As a user' do
       content = 'What is reduce good for?'
 
       within '.new_question' do
-        choose 'question_forum_technical'
+        choose 'Technical'
         fill_in :question_subject, with: subject
         fill_in :question_content, with: content
         click_on 'Submit Question'
@@ -52,7 +52,7 @@ RSpec.describe 'As a user' do
       content = 'How do I get one?'
 
       within '.new_question' do
-        choose 'question_forum_professional'
+        choose 'Professional'
         fill_in :question_subject, with: subject
         fill_in :question_content, with: content
         click_on 'Submit Question'
@@ -73,7 +73,7 @@ RSpec.describe 'As a user' do
       content = 'How do I get one?'
 
       within '.new_question' do
-        choose 'question_forum_professional'
+        choose 'Professional'
         fill_in :question_subject, with: ''
         fill_in :question_content, with: content
         click_on 'Submit Question'
@@ -92,7 +92,7 @@ RSpec.describe 'As a user' do
       content = 'What is reduce good for?'
 
       within '.new_question' do
-        choose 'question_forum_technical'
+        choose 'Technical'
         fill_in :question_subject, with: "why" * 91
         fill_in :question_content, with: content
         click_on 'Submit Question'

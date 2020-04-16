@@ -4,9 +4,6 @@
 
 <p> Leave your comment here </p>
 
-<%= form_with(url: update_answer_comment_path, method: :patch, local: true) do %>
-  <%= label_tag :content %>
-  <%= text_field_tag :content %>
-
-  <%= submit_tag 'Submit' %>
+<%= form_tag update_answer_comment_path, method: :patch do %>
+  <%= render 'partials/comments' %>
 <% end %>

@@ -11,7 +11,7 @@ RSpec.describe 'As a Visitor' do
 
       expect(current_path).to eq('/users/sign_up')
 
-      choose :user_status_1
+      choose  'Turing student'
       fill_in :user_first_name, with: 'Fakey'
       fill_in :user_last_name, with: 'McFakerson'
       fill_in :user_cohort, with: '1911'

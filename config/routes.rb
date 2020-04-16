@@ -39,6 +39,7 @@ Rails.application.routes.draw do
       end
     end
 
+    post '/:id/verify', to: 'users/verification#verify_answer', as: 'verify_answer'
     post '/questions/:id', to: 'users/upvotes#question_upvotes', as: 'question_upvote'
     post '/questions/:id/answers/:id', to: 'users/upvotes#answer_upvotes', as: 'answer_upvote'
     post '/questions/:id/comments/:id', to: 'users/upvotes#question_comment_upvotes', as: 'question_comment_upvote'

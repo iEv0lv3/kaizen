@@ -49,7 +49,8 @@ Rails.application.routes.draw do
 
   get 'technical_forum', to: 'technical_forum#index'
   get 'professional_forum', to: 'professional_forum#index'
-  get '/questions/:id', to: 'questions#show'
+  get '/questions/:id', to: 'questions#show', as: 'question_show'
 
   get '/users/:id', to: 'users#show'
+  get '/search', to: 'search#index', as: 'search'
 end

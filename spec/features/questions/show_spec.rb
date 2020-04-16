@@ -242,4 +242,35 @@ RSpec.describe 'As a visitor' do
       end
     end
   end
+
+  describe 'As a user' do
+    before :each do
+      @user_1 = create(:user)
+      @user_2 = create(:user)
+      @user_3 = create(:user)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+
+      @question = @user.questions.create!(
+        subject: 'User Question',
+        content: 'This is a question written by a user',
+        forum: 0,
+        upvotes: 3
+      )
+
+      @answer_1 = @question.answers.create!(
+        content: 'This is the best answer to user_1s question',
+        user_id: @user_2.id,
+        upvotes: 30,
+        verification: 0
+      )
+
+      @answer_2 = @question.answers.create!(
+        content: 'This is the second best answer to user_1s question',
+        user_id: @user_3.id,
+        upvotes: 10,
+        verification: 0
+      )
+    end
+  end
 end

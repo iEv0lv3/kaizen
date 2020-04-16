@@ -21,3 +21,19 @@
   position: absolute;
   top: 25%;
 }
+
+.submitButton {
+  width: 10em;
+  margin-top: 1em;
+  color: #343a40;
+  background-color: #12f1fc;
+  border-color: #12f1fc;
+}
+
+.submitButton:hover {
+  width: 10em;
+  margin-top: 1em;
+  color: #fff;
+  background-color: #138496;
+  border-color: #117a8b;
+}

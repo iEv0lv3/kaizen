@@ -137,7 +137,7 @@ RSpec.describe 'As a User' do
 
       expect(current_path).to eq("/profile")
 
-      expect(page).to have_content('GitHub Account Connected')
+      expect(page).to have_content('Connected to GitHub!')
     end
   end
   # describe 'As a new user I can connect to stack overflow' do 

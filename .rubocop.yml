@@ -27,3 +27,9 @@ Style/HashTransformKeys:
 
 Style/HashTransformValues:
   Enabled: false
+
+Metrics/LineLength:
+  Max: 112
+
+Metrics/MethodLength:
+  Max: 15

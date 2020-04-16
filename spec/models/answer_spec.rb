@@ -48,5 +48,13 @@ RSpec.describe Answer, type: :model do
 
       expect(@answer.upvotes).to eq(2)
     end
+
+    it 'can verify an answer' do
+      expect(@answer.verification).to eq('unverified')
+
+      @answer.verify_answer
+
+      expect(@answer.verification).to eq('verified')
+    end
   end
 end

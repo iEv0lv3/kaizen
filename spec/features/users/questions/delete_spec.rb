@@ -47,7 +47,7 @@ RSpec.describe 'As a user' do
                                       user_id: @user.id})
     end
 
-    it "I can delete a question from the professional forum" do
+    it "I can delete a question from the professional forum", :vcr do
       visit '/profile'
 
       within "#question-#{@question_2.id}" do

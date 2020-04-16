@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'As a User' do
-  describe 'When I visit my profile page' do
+  describe 'When I visit my profile page', :vcr do
     before :each do
       @user = User.create!({email: "user_1@turing.io",
                             password: "password",
@@ -32,7 +32,7 @@ RSpec.describe 'As a User' do
       expect(current_path).to eq(profile_path)
     end
 
-    it 'I can edit my profile' do
+    it 'I can edit my profile', :vcr do
       expect(page).to have_link('Edit')
 
       click_on 'Edit'
@@ -49,7 +49,7 @@ RSpec.describe 'As a User' do
       expect(page).not_to have_content(@user.last_name)
     end
 
-    it 'I can edit my password seperately from editing my profile' do
+    it 'I can edit my password seperately from editing my profile', :vcr do
       expect(page).to have_link('Change your password')
 
       click_on 'Change your password'

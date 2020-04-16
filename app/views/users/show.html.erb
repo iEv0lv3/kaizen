@@ -45,7 +45,7 @@
 
 <h4>Your Recent Activity</h4>
 
-<% @user.ordered_questions.each do |question| %>
+<% @user.recent_questions.each do |question| %>
     <div id="question-<%= question.id %>">
       <h5>Question: <%= link_to question.subject, "/questions/#{question.id}" %></h5>
       <p>Upvotes: <%= question.upvotes %></p>

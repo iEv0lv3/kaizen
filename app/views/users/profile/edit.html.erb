@@ -1,21 +1,61 @@
 <h2> Edit Profile </h2>
 <section id='user_edit_form'>
   <%= form_tag "/profile", method: :patch do %>
-    <%= label_tag :email %>
-    <%= text_field_tag :email, @profile.user.email %>
 
-    <%= label_tag :user_name %>
-    <%= text_field_tag :user_name, @profile.user.user_name %>
+    <div class="form-group row">
+      <%= label_tag :email, nil, class: 'col-sm-2 col-form-label' %>
+      <div class="col-sm-10">
+        <%= text_field_tag :email, @profile.user.email, class: 'form-control' %>
+      </div>
+    </div>
 
-    <%= label_tag :first_name %>
-    <%= text_field_tag :first_name, @profile.user.first_name %>
+    <div class="form-group row">
+      <%= label_tag :user_name, nil, class: 'col-sm-2 col-form-label' %>
+      <div class="col-sm-10">
+        <%= text_field_tag :user_name, @profile.user.user_name, class: 'form-control' %>
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <%= label_tag :first_name, nil, class: 'col-sm-2 col-form-label' %>
+      <div class="col-sm-10">
+        <%= text_field_tag :first_name, @profile.user.first_name, class: 'form-control' %>
+      </div>
+    </div>
+  
+    <div class="form-group row">
+      <%= label_tag :last_name, nil, class: 'col-sm-2 col-form-label' %>
+      <div class="col-sm-10">
+        <%= text_field_tag :last_name, @profile.user.last_name, class: 'form-control' %>
+      </div>
+    </div>
 
-    <%= label_tag :last_name %>
-    <%= text_field_tag :last_name, @profile.user.last_name%>
+    <div class="form-group row">
+      <%= label_tag :cohort, nil, class: 'col-sm-2 col-form-label' %>
+      <div class="col-sm-10">
+        <%= text_field_tag :cohort, @profile.user.cohort, class: 'form-control' %>
+      </div>
+    </div>
 
-    <%= label_tag :cohort %>
-    <%= text_field_tag :cohort, @profile.user.cohort %>
+  <div class="field">
+    <div class="row">
+      <div class="col-sm-10">
+        <div class="form-check">
+          <%= label_tag 'Turing Alumni', nil, class: 'form-check-label', for: "gridRadios1" %>
+          <%= radio_button_tag :status, 'alumni', class: 'form-check-input', id: "gridRadios1" %>
+        </div>
+        <div class="form-check">
+          <%= label_tag 'Turing Student', nil, class: 'form-check-label', for: "gridRadios2" %>
+          <%= radio_button_tag :status, 'student', class: 'form-check-input', id: "gridRadios2" %>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <%= submit_tag 'Submit' %>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <%= submit_tag 'Submit', class: "btn btn-primary editProfileSubmit" %>
+      </div>
+    </div>
   <% end %>
 </section>

@@ -151,7 +151,7 @@
             <% elsif current_user.upvoted?(answer_comment) || current_user.id == answer_comment.user_id %>
               <%= answer_comment.upvotes %> ::
             <% else %>
-              <%= answer_comment.upvotes %> :: <%= link_to 'upvote.png', answer_comment_upvote_path(answer_comment), method: :post %>
+              <%= answer_comment.upvotes %> :: <%= link_to 'Upvote', answer_comment_upvote_path(answer_comment), method: :post %>
             <% end %>
 
             <% if current_user && current_user.id == answer_comment.user_id %>

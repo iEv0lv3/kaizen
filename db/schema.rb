@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_16_154733) do
+ActiveRecord::Schema.define(version: 2020_04_16_203433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "answers", force: :cascade do |t|
-    t.text "content"
     t.integer "upvotes", default: 1
     t.integer "awards"
     t.datetime "created_at", precision: 6, null: false
@@ -24,12 +23,13 @@ ActiveRecord::Schema.define(version: 2020_04_16_154733) do
     t.bigint "user_id", null: false
     t.bigint "question_id", null: false
     t.integer "verification", default: 0
+    t.text "content"
+    t.index ["content"], name: "index_answers_on_content"
     t.index ["question_id"], name: "index_answers_on_question_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text "content"
     t.integer "upvotes", default: 1
     t.integer "awards"
     t.datetime "created_at", precision: 6, null: false
@@ -37,19 +37,24 @@ ActiveRecord::Schema.define(version: 2020_04_16_154733) do
     t.string "commentable_type"
     t.bigint "commentable_id"
     t.bigint "user_id", null: false
+    t.text "content"
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
+    t.index ["content"], name: "index_comments_on_content"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "subject"
-    t.text "content"
     t.integer "upvotes", default: 1
     t.integer "awards"
-    t.integer "forum"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
+    t.text "content"
+    t.string "subject"
+    t.integer "forum"
+    t.index ["content"], name: "index_questions_on_content"
+    t.index ["forum"], name: "index_questions_on_forum"
+    t.index ["subject"], name: "index_questions_on_subject"
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
@@ -79,6 +84,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_154733) do
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["user_name"], name: "index_users_on_user_name"
   end
 
   create_table "votes", force: :cascade do |t|

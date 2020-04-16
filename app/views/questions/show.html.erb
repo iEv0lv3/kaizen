@@ -9,13 +9,15 @@
       :: <%= link_to image_tag('upvote.png', alt: 'Upvote'), question_upvote_path(@question), method: :post %>
     <% end %>
     <% if current_user %>
+      <% if current_user.id != @question.user.id %>
       <div class='answerQuestionLink'>
         <%= link_to "Answer Question", "/questions/#{@question.id}/answers/new", method: :get %>
       </div>
+      <% end %>
     <% end %>
   </div>
   <div class="col-sm-2 themed-grid-col sigBox">
-  <p><%= @question.user.first_name %> :: 
+  <p><%= link_to @question.user.user_name, "/users/#{@question.user.id}" %> ::
      <%= @question.user.cohort %></p>
      <p>Level: </p>
      <p>Awards: </p>
@@ -26,7 +28,7 @@
   <% if current_user && current_user.id == @question.user.id %>
     <div class="col-md-8 themed-grid-col"></div>
     <div class="col-sm-2 themed-grid-col questionModification" id='question-crud-<%= @question.id %>'>
-      <%= link_to 'Update Question', "/questions/#{@question.id}/edit", method: :get %> :: 
+      <%= link_to 'Update Question', "/questions/#{@question.id}/edit", method: :get %> ::
       <%= link_to 'Delete Question', "/questions/#{@question.id}", method: :delete, data: {confirm: "Are you sure?"} %>
     </div>
   <% end %>
@@ -55,14 +57,14 @@
       </div>
 
       <div class="col-sm-2 themed-grid-col commSigBox">
-        <p><%= question_comment.user.first_name %></p>
+        <p><%= link_to question_comment.user.user_name, "/users/#{question_comment.user.id}" %></p>
         <p>LEVEL :: AWARDS </p>
       </div>
     </div>
 
     <div class='row mb-3'>
       <div class="col-sm-1 themed-grid-col "></div>
-      <div class="col-md-6 themed-grid-col commentModification">
+      <div class="col-md-6 themed-grid-col commentModification", id="upvote-<%= question_comment.id %>">
         <% if current_user.nil? %>
           <%= question_comment.upvotes %> ::
         <% elsif current_user.upvoted?(question_comment) || current_user.id == question_comment.user_id %>
@@ -75,7 +77,6 @@
           <%= link_to "Edit", "/questions/#{@question.id}/comments/#{question_comment.id}/edit"%> ::
           <%= link_to "Delete", "/questions/#{@question.id}/comments/#{question_comment.id}/delete", method: :delete %>
         <% end %>
-        
       </div>
       <div class="col-sm-2 themed-grid-col"></div>
     </div>
@@ -86,7 +87,7 @@
 <% @answers.each do |answer| %>
   <div id="answer-<%= answer.id %>">
     <div class="row mb-3 answerSig">
-      <div class="col-md-8 themed-grid-col answer">Answer :: <%= answer.upvotes %>
+      <div class="col-md-8 themed-grid-col answer", id="answer-upvotes-<%= answer.id %>">Answer :: <%= answer.upvotes %>
         <% if current_user.nil? %>
           :: <%= image_tag 'upvote.png' %>
         <% elsif current_user.upvoted?(answer) || current_user.id == answer.user_id %>
@@ -97,7 +98,7 @@
       </div>
 
       <div class="col-sm-2 themed-grid-col sigBox">
-        <p><%= answer.user.first_name %> :: 
+        <p><%= link_to answer.user.user_name, "/users/#{answer.user.id}" %> ::
           <%= answer.user.cohort %></p>
         <p>Level: </p>
         <p>Awards: </p>
@@ -137,24 +138,24 @@
             </section>
           </div>
           <div class="col-sm-2 themed-grid-col commSigBox">
-            <p><%= answer_comment.user.first_name %></p>
+            <p><%= link_to answer_comment.user.user_name, "/users/#{answer_comment.user.id}" %></p>
             <p>LEVEL :: AWARDS </p>
           </div>
         </div>
 
         <div class='row mb-3'>
           <div class="col-sm-1 themed-grid-col "></div>
-          <div class="col-md-6 themed-grid-col commentModification">
+          <div class="col-md-6 themed-grid-col commentModification", id="answer-comment-upvote-<%= answer_comment.id %>">
             <% if current_user.nil? %>
               <%= answer_comment.upvotes %> ::
             <% elsif current_user.upvoted?(answer_comment) || current_user.id == answer_comment.user_id %>
               <%= answer_comment.upvotes %> ::
             <% else %>
-              <%= answer_comment.upvotes %> :: <%= link_to 'upvote.png', answer_comment_upvote_path(answer_comment), method: :post %> 
+              <%= answer_comment.upvotes %> :: <%= link_to 'upvote.png', answer_comment_upvote_path(answer_comment), method: :post %>
             <% end %>
-            
+
             <% if current_user && current_user.id == answer_comment.user_id %>
-              <%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/comments/#{answer_comment.id}/edit" %> :: 
+              <%= link_to "Edit", "/questions/#{@question.id}/answers/#{answer.id}/comments/#{answer_comment.id}/edit" %> ::
               <%= link_to "Delete", "/questions/#{@question.id}/answers/#{answer.id}/comments/#{answer_comment.id}/delete", method: :delete %>
             <% end %>
           </div>
@@ -164,5 +165,3 @@
     <% end %>
   </div>
 <% end %>
-
-  

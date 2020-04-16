@@ -1,0 +1,54 @@
+<h2><%= @user.first_name %><%= @user.last_name%></h2>
+
+<div id='avatar'><%= image_tag 'https://i.imgur.com/bdnuBf1.jpg', size: '300x150' %></div>
+
+<p>Cohort: <%= @user.cohort%></p>
+<p>User Name: <%= @user.user_name%></p>
+
+<div>
+  <%= image_tag 'turing_logo.png', width: 50, height: 50 %>
+  Turing Status: <%= @user.status %>
+</div>
+
+<% if @user.gh_token.nil? %>
+  <div id='github_auth'>
+    <%= image_tag 'github-logo-lg.png', width: 50, height: 50 %>
+    GitHub Account Not Connected
+  </div>
+<% else %>
+  <div>
+    <%= image_tag 'github-logo-lg.png', width: 50, height: 50 %> 
+    GitHub Account Connected
+  </div>
+<% end %>
+
+<% if @user.so_token.nil? %>
+  <div id='stackoverflow_auth'>
+    <%= image_tag 'so-icon-lg.png', width: 50, height: 50 %> 
+    StackOverflow Account Not Connected
+  </div>
+<% elsif !@user.award_count.zero? %>
+  <div>
+    <%= image_tag 'so-icon-lg.png', width: 50, height: 50 %> <p> StackOverflow Account Connected </p>
+  </div>
+  <div id='so_badges'>
+    <%= image_tag 'medal.png', width: 50, height: 50 %>
+    StackOverflow Award Count: <%= @user.award_count %>
+  </div>
+<% else %>
+  <div>
+    <%= image_tag 'so-icon-lg.png', width: 50, height: 50 %>
+    StackOverflow Account Connected
+  </div>
+  <p>You have no awards!</p>
+<% end %>
+
+<h4>Your Recent Activity</h4>
+
+<% @user.recent_questions.each do |question| %>
+    <div id="question-<%= question.id %>">
+      <h5>Question: <%= link_to question.subject, "/questions/#{question.id}" %></h5>
+      <p>Upvotes: <%= question.upvotes %></p>
+      <p>Last Updated: <%= question.updated_at.to_date %></p>
+    </div>
+<% end %>

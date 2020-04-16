@@ -4,6 +4,11 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
   validates :email, confirmation: true
   validates :email, confirmation: { case_sensitive: false }
+  validates_presence_of :user_name
+  validates_uniqueness_of :user_name
+  validates :user_name, confirmation: true
+  validates :user_name, confirmation: { case_sensitive: false }
+  validates :user_name, length: { maximum: 10 }
   validates_presence_of :encrypted_password
   validates_presence_of :first_name
   validates_presence_of :last_name

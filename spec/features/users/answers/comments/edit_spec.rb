@@ -72,6 +72,21 @@ RSpec.describe 'As a User' do
         end
       end
 
+      it 'I can see a link to edit my comment, when I click it if I enter in the info incorrectly I can not update my comment ' do
+        within "#answer-comment-#{@comment_1.id}" do
+          expect(page).to have_link('Edit')
+          click_on 'Edit'
+        end
+
+        expect(current_path).to eq("/questions/#{@question_1.id}/answers/#{@answer_1.id}/comments/#{@comment_1.id}/edit")
+
+        fill_in :content, with: ' '
+
+        click_on 'Submit'
+
+        expect(page).to have_content("Content can't be blank")
+      end
+
       it 'I can not see a link to edit my comment, If I did not make that comment' do
         user_4 = create(:user)
         user_4.confirm

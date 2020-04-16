@@ -4,6 +4,7 @@ RSpec.describe User, type: :model do
   describe 'validations' do
     it { should validate_uniqueness_of :email }
     it { should validate_presence_of :encrypted_password }
+    it { should validate_presence_of :user_name}
     it { should validate_presence_of :first_name }
     it { should validate_presence_of :last_name }
     it { should validate_presence_of :cohort }
@@ -51,6 +52,7 @@ RSpec.describe User, type: :model do
     before :each do
       @user = User.create!(
         email: 'user@turing.io',
+        user_name: 'iEv0lv3',
         password: 'user_1',
         first_name: 'User',
         last_name: '1',
@@ -62,6 +64,7 @@ RSpec.describe User, type: :model do
 
       @user2 = User.create!(
         email: 'user2@turing.io',
+        user_name: 'iEv0lv32',
         password: 'user_1',
         first_name: 'User',
         last_name: '1',
@@ -74,6 +77,7 @@ RSpec.describe User, type: :model do
       @user3 = User.create!(
         email: 'user3@turing.io',
         password: 'user_1',
+        user_name: 'iEv0lv33',
         first_name: 'User',
         last_name: '1',
         cohort: '1811',

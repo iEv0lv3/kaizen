@@ -3,6 +3,7 @@
 <section class='profile-info'>
   <div id='avatar'><%= image_tag 'https://i.imgur.com/bdnuBf1.jpg', size: '300x150' %></div>
   <h2><%= @profile.user.first_name %> <%= @profile.user.last_name %></h2>
+  <h4><%= @profile.user.user_name %></h4>
   <h4>Cohort: <%= @profile.user.cohort %></h4>
   <h5 id="<%= @profile.kaizen_medals %>">:: Kaizen Medals :: <%= image_tag @profile.kaizen_medals, alt: 'kaizen_medal' %></h5>
   <div>

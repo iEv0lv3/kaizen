@@ -3,32 +3,32 @@ require 'rails_helper'
 RSpec.describe 'As a visitor' do
   describe 'When I visit one of the questions index page' do
     before :each do
-      user = create(:user)
-      user.confirm
+      @user = create(:user)
+      @user.confirm
 
       @question_1 = Question.create!({ subject: 'Ruby methods',
                                        content: 'What is attr_reader?',
                                        upvotes: 1,
                                        forum: 0,
-                                       user_id: user.id })
+                                       user_id: @user.id })
 
       @question_2 = Question.create!({ subject: 'Jobs',
                                        content: "Why can't I get a job?",
                                        upvotes: 1,
                                        forum: 1,
-                                       user_id: user.id })
+                                       user_id: @user.id })
 
       @question_3 = Question.create!({ subject: 'Ruby accessors',
                                        content: 'What is attr_accessor?',
                                        upvotes: 1,
                                        forum: 0,
-                                       user_id: user.id })
+                                       user_id: @user.id })
 
       @question_4 = Question.create!({ subject: 'Interviews',
                                        content: 'Best interview practices',
                                        upvotes: 1,
                                        forum: 1,
-                                       user_id: user.id })
+                                       user_id: @user.id })
     end
 
     it 'I can click on a question subject in technical index and be taken to its show page' do

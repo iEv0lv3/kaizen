@@ -15,6 +15,7 @@ RSpec.describe Comment, type: :model do
     before :each do
       user_1 = User.create!(
         email: 'user_1@turing.io',
+        user_name: 'user_1',
         password: 'user_1',
         first_name: 'User',
         last_name: '1',

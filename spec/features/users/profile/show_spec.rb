@@ -56,6 +56,7 @@ RSpec.describe 'As a User' do
       expect(page).to have_content(@user.status)
 
       expect(page).to have_css("img[alt='kaizen_medal']")
+      expect(page).to have_content(@user.user_name)
     end
 
     it 'I can delete my account if I really want to' do

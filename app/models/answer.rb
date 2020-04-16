@@ -11,4 +11,8 @@ class Answer < ApplicationRecord
   def increment_upvotes
     update_column(:upvotes, self.upvotes += 1)
   end
+
+  def self.search(search_params)
+    where('content ILIKE :search', search: "%#{search_params}%").limit(5)
+  end
 end

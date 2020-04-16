@@ -1,0 +1,23 @@
+.kaizenTitle {
+  margin-bottom: .5em
+}
+
+.searchButton {
+  width: 10em;
+  margin-top: 1em;
+  color: #343a40;
+  background-color: #12f1fc;
+  border-color: #12f1fc;
+}
+
+.searchPosition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBarPostion {
+  margin: 0;
+  position: absolute;
+  top: 25%;
+}

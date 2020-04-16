@@ -33,7 +33,8 @@ class Users::ProfileController < Users::BaseController
       :user_name,
       :first_name,
       :last_name,
-      :cohort
+      :cohort,
+      :status
     )
   end
 end

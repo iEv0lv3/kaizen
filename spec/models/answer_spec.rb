@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Answer, type: :model do
   describe 'validations' do
     it { should validate_presence_of :content }
+    it { should validate_presence_of :verification }
   end
 
   describe 'relationships' do
@@ -46,6 +47,14 @@ RSpec.describe Answer, type: :model do
       @answer.increment_upvotes
 
       expect(@answer.upvotes).to eq(2)
+    end
+
+    it 'can verify an answer' do
+      expect(@answer.verification).to eq('unverified')
+
+      @answer.verify_answer
+
+      expect(@answer.verification).to eq('verified')
     end
   end
 end

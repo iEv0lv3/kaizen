@@ -90,14 +90,14 @@ RSpec.describe User, type: :model do
          subject: 'Ruby methods',
           content: 'What is attr_reader?',
           upvotes: 1,
-          forum: 0 
+          forum: 0
       )
 
       @question_2 = @user2.questions.create!(
          subject: 'Jobs',
           content: "Why can't I get a job?",
           upvotes: 1,
-          forum: 1 
+          forum: 1
       )
 
       @answer_1 = @question_1.answers.create!(
@@ -123,16 +123,24 @@ RSpec.describe User, type: :model do
       )
     end
 
+    it 'my_medals' do
+      expect(@user2.my_medals).to eq('kaizen_award_blue.png')
+      expect(@user3.my_medals).to eq('kaizen_award_red.png')
+    end
+
+
     it 'my_answers' do
       expect(@user.my_answers).to eq(2)
     end
 
     it 'my_questions' do
       expect(@user.my_questions).to eq(1)
+      expect(@user2.my_questions).to eq(1)
     end
 
     it 'my_comments' do
       expect(@user.my_comments).to eq(0)
+      expect(@user3.my_comments).to eq(2)
     end
   end
 end

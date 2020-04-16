@@ -37,7 +37,7 @@ RSpec.describe 'As a visitor' do
       expect(current_path).to eq(new_user_registration_path)
 
       within '.new_user' do
-        choose 'user_status_1'
+        choose 'Turing alumni'
         fill_in :user_first_name, with: 'firstname'
         fill_in :user_last_name, with: 'lastname'
         fill_in :user_cohort, with: '1911'
@@ -67,7 +67,7 @@ RSpec.describe 'As a visitor' do
       expect(current_path).to eq(new_user_registration_path)
 
       within '.new_user' do
-        choose 'user_status_1'
+        choose 'Turing alumni'
         fill_in :user_first_name, with: 'firstname'
         fill_in :user_last_name, with: 'lastname'
         fill_in :user_cohort, with: 'cohort'

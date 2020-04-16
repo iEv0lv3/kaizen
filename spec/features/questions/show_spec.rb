@@ -92,7 +92,7 @@ RSpec.describe 'As a visitor' do
         @user_2.confirm
 
         @comment_1 = @question_1.comments.create!(
-          { content: 'Yes I herd my instructor say that in class but I also have no idea what that is.',
+          { content: 'Yes I heard my instructor say that in class but I also have no idea what that is.',
             user_id: @user_2.id }
         )
 
@@ -126,7 +126,7 @@ RSpec.describe 'As a visitor' do
         expect(page).to have_content('Your Comment was successfully deleted!')
       end
 
-      it 'within the questions show page, unless I did not make the comment then I cannot see the link' do
+      it 'within the questions show page, unless I did not make the comment, then I cannot see the link' do
         user_3 = create(:user)
         user_3.confirm
 
@@ -157,15 +157,15 @@ RSpec.describe 'As a visitor' do
   describe 'As a User' do
     describe 'I can delete any questions answers comments that I made' do
       before :each do
-        user = create(:user)
-        user.confirm
+        @user = create(:user)
+        @user.confirm
 
         @question_1 = Question.create!(
           { subject: 'Ruby methods',
             content: 'What is attr_reader?',
             upvotes: 1,
             forum: 0,
-            user_id: user.id }
+            user_id: @user.id }
         )
 
         @user_2 = create(:user)

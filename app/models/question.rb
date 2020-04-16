@@ -28,4 +28,8 @@ class Question < ApplicationRecord
   def self.search(search_params)
     where('content ILIKE :search OR subject ILIKE :search', search: "%#{search_params}%").limit(5)
   end
+
+  def has_verified_answer?
+    !answers.find_by(verification: 'verified').nil?
+  end
 end

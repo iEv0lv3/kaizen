@@ -88,6 +88,16 @@
   <div id="answer-<%= answer.id %>">
     <div class="row mb-3 answerSig">
       <div class="col-md-8 themed-grid-col answer", id="answer-upvotes-<%= answer.id %>">Answer :: <%= answer.upvotes %>
+        <% if !answer.verified? && current_user.nil? %>
+          :: Non-Verified Answer ::
+        <% elsif answer.verified? && current_user.nil? %>
+          :: Verified Answer ::
+        <% elsif current_user.id == answer.question.user_id && !answer.verified? %>
+          :: <%= link_to 'Verify Answer', verify_answer_path(answer), method: :post %>
+        <% elsif (current_user.id == answer.question.user_id && answer.verified?) || current_user %>
+          :: Verified Answer ::
+        <% end %>
+
         <% if current_user.nil? %>
           :: <%= image_tag 'upvote.png' %>
         <% elsif current_user.upvoted?(answer) || current_user.id == answer.user_id %>

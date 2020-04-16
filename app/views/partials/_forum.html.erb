@@ -4,7 +4,11 @@
       <p>Upvotes: <%= question.upvotes %></p>
       <p>Answers: <%= question.answers.count %></p>
       <p>Date Posted: <%= question.created_at.to_date %></p>
-      <p>Verified Answered: </p>
+      <% if question.has_verified_answer? %>
+        <p>Verified Answer :: YES ::</p>
+      <% else %>
+        <p>Verified Answer :: NO ::</p>
+      <% end%>
     </div>
 
     <div class="col-md-8 themed-grid-col questionBox">

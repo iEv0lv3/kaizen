@@ -7,7 +7,11 @@
         <p>Upvotes: <%= result.upvotes %></p>
         <p>Answers: <%= result.question.answers.count %></p>
         <p>Date Posted: <%= result.created_at.to_date %></p>
-        <p>Verified Answered: </p>
+        <% if result.verified? %>
+          <p>Verified Answer :: YES ::</p>
+        <% else %>
+          <p>Verified Answer :: NO ::</p>
+        <% end%>
       </div>
 
       <div class="col-md-8 themed-grid-col questionBox">
@@ -27,7 +31,11 @@
         <p>Upvotes: <%= result.upvotes %></p>
         <p>Answers: <%= result.answers.count %></p>
         <p>Date Posted: <%= result.created_at.to_date %></p>
-        <p>Verified Answered: </p>
+        <% if result.has_verified_answer? %>
+          <p>Verified Answer :: YES ::</p>
+        <% else %>
+          <p>Verified Answer :: NO ::</p>
+        <% end%>
       </div>
 
       <div class="col-md-8 themed-grid-col questionBox">
@@ -40,7 +48,6 @@
         Comments :: <%= result.comments.count %>
       </div>
     </div>
-    
   <% end %>
 <% end %>
 

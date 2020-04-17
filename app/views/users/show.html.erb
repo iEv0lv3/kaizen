@@ -27,14 +27,14 @@
         <%= image_tag 'so-icon-lg.png', width: 50, height: 50 %>
         StackOverflow Account Not Connected
       </div>
-    <% elsif !@user.so_awards.zero? %>
+    <% elsif !@user.award_count.zero? %>
       <div class="profile-logos">
         <%= image_tag 'so-icon-lg.png', width: 50, height: 50 %>
         StackOverflow Account Connected
       </div>
       <div id='so_badges'>
         <%= image_tag 'medal.png', width: 50, height: 50 %>
-        StackOverflow Award Count: <%= @user.so_awards %>
+        StackOverflow Award Count: <%= @user.award_count %>
       </div>
     <% else %>
       <div>

@@ -22,7 +22,7 @@ RSpec.describe 'As a Visitor' do
 
       click_on 'Sign up'
   
-      expect(current_path).to eq('/')
+      expect(current_path).to eq('/profile')
       expect(User.last.first_name).to eq('Fakey')
     end
   end

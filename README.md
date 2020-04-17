@@ -36,7 +36,7 @@
 <h2><span style="color: #ef3852">Production</span></h2>
   <p style="color: #343a40">Looking to figure out how to use our production application? Check out the information below.</p>
   
-<h3 align='center'><span style="color: #ef3852">Signing Up</span></h3>
+<h2 align='center'><span style="color: #ef3852">Signing Up</span></h3>
 
 <p align='center'>
   <img src='https://media.giphy.com/media/dApBYqUA317is4qdM0/giphy.gif'>

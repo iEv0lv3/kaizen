@@ -1,103 +1,113 @@
-<h1 align=center><a href="https://obscure-journey-59246.herokuapp.com">Kaizen</a></h1>
+<h1 align=center>Welcome to <a href="https://obscure-journey-59246.herokuapp.com" style="color: #ef3852">Kaizen</a></h1>
+<h4 align=center style="color: #f9ae06">Your portal to iterative self-improvement.</h4>
 
-<p align=center>An internal forum to ask questions and provide answers for students, alumni, and staff of
- the <em>Turing School of Software and Design</em>. The goal of this community is to provide a
-welcoming environment for new and learning software developers to gain experience asking
-and answering questions, and to provide a living resource of answers for students of all 
-levels.</p>
+<p align="center">
+  <img src='app/assets/images/readme/kaizen_landing.png' alt='The :: Kaizen :: Landing Page'>
+</p>
 
-## Scope of Questions and Answers
+<p align=center style="color: #343a40">Kaizen, as a word, comes from the Japanese philosophy of improving oneself in any way, big or small. Kaizen, as an application, is built with this philosophy at it's core.</p>
 
-The initial iteration of this project has two broad categories of questions:
+<p align='center'>
+  <img src='app/assets/images/readme/turing_horizontal_spacer_sm.png'>
+</p>
 
-* Technical
-  * concepts
-  * issues and bugs
-  * environment setup
-  * any technical question
-* Professional
-  * career
-  * job hunt
-  * interivews
-  * any professional question
-  
-  In addition tag(s) are used to define a specific categories in each forum page.
-  
-  Users are able to leave questions, answers and comments to those questions and answers. 
-  only the user who created the post of any kind has the ability to modify said post. 
-  
-  ## External API Connections
-  
-   This app consumes both GitHub and Stock overlfow API's. What this means is that a user has the ability from their 
-   profile to connect and or sign up for github or stock overflow. connecting their remote accounts to this app. We feel
-   the advantage of having a one stop for all your question and answer needs will help students grow and develope at 
-   quicker pase to keep up with the high demand of Turing.
-   
-    * GitHub
-    * Stock OverFlow 
-    
-  ## Setup
-  
-   For those who wish to see this app for yourself on your local drive please follow these simple instructions.
-   
-   #### First, Fork and Clone
-   
-    <img width="1365" alt="Screen Shot 2020-04-13 at 8 37 27 AM" src="https://user-images.githubusercontent.com/51456013/79129254-1d4bdf00-7d62-11ea-93a8-8227aa1405bf.png">
-    
-   After you have forked your own copy of <em>Kaizen</em> it is time to clone it down to your local computer.
-   Please Click on the clone & Download button. We strongly recommend that you use the SSH function when cloning as 
-   seen below. 
-   
-   <img width="1283" alt="Screen Shot 2020-04-13 at 8 40 41 AM" src="https://user-images.githubusercontent.com/51456013/79129494-892e4780-7d62-11ea-83e1-32855501d264.png">
-   
-   If you click on the button the red arrow is pointing to then it will copy the repository url. 
-   
-   #### Second lets pull your remote and make a local
-   
-    Now that you have your own remote copy of <em>Kaizen</em> lets make a local copy that you can mess around with 
-    yourself!! 
-    
-    You will need to choose a place in your computers terminal to keep your personal copy of <em>Kaizen</em>. Once
-    you have chosen that space please go ahead and run `git clone <command+v>` this will clone the remote repo that we
-    just copied. and pull in your remote copy and make a local copy for you!! it should look like this. 
-    
-    <img width="867" alt="Screen Shot 2020-04-13 at 8 46 07 AM" src="https://user-images.githubusercontent.com/51456013/79129901-3e60ff80-7d63-11ea-908f-014ff00e5e5c.png">
-    
-    after you hit `return` to clone this repo to your local then you have your local version! We are almost done! 
-    
-    #### Finally we need to set up your enviornment
-    
-     To do this we are going to run a lot of commands. However first we have to make sure you have the proper version of
-     ruby set up. <em>Kaizen</em> runs on the programming languages Ruby and Rails so we need to make sure you are set
-     up. if you do not have ruby installed please [click here](https://www.ruby-lang.org/en/documentation/installation/).
-     
-     After your ruby version is installed and ready to go we can finish setting up your local <em>Kaizen</em> app. the 
-     next step is run a `bundle install` this is a nifty app that takes all the defined apps in the <em>Kaizen</em> gem 
-     file and installs them all at once!! if you do not have bundle simply run `gem install bundler` on your command line
-     and you will have it in not time. Once you do please run `bundle install` your page should look like this. 
-     
-     <img width="405" alt="Screen Shot 2020-04-13 at 8 53 12 AM" src="https://user-images.githubusercontent.com/51456013/79130458-3b1a4380-7d64-11ea-8806-e83a283e19ee.png">
-     
-     Now we just need to set up the database and you are set to start coding with your new copy of <em>Kaizen</em>
-     
-     Run these commands in sequence 
-     
-     * `rake db:create`
-     * `rake db:migrate`
-     * `rake db:seed`
-     
-     Once these commands have been run then you just need to make sure everything is working!!! 
-     
-     run `bundle exec rspec` 
-     
-     if your screen looks like this then you are good to go!!! 
-     
-     <img width="1057" alt="Screen Shot 2020-04-13 at 8 57 07 AM" src="https://user-images.githubusercontent.com/51456013/79130783-c72c6b00-7d64-11ea-8978-ce464bccba6f.png">
-     
-## Comments
+# <span style="color: #ef3852">About Kaizen ::</span>
 
- We really enjoyed making <em>KAizen</em> for you to use. if you have any comments questions or concerns please leave a 
- comment below. thank you again and have a great day!! 
+<p style="color: #343a40">Kaizen is an application about community improvement. At it's core, Kaizen seeks to help bridge the gap between students and junior developers breaking in to development and large, professional communities like Stack Overflow. Turing taught us that developer empathy should be at the forfront of developer engagement. As a developer team, we set out to bring empathy to those who may feel intimidated in other spaces. The result? Kaizen.</p>
+
+<p align='center'>
+  <img src='app/assets/images/readme/turing_horizontal_spacer_sm.png'>
+</p>
+
+# <span style="color: #ef3852">Table of Contents ::</span>
+
+* <span style="color: #343a40">[Production](#production)</span>
+  * <span style="color: #343a40">[Signing Up](#signing-up)</span>
+  * <span style="color: #343a40">[Logging In](#logging-in)</span>
+  * <span style="color: #343a40">[Search](#search)</span>
+  * <span style="color: #343a40">[Post Question](#post-question)</span>
+  * <span style="color: #343a40">[Leave a Comment](#leave-a-comment)</span>
+  * <span style="color: #343a40">[Answer a Question](#answer-question)</span>
+* <span style="color: #343a40">[Development](#development)</span>
+  * <span style="color: #343a40">[Versions](#versions)</span>
+  * <span style="color: #343a40">[Setup](#setup)</span>
+
+
+<h1><span style="color: #ef3852">Production</span></h1>
+  <p style="color: #343a40">Looking to figure out how to use our production application? Check out the information below.</p>
+  
+<h2 align='center'><span style="color: #ef3852">Signing Up</span></h2>
+
+<p align='center'>
+  <img src='https://media.giphy.com/media/dApBYqUA317is4qdM0/giphy.gif'>
+</p></br>
+
+<h2 align='center'><span style="color: #ef3852">Logging In</span></h2>
+
+<p align='center'>
+  <img src='https://media.giphy.com/media/f6EFyWkfa69vLiFq5e/giphy.gif'>
+</p></br>
+
+<h2 align='center'><span style="color: #ef3852">Searching the Application</span></h2>
+
+<p align='center'>
+  <img src='https://media.giphy.com/media/kERGwpKpGY0uqXxGMG/giphy.gif'>
+</p></br>
+
+<h2 align='center'><span style="color: #ef3852">Post Question</span></h2>
+
+<p align='center'>
+  <img src='https://media.giphy.com/media/ghTZF3VrKOuER7eTHe/giphy.gif'>
+</p></br>
+
+<h2 align='center'><span style="color: #ef3852">Leave a Comment</span></h2>
+
+<p align='center'>
+  <img src='https://media.giphy.com/media/jsrNB7Wv679AOefFxy/giphy.gif'>
+</p></br>
+
+<h2 align='center'><span style="color: #ef3852">Answer Question</span></h2>
+
+<p align='center'>
+  <img src='https://media.giphy.com/media/jsrNB7Wv679AOefFxy/giphy.gif'>
+</p></br>
+
+<h1><span style="color: #ef3852">Development</span></h1>
+
+<h2><span style="color: #ef3852">Versions</span></h2>
+
+  - Ruby :: [2.7.1](https://www.ruby-lang.org/en/news/2020/03/31/ruby-2-7-1-released)
+  - Rails :: [6.0.2.2](https://guides.rubyonrails.org/)
+  - Devise :: [4.0](https://github.com/heartcombo/devise)
+  - RSpec :: [3.9](https://rspec.info/documentation/)
+
+   
+<h2><span style="color: #ef3852">Setup</span></h2>
+  
+<p>If you are interested in seeing what it looks like under the hood, follow these steps to bring to your local machine.</p>
+
+  * [FORK and CLONE](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) this repository. 
+
+  * Head to your terminal and type the following commands:
+
+    ```
+    bundle install
+    bundle update
+    rails db:{drop,create,migrate,seed}
+    ```
+
+  * Want to see it in a local server? Do this:
+  
+    ```
+    rails s
+    ```
+    Then head to your favorite browser and head to `localhost:3000`
+
+  * Interested in our testing coverage and suite? Do this:
+
+    ```
+    bundle exec rspec
+    ``` 
  
  
   

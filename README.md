@@ -40,37 +40,37 @@
 
 <p align='center'>
   <img src='https://media.giphy.com/media/dApBYqUA317is4qdM0/giphy.gif'>
-</p>
+</p></br>
 
 <h3 align='center'><span style="color: #ef3852">Logging In</span></h3>
 
 <p align='center'>
   <img src='https://media.giphy.com/media/f6EFyWkfa69vLiFq5e/giphy.gif'>
-</p>
+</p></br>
 
 <h3 align='center'><span style="color: #ef3852">Searching the Application</span></h3>
 
 <p align='center'>
   <img src='https://media.giphy.com/media/kERGwpKpGY0uqXxGMG/giphy.gif'>
-</p>
+</p></br>
 
 <h3 align='center'><span style="color: #ef3852">Post Question</span></h3>
 
 <p align='center'>
   <img src='https://media.giphy.com/media/ghTZF3VrKOuER7eTHe/giphy.gif'>
-</p>
+</p></br>
 
 <h3 align='center'><span style="color: #ef3852">Leave a Comment</span></h3>
 
 <p align='center'>
   <img src='https://media.giphy.com/media/jsrNB7Wv679AOefFxy/giphy.gif'>
-</p>
+</p></br>
 
 <h3 align='center'><span style="color: #ef3852">Answer Question</span></h3>
 
 <p align='center'>
   <img src='https://media.giphy.com/media/jsrNB7Wv679AOefFxy/giphy.gif'>
-</p>
+</p></br>
 
 <h1><span style="color: #ef3852">Development</span></h1>
 

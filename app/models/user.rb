@@ -54,11 +54,11 @@ class User < ApplicationRecord
   end
 
   def my_medals
-    if total_activity >= 3
+    if total_activity >= 15
       'kaizen_award_yellow.png'
-    elsif total_activity >= 2
+    elsif total_activity >= 10
       'kaizen_award_red.png'
-    elsif total_activity >= 1
+    elsif total_activity >= 5
       'kaizen_award_blue.png'
     else
       'kaizen_award_green.png'

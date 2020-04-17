@@ -29,7 +29,7 @@ RSpec.describe 'As a Visitor' do
     expect(page).to have_content(@user_1.last_name)
     expect(page).to have_content(@user_1.cohort)
     expect(page).to have_content(@user_1.user_name)
-    expect(page).to have_content(@user_1.status)
+    expect(page).to have_content(@user_1.status.capitalize)
     end
   end
 end

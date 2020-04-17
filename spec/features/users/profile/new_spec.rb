@@ -29,7 +29,6 @@ RSpec.describe 'As a User' do
       end
 
       expect(current_path).to eq(profile_path)
-      expect(page).to have_content("Welcome #{@user.first_name} #{@user.last_name}!")
     end
   end
 end

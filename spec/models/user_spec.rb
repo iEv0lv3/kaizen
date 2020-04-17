@@ -86,61 +86,71 @@ RSpec.describe User, type: :model do
         gh_login: 'iEv0lv3'
       )
 
-      @question_1 = @user.questions.create!(
-         subject: 'Ruby methods',
+      @user4 = User.create!(
+        email: 'user4@turing.io',
+        password: 'user_1',
+        user_name: 'iEv0lv333',
+        first_name: 'User',
+        last_name: '1',
+        cohort: '1811',
+        status: 1,
+        so_uid: 4947551,
+        gh_login: 'iEv0lv3'
+      )
+
+      16.times do
+        @question_1 = @user.questions.create!(
+          subject: 'Ruby methods',
           content: 'What is attr_reader?',
           upvotes: 1,
           forum: 0
-      )
+        )
+      end
 
-      @question_2 = @user2.questions.create!(
-         subject: 'Jobs',
+      10.times do
+        @question_2 = @user2.questions.create!(
+          subject: 'Jobs',
           content: "Why can't I get a job?",
           upvotes: 1,
           forum: 1
-      )
+        )
+      end
 
-      @answer_1 = @question_1.answers.create!(
-        content: 'The attr_reader lets other read your code.',
-        upvotes: 1,
-        user_id: @user.id
-      )
+      5.times do
+        @comment_1 = @question_1.comments.create!(
+          content: 'An amazing comment part 1',
+          user_id: @user3.id
+        )
+      end
 
-      @answer_2 = @question_1.answers.create!(
-        content: 'the attr_reader allows methods in the file to be read by other files.',
-        upvotes: 1,
-        user_id: @user.id
-      )
-
-      @comment_1 = @question_1.comments.create!(
-        content: 'An amazing comment part 1',
-        user_id: @user3.id
-      )
-
-      @comment_2 = @answer_1.comments.create!(
-        content: 'An amazing comment part 2',
-        user_id: @user3.id
-      )
+      3.times do
+        @comment_2 = @question_1.comments.create!(
+          content: 'An amazing comment part 1',
+          user_id: @user4.id
+        )
+      end
     end
 
     it 'my_medals' do
-      expect(@user2.my_medals).to eq('kaizen_award_blue.png')
-      expect(@user3.my_medals).to eq('kaizen_award_red.png')
+      expect(@user4.my_medals).to eq('kaizen_award_green.png')
+      expect(@user3.my_medals).to eq('kaizen_award_blue.png')
+      expect(@user2.my_medals).to eq('kaizen_award_red.png')
+      expect(@user.my_medals).to eq('kaizen_award_yellow.png')
     end
 
 
     it 'my_answers' do
-      expect(@user.my_answers).to eq(2)
+      expect(@user.my_answers).to eq(0)
     end
 
     it 'my_questions' do
-      expect(@user.my_questions).to eq(1)
-      expect(@user2.my_questions).to eq(1)
+      expect(@user.my_questions).to eq(16)
+      expect(@user2.my_questions).to eq(10)
     end
 
     it 'my_comments' do
       expect(@user.my_comments).to eq(0)
-      expect(@user3.my_comments).to eq(2)
+      expect(@user3.my_comments).to eq(5)
     end
   end
 end

@@ -1,8 +1,12 @@
 <div class="row justify-content-md-center profileCenterText">
   <div class="col-md-5-auto">
     <section class='profile-info'>
-      <div id='avatar'><%= image_tag 'https://i.imgur.com/bdnuBf1.jpg', size: '300x150' %></div>
+      <div id='avatar' class="effect2"><%= image_tag 'https://i.imgur.com/CjT8lBB.png' %></div>
       <h2><%= @profile.user.first_name %> <%= @profile.user.last_name %></h2>
+      <div class="profile-info-space"><%= link_to "Edit", "/profile/edit" %>
+      :: <%= link_to "Delete", destroy_user_path(@profile.user), method: :delete, data: { confirm: "You sure?" } %>
+      :: <%= link_to "Change your password", edit_user_registration_path %>
+    </div>
     </section>
   </div>
 
@@ -48,10 +52,6 @@
 
 <div class="row justify-content-md-center profileCenterText">
   <div class="col-md-10-auto">
-    <div class="profile-info-space"><%= link_to "Edit", "/profile/edit" %>
-    :: <%= link_to "Delete", destroy_user_path(@profile.user), method: :delete, data: { confirm: "You sure?" } %>
-    :: <%= link_to "Change your password", edit_user_registration_path %>
-    </div>
     <h4 class="inline-header"><%= @profile.user.user_name %> </h4>
     <h4 class="inline-header">  :: Cohort <%= @profile.user.cohort %></h4>
     <h5 id="<%= @profile.kaizen_medals %>">:: Kaizen Medals :: <%= image_tag @profile.kaizen_medals, alt: 'kaizen_medal' %></h5>
@@ -71,19 +71,19 @@
 <% @profile.recent_questions.each do |question| %>
   <div id='question-<%= question.id %>' class='row justify-content-md-center profileCenterText card-spacing'>
     <div class="col-md-3 themed-grid-col activityBox">
-      <p>Upvotes: <%= question.upvotes %></p>
-      <p>Answers: <%= question.answers.count %></p>
-      <p>Date Posted: <%= question.created_at.to_date %></p>
-        <% if question.has_verified_answer? %>
-          <%= image_tag 'green-check-small.png', class: 'green_verify' %>
-        <% else %>
-          <%= image_tag 'grey-check-small.png', class: 'grey_verify' %>
-        <% end%>
+      <p><%= image_tag 'upvote.png' %> :: <%= question.upvotes %></p>
+      <p>Answers :: <%= question.answers.count %></p>
+      <p><%= image_tag 'calendar.png' %> :: <%= question.created_at.to_date %></p>
+      <% if question.has_verified_answer? %>
+        <%= image_tag 'green-check-small.png', class: 'green_verify' %>
+      <% else %>
+        <%= image_tag 'grey-check-small.png', class: 'grey_verify' %>
+      <% end%>
     </div>
 
     <div class="col-md-7 themed-grid-col questionBox">
       <h4><%= link_to question.subject, "/questions/#{question.id}" %></h4>
-      <div class="questionContent">:: <%= question.content.first(50) + "..." %></div>
+      <div class="questionContent">:: <%= question.content.first(70) + "..." %></div>
       <div class="questionBoxInfo">Posted By :: <%= link_to question.user.user_name, "/users/#{question.user.id}" %></div>
       <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
       <div class="questionBoxInfo">Cohort :: <%= question.user.cohort %></div>

@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_203433) do
     t.string "gh_token"
     t.string "so_token"
     t.text "bio"
-    t.string "avatar", default: "https://i.imgur.com/bdnuBf1.jpg"
+    t.string "avatar", default: "https://i.imgur.com/CjT8lBB.png"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "gh_login"

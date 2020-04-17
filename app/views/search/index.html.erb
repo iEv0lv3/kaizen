@@ -4,9 +4,9 @@
   <% if result.class == Answer %>
     <div id='question-<%= result.question.id %>' class='row mb-3 rowSpace'>
       <div class="col-sm-3 themed-grid-col activityBox">
-        <p>Upvotes: <%= result.upvotes %></p>
-        <p>Answers: <%= result.question.answers.count %></p>
-        <p>Date Posted: <%= result.created_at.to_date %></p>
+        <p><%= image_tag 'upvote.png' %> :: <%= result.upvotes %></p>
+        <p>Answers :: <%= result.question.answers.count %></p>
+        <p><%= image_tag 'calendar.png' %> :: <%= result.created_at.to_date %></p>
         <% if result.verified? %>
           <%= image_tag 'green-check-small.png', class: 'green_verify' %>
         <% else %>
@@ -28,9 +28,9 @@
   <% else %>
     <div id='question-<%= result.id %>' class='row mb-3 rowSpace'>
       <div class="col-sm-3 themed-grid-col activityBox">
-        <p>Upvotes: <%= result.upvotes %></p>
-        <p>Answers: <%= result.answers.count %></p>
-        <p>Date Posted: <%= result.created_at.to_date %></p>
+        <p><%= image_tag 'upvote.png' %> :: <%= result.upvotes %></p>
+        <p>Answers :: <%= result.answers.count %></p>
+        <p><%= image_tag 'calendar.png' %> :: <%= result.created_at.to_date %></p>
         <% if result.has_verified_answer? %>
           <%= image_tag 'green-check-small.png', class: 'green_verify' %>
         <% else %>

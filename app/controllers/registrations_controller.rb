@@ -1,9 +1,14 @@
 class RegistrationsController < Devise::RegistrationsController
   def create
-    status = params[:user][:status].to_i
-    params[:user][:status] = status
-
-    super
+    user = User.new(sign_up_params)
+    if user.save
+      sign_in(user, scope: :user)
+      flash[:success] = 'Welcome to Kaizen! Account created successfully.'
+      redirect_to profile_path
+    else
+      flash[:warning] = user.errors.full_messages.to_sentence
+      redirect_to new_user_registration_path
+    end
   end
 
   private

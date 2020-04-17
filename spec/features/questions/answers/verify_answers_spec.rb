@@ -47,6 +47,8 @@ RSpec.describe 'As a user' do
       click_on 'Verify Answer'
     end
 
-    expect(page).to have_content('Verified Answer')
+    within "#answer-#{@answer_1.id}" do
+      expect(page).to have_css('.verification')
+    end
   end
 end

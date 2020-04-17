@@ -1,7 +1,7 @@
 <div class="row justify-content-md-center profileCenterText">
   <div class="col-md-5-auto">
     <section class='profile-info'>
-      <div id='avatar'><%= image_tag 'https://i.imgur.com/bdnuBf1.jpg', size: '300x150' %></div>
+      <div id='avatar' class='effect2'><%= image_tag 'https://i.imgur.com/CjT8lBB.png' %></div>
       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
     </section>
   </div>
@@ -65,7 +65,7 @@
 </div>
 
 <% @user.recent_questions.each do |question| %>
-  <div id='question-<%= question.id %>' class='row justify-content-md-center profileCenterText'>
+  <div id='question-<%= question.id %>' class='row justify-content-md-center profileCenterText card-spacing'>
     <div class="col-md-3 themed-grid-col activityBox">
       <p>Upvotes: <%= question.upvotes %></p>
       <p>Answers: <%= question.answers.count %></p>

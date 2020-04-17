@@ -47,6 +47,6 @@ RSpec.describe 'As a user' do
       click_on 'Verify Answer'
     end
 
-    expect(page).to have_content(':: Verified Answer ::')
+    expect(page).to have_content('Verified Answer')
   end
 end

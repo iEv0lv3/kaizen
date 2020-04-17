@@ -80,7 +80,6 @@
   - Rails :: [6.0.2.2](https://guides.rubyonrails.org/)
   - Devise :: [4.0](https://github.com/heartcombo/devise)
   - RSpec :: [3.9](https://rspec.info/documentation/)
-
    
 <h2><span style="color: #ef3852">Setup</span></h2>
   
@@ -101,7 +100,7 @@
     ```
     rails s
     ```
-    Then head to your favorite browser and head to `localhost:3000`
+    Then open your favorite browser and head to `localhost:3000`
 
   * Interested in our testing coverage and suite? Do this:
 
@@ -109,5 +108,6 @@
     bundle exec rspec
     ``` 
  
- 
-  
+ ### Contributions
+  * Buit by :: [Dave](https://github.com/DavidHoltkamp1), [Jordan](https://github.com/iEv0lv3), [Sebastian](https://github.com/sasloan), and [Steve](https://github.com/alerrian)
+  * Continuous Integration through [TravisCI](https://docs.travis-ci.com/)

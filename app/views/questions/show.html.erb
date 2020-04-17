@@ -99,11 +99,13 @@
         Answer
 
         <% if current_user.nil? %>
-          <%= answer.verification_status %>
+          <%= image_tag answer.verification_status, class: 'verification' %>
         <% elsif current_user.id == answer.question.user_id && answer.unverified? %>
-          :: <%= link_to 'Verify Answer', verify_answer_path(answer), method: :post %>
+          <div class='answerVerification'>
+            <%= link_to ':: Verify Answer', verify_answer_path(answer), method: :post %>
+          </div>
         <% else %>
-          <%= answer.verification_status %>
+          <%= image_tag answer.verification_status, class: 'verification' %>
         <% end %>
       </div>
 

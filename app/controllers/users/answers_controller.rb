@@ -4,6 +4,7 @@ class Users::AnswersController < Users::BaseController
   end
 
   def create
+    # require 'pry'; binding.pry
     question = Question.find(params[:question_id])
     answer = question.answers.new(answer_params)
     answer.user_id = current_user.id

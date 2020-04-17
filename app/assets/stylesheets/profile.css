@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.card-spacing {
+  margin-bottom: 2em;
+}
+
+.profile-info-space {
+  margin-bottom: 2em;
+}
+
 .inline-header {
   display: inline-flex;
   margin-top: .5em;

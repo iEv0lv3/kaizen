@@ -33,40 +33,40 @@
   * <span style="color: #343a40">[Setup](#setup)</span>
 
 
-<h2><span style="color: #ef3852">Production</span></h2>
+<h1><span style="color: #ef3852">Production</span></h1>
   <p style="color: #343a40">Looking to figure out how to use our production application? Check out the information below.</p>
   
-<h2 align='center'><span style="color: #ef3852">Signing Up</span></h3>
+<h2 align='center'><span style="color: #ef3852">Signing Up</span></h2>
 
 <p align='center'>
   <img src='https://media.giphy.com/media/dApBYqUA317is4qdM0/giphy.gif'>
 </p></br>
 
-<h3 align='center'><span style="color: #ef3852">Logging In</span></h3>
+<h2 align='center'><span style="color: #ef3852">Logging In</span></h2>
 
 <p align='center'>
   <img src='https://media.giphy.com/media/f6EFyWkfa69vLiFq5e/giphy.gif'>
 </p></br>
 
-<h3 align='center'><span style="color: #ef3852">Searching the Application</span></h3>
+<h2 align='center'><span style="color: #ef3852">Searching the Application</span></h2>
 
 <p align='center'>
   <img src='https://media.giphy.com/media/kERGwpKpGY0uqXxGMG/giphy.gif'>
 </p></br>
 
-<h3 align='center'><span style="color: #ef3852">Post Question</span></h3>
+<h2 align='center'><span style="color: #ef3852">Post Question</span></h2>
 
 <p align='center'>
   <img src='https://media.giphy.com/media/ghTZF3VrKOuER7eTHe/giphy.gif'>
 </p></br>
 
-<h3 align='center'><span style="color: #ef3852">Leave a Comment</span></h3>
+<h2 align='center'><span style="color: #ef3852">Leave a Comment</span></h2>
 
 <p align='center'>
   <img src='https://media.giphy.com/media/jsrNB7Wv679AOefFxy/giphy.gif'>
 </p></br>
 
-<h3 align='center'><span style="color: #ef3852">Answer Question</span></h3>
+<h2 align='center'><span style="color: #ef3852">Answer Question</span></h2>
 
 <p align='center'>
   <img src='https://media.giphy.com/media/jsrNB7Wv679AOefFxy/giphy.gif'>

@@ -94,7 +94,7 @@ RSpec.describe 'As a visitor' do
 
       within "#question-#{question.id}" do
         within '.activityBox' do
-          expect(page).to have_content('Verified Answer :: NO ::')
+          expect(page).to have_css('.grey_verify')
         end
       end
     end

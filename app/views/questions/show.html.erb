@@ -1,13 +1,15 @@
 <%#This is the start of the question section %>
 <div class="row mb-3">
-  <div class="col-md-8 themed-grid-col question"><%= @question.subject %> :: <%= @question.upvotes %>
+  <div class="col-md-8 themed-grid-col question"><%= @question.upvotes %>
     <% if current_user.nil? %>
-      :: <%= image_tag 'upvote.png' %>
+      <%= image_tag 'upvote.png' %> ::
     <% elsif current_user.upvoted?(@question) || current_user.id == @question.user_id %>
-      :: <%= image_tag 'upvote.png' %>
+      <%= image_tag 'upvote.png' %> ::
     <% else %>
-      :: <%= link_to image_tag('upvote.png', alt: 'Upvote'), question_upvote_path(@question), method: :post %>
+      <%= link_to image_tag('upvote.png', alt: 'Upvote'), question_upvote_path(@question), method: :post %> ::
     <% end %>
+    <%= @question.subject %>
+
     <% if current_user %>
       <% if current_user.id != @question.user.id %>
       <div class='answerQuestionLink'>
@@ -19,8 +21,7 @@
   <div class="col-sm-2 themed-grid-col sigBox">
   <p><%= link_to @question.user.user_name, "/users/#{@question.user.id}" %> ::
      <%= @question.user.cohort %></p>
-     <p>Level: </p>
-     <p>Awards: </p>
+     <p>Medals :: <%= image_tag @question.user.my_medals %></p>
   </div>
 </div>
 
@@ -57,8 +58,8 @@
       </div>
 
       <div class="col-sm-2 themed-grid-col commSigBox">
-        <p><%= link_to question_comment.user.user_name, "/users/#{question_comment.user.id}" %></p>
-        <p>LEVEL :: AWARDS </p>
+        <p><%= link_to question_comment.user.user_name, "/users/#{question_comment.user.id}" %> :: <%= question_comment.user.cohort %></p>
+        <p>Medals :: <%= image_tag @question.user.my_medals %></p>
       </div>
     </div>
 
@@ -87,29 +88,31 @@
 <% @answers.each do |answer| %>
   <div id="answer-<%= answer.id %>">
     <div class="row mb-3 answerSig">
-      <div class="col-md-8 themed-grid-col answer", id="answer-upvotes-<%= answer.id %>">Answer :: <%= answer.upvotes %>
+      <div class="col-md-8 themed-grid-col answer", id="answer-upvotes-<%= answer.id %>"><%= answer.upvotes %>
         <% if current_user.nil? %>
-          <%= answer.verification_status %>
-        <% elsif current_user.id == answer.question.user_id && answer.unverified? %>
-          :: <%= link_to 'Verify Answer', verify_answer_path(answer), method: :post %>
+          <%= image_tag 'upvote.png' %> ::
+        <% elsif current_user.upvoted?(answer) || current_user.id == answer.user_id %>
+          <%= image_tag 'upvote.png' %> ::
         <% else %>
-          <%= answer.verification_status %>
+          <%= link_to image_tag('upvote.png', alt: 'Upvote'), answer_upvote_path(answer), method: :post %> ::
         <% end %>
+        Answer
 
         <% if current_user.nil? %>
-          :: <%= image_tag 'upvote.png' %>
-        <% elsif current_user.upvoted?(answer) || current_user.id == answer.user_id %>
-          :: <%= image_tag 'upvote.png' %>
+          <%= image_tag answer.verification_status, class: 'verification' %>
+        <% elsif current_user.id == answer.question.user_id && answer.unverified? %>
+          <div class='answerVerification'>
+            <%= link_to ':: Verify Answer', verify_answer_path(answer), method: :post %>
+          </div>
         <% else %>
-          :: <%= link_to image_tag('upvote.png', alt: 'Upvote'), answer_upvote_path(answer), method: :post %>
+          <%= image_tag answer.verification_status, class: 'verification' %>
         <% end %>
       </div>
 
       <div class="col-sm-2 themed-grid-col sigBox">
         <p><%= link_to answer.user.user_name, "/users/#{answer.user.id}" %> ::
           <%= answer.user.cohort %></p>
-        <p>Level: </p>
-        <p>Awards: </p>
+        <p>Medals :: <%= image_tag @question.user.my_medals %></p>
       </div>
     </div>
 
@@ -146,8 +149,8 @@
             </section>
           </div>
           <div class="col-sm-2 themed-grid-col commSigBox">
-            <p><%= link_to answer_comment.user.user_name, "/users/#{answer_comment.user.id}" %></p>
-            <p>LEVEL :: AWARDS </p>
+            <p><%= link_to answer_comment.user.user_name, "/users/#{answer_comment.user.id}" %> :: <%= answer_comment.user.cohort %></p>
+            <p>Medals :: <%= image_tag @question.user.my_medals %></p>
           </div>
         </div>
 

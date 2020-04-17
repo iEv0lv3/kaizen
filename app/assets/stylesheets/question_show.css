@@ -105,3 +105,10 @@ h1 {
 .answerQuestionLink {
   margin-top: -.5em;
 }
+
+.answerVerification a {
+  color: #12f1fc;
+  font-size: .5em;
+  text-decoration: none;
+  margin-top: -.2em;
+}

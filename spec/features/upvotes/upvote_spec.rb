@@ -61,7 +61,7 @@ RSpec.describe 'As a User' do
 
     within '.question' do
       click_on 'Upvote'
-      expect(page).to have_content("#{@question_2.subject} :: 2")
+      expect(page).to have_content("2 :: #{@question_2.subject}")
     end
   end
 
@@ -90,7 +90,7 @@ RSpec.describe 'As a User' do
       click_on 'Upvote'
     end
 
-    expect(page).to have_content("Answer :: 2")
+    expect(page).to have_content("2 :: Answer")
   end
 
   it 'I can upvote a comment on an answer' do

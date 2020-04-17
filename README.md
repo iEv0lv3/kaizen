@@ -33,32 +33,44 @@
   * <span style="color: #343a40">[Setup](#setup)</span>
 
 
-<h2><span style="color: #ef3852">Production ::</span></h2>
+<h2><span style="color: #ef3852">Production</span></h2>
   <p style="color: #343a40">Looking to figure out how to use our production application? Check out the information below.</p>
   
-<h3><span style="color: #ef3852">Signing Up</span></h3>
+<h3 align='center'><span style="color: #ef3852">Signing Up</span></h3>
 
-![Signing Up](https://media.giphy.com/media/dApBYqUA317is4qdM0/giphy.gif)
+<p align='center'>
+  <img src='https://media.giphy.com/media/dApBYqUA317is4qdM0/giphy.gif'>
+</p>
 
-<h2><span style="color: #ef3852">Logging In</span></h2>
+<h3 align='center'><span style="color: #ef3852">Logging In</span></h3>
 
-![Logging In](https://media.giphy.com/media/f6EFyWkfa69vLiFq5e/giphy.gif)
+<p align='center'>
+  <img src='https://media.giphy.com/media/f6EFyWkfa69vLiFq5e/giphy.gif'>
+</p>
 
-<h2><span style="color: #ef3852">Searching the Application</span></h2>
+<h3 align='center'><span style="color: #ef3852">Searching the Application</span></h3>
 
-![Search](https://media.giphy.com/media/kERGwpKpGY0uqXxGMG/giphy.gif)
+<p align='center'>
+  <img src='https://media.giphy.com/media/kERGwpKpGY0uqXxGMG/giphy.gif'>
+</p>
 
-<h2><span style="color: #ef3852">Post Question</span></h2>
+<h3><span style="color: #ef3852">Post Question</span></h3>
 
-![Post Question](https://media.giphy.com/media/ghTZF3VrKOuER7eTHe/giphy.gif)
+<p align='center'>
+  <img src='https://media.giphy.com/media/ghTZF3VrKOuER7eTHe/giphy.gif'>
+</p>
 
-<h2><span style="color: #ef3852">Leave a Comment</span></h2>
+<h3 align='center'><span style="color: #ef3852">Leave a Comment</span></h3>
 
-![Leave Comment](https://media.giphy.com/media/jsrNB7Wv679AOefFxy/giphy.gif)
+<p align='center'>
+  <img src='https://media.giphy.com/media/jsrNB7Wv679AOefFxy/giphy.gif'>
+</p>
 
-<h2><span style="color: #ef3852">Answer Question</span></h2>
+<h3 align='center'><span style="color: #ef3852">Answer Question</span></h3>
 
-![Answer Question](https://media.giphy.com/media/jsrNB7Wv679AOefFxy/giphy.gif)
+<p align='center'>
+  <img src='https://media.giphy.com/media/jsrNB7Wv679AOefFxy/giphy.gif'>
+</p>
 
 <h1><span style="color: #ef3852">Development</span></h1>
 
@@ -70,9 +82,9 @@
   - RSpec :: [3.9](https://rspec.info/documentation/)
 
    
-  <h2><span style="color: #ef3852">Setup</span></h2>
+<h2><span style="color: #ef3852">Setup</span></h2>
   
-  <p>If you are interested in seeing what it looks like under the hood, follow these steps to bring to your local machine.</p>
+<p>If you are interested in seeing what it looks like under the hood, follow these steps to bring to your local machine.</p>
 
   * [FORK and CLONE](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) this repository. 
 

@@ -1,12 +1,12 @@
-<h1 align=center><a href="https://obscure-journey-59246.herokuapp.com">Kaizen</a></h1>
+<h1 align=center>Welcome to <a href="https://obscure-journey-59246.herokuapp.com" style="color: #12f1fc">Kaizen</a></h1>
+<h4 align=center style="color: #f9ae06">Your portal to iterative self-improvement.</h4>
 
-<p align=center>An internal forum to ask questions and provide answers for students, alumni, and staff of
- the <em>Turing School of Software and Design</em>. The goal of this community is to provide a
-welcoming environment for new and learning software developers to gain experience asking
-and answering questions, and to provide a living resource of answers for students of all 
-levels.</p>
+![The :: Kaizen :: Landing Page](app/assets/images/readme/kaizen_landing.jpg)
+![](app/assets/images/readme/turing_horizontal_spacer.png)
 
-## Scope of Questions and Answers
+<p align=center>Kaizen, as a word, comes from the Japanese philosophy of improving oneself in any way, big or small. Kaizen, as an application, is built with this philosophy at it's core.</p>
+
+## <span style="color: #12f1fc">Scope of Questions and Answers</span>
 
 The initial iteration of this project has two broad categories of questions:
 

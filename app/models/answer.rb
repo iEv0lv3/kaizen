@@ -21,4 +21,8 @@ class Answer < ApplicationRecord
   def verify_answer
     self.verification = 1
   end
+
+  def verification_status
+    self.verified? ? 'green-check-small.png' : ''
+  end
 end

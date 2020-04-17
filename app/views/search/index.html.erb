@@ -8,9 +8,9 @@
         <p>Answers: <%= result.question.answers.count %></p>
         <p>Date Posted: <%= result.created_at.to_date %></p>
         <% if result.verified? %>
-          <p>Verified Answer :: YES ::</p>
+          <%= image_tag 'green-check-small.png', class: 'green_verify' %>
         <% else %>
-          <p>Verified Answer :: NO ::</p>
+          <%= image_tag 'grey-check-small.png', class: 'grey_verify' %>
         <% end%>
       </div>
 
@@ -32,9 +32,9 @@
         <p>Answers: <%= result.answers.count %></p>
         <p>Date Posted: <%= result.created_at.to_date %></p>
         <% if result.has_verified_answer? %>
-          <p>Verified Answer :: YES ::</p>
+          <%= image_tag 'green-check-small.png', class: 'green_verify' %>
         <% else %>
-          <p>Verified Answer :: NO ::</p>
+          <%= image_tag 'grey-check-small.png', class: 'grey_verify' %>
         <% end%>
       </div>
 

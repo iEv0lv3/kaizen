@@ -5,9 +5,9 @@
       <p>Answers: <%= question.answers.count %></p>
       <p>Date Posted: <%= question.created_at.to_date %></p>
       <% if question.has_verified_answer? %>
-        <p>Verified Answer :: YES ::</p>
+        <%= image_tag 'green-check-small.png', class: 'green_verify' %>
       <% else %>
-        <p>Verified Answer :: NO ::</p>
+        <%= image_tag 'grey-check-small.png', class: 'grey_verify' %>
       <% end%>
     </div>
 

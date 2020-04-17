@@ -54,7 +54,7 @@
   <img src='https://media.giphy.com/media/kERGwpKpGY0uqXxGMG/giphy.gif'>
 </p>
 
-<h3><span style="color: #ef3852">Post Question</span></h3>
+<h3 align='center'><span style="color: #ef3852">Post Question</span></h3>
 
 <p align='center'>
   <img src='https://media.giphy.com/media/ghTZF3VrKOuER7eTHe/giphy.gif'>

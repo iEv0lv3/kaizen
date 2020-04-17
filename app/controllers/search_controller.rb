@@ -7,7 +7,7 @@ class SearchController < ApplicationController
       flash[:warning] = 'You must enter something to search.'
       redirect_back(fallback_location: root_path)
     elsif @results.sorted.empty?
-      flash[:warning] = 'Improve your query for better results.'
+      flash[:warning] = 'No results. Improve your query for better results.'
     end
   end
 end

@@ -49,8 +49,8 @@ RSpec.describe 'As a visitor' do
         click_on 'Sign up'
       end
 
-      expect(current_path).to eq(root_path)
-      expect(page).to have_content('Welcome! You have signed up successfully.')
+      expect(current_path).to eq('/profile')
+      expect(page).to have_content('Welcome to Kaizen! Account created successfully.')
     end
 
     it 'can not register for an account if I do not fill in the info correctly ' do
@@ -79,7 +79,7 @@ RSpec.describe 'As a visitor' do
         click_on 'Sign up'
       end
 
-      expect(page).to have_content('× 2 errors must be fixed Cohort is too long (maximum is 4 characters)Cohort is not a number')
+      expect(page).to have_content('Cohort is too long (maximum is 4 characters) and Cohort is not a number')
     end
 
     it 'I do not see a profile button in the nav bar' do

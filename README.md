@@ -1,4 +1,4 @@
-<h1 align=center>Welcome to <a href="https://obscure-journey-59246.herokuapp.com" style="color: #ef3852">Kaizen</a></h1>
+<h1 align=center>Welcome to <a href="https://www.kaizen.fyi" style="color: #ef3852">Kaizen</a></h1>
 <h4 align=center style="color: #f9ae06">Your portal to iterative self-improvement.</h4>
 
 <p align="center">

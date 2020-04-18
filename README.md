@@ -109,5 +109,5 @@
     ``` 
  
  ### Contributions
-  * Buit by :: [Dave](https://github.com/DavidHoltkamp1), [Jordan](https://github.com/iEv0lv3), [Sebastian](https://github.com/sasloan), and [Steve](https://github.com/alerrian)
+  * Built by :: [Dave](https://github.com/DavidHoltkamp1), [Jordan](https://github.com/iEv0lv3), [Sebastian](https://github.com/sasloan), and [Steve](https://github.com/alerrian)
   * Continuous Integration through [TravisCI](https://docs.travis-ci.com/)

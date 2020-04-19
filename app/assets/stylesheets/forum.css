@@ -27,12 +27,16 @@ h1 {
   margin-bottom: .25em;
 }
 
-.questionBox {
+.forum-box {
   background-color: white;
   border-radius: .5em;
-  padding-top: .3em;
-  padding-bottom: .3em;
+  padding: 1em;
   box-shadow: 0 0 5px 3px rgba(211, 211, 211, .5);
+}
+
+.forum-user-info {
+  padding-top: .5em;
+  border-top: 1px solid rgba(211, 211, 211, 1);
 }
 
 .questionContent {
@@ -52,11 +56,11 @@ h1 {
   margin-left: .5em;
 }
 
-.questionBox a {
+.forum-box a {
   text-decoration: none;
   color: #ef3852;
 }
 
-.questionBox a:hover {
+.forum-box a:hover {
   text-decoration: underline;
 }

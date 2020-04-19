@@ -101,9 +101,12 @@ h1 {
 }
 
 .question-crud {
-  margin-bottom: .5em;
   font-size: .7em;
   text-align: right;
+}
+
+.question-crud-box {
+  margin-bottom: .5em;
 }
 
 .leave-comment {

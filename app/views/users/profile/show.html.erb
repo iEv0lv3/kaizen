@@ -69,7 +69,7 @@
 </div>
 
 <% @profile.recent_questions.each do |question| %>
-  <div id='question-<%= question.id %>' class='row justify-content-md-center card-spacing'>
+  <div id='question-<%= question.id %>' class='row justify-content-center card-spacing'>
     <div class="col-sm-2 themed-grid-col activityBox">
       <p><%= image_tag 'upvote.png' %> :: <%= question.upvotes %></p>
       <p>Answers :: <%= question.answers.count %></p>

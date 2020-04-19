@@ -2,6 +2,10 @@
   margin-bottom: .5em
 }
 
+.search-block-position {
+  margin-top: 20vh;
+}
+
 .searchButton {
   width: 10em;
   margin-top: 1em;
@@ -16,11 +20,6 @@
   justify-content: center;
 }
 
-.searchBarPostion {
-  margin: 0;
-  position: absolute;
-  top: 25%;
-}
 
 .submitButton {
   width: 10em;

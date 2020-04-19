@@ -2,8 +2,8 @@
 
 <% @results.sorted.each do |result| %>
   <% if result.class == Answer %>
-    <div id='question-<%= result.question.id %>' class='row mb-3 rowSpace'>
-      <div class="col-sm-3 themed-grid-col activityBox">
+    <div id='question-<%= result.question.id %>' class='row justify-content-center rowSpace'>
+      <div class="col-sm-2 themed-grid-col activityBox">
         <p><%= image_tag 'upvote.png' %> :: <%= result.upvotes %></p>
         <p>Answers :: <%= result.question.answers.count %></p>
         <p><%= image_tag 'calendar.png' %> :: <%= result.created_at.to_date %></p>
@@ -14,20 +14,24 @@
         <% end%>
       </div>
 
-      <div class="col-md-8 themed-grid-col questionBox">
-        <h4 class="answerSearchResult"><%= link_to result.question.subject.first(70), question_show_path(result.question) %></h4>
-        <div class="questionContent">:: <%= result.content.first(50) + "..." %></div>
-        <div class="questionBoxInfo">Posted By :: <%= link_to result.user.user_name, "/users/#{result.user.id}" %></div>
-        <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
-        <div class="questionBoxInfo">Cohort :: <%= result.user.cohort %></div>
-        <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
-        Comments :: <%= result.comments.count %>
+      <div class="col-sm-8 themed-grid-col forum-box">
+        <h4 class="answerSearchResult"><%= link_to "A :: #{result.question.subject.first(55)}...", question_show_path(result.question) %></h4>
+        <div class="questionContent">:: <%= result.content.first(70) + "..." %></div>
+        <div class='forum-user-info'>
+          <div class="questionBoxInfo">Posted By :: <%= link_to result.user.user_name, "/users/#{result.user.id}" %></div>
+          <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
+          <div class="questionBoxInfo">Cohort :: <%= result.user.cohort %></div>
+          <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
+          <div class='questionBoxInfo'>Comments :: <%= result.comments.count %></div>
+          <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
+          <div class='questionBoxInfo'>Medals :: <%= image_tag result.user.my_medals %></div>
+        </div>
       </div>
     </div>
 
   <% else %>
-    <div id='question-<%= result.id %>' class='row mb-3 rowSpace'>
-      <div class="col-sm-3 themed-grid-col activityBox">
+    <div id='question-<%= result.id %>' class='row justify-content-center rowSpace'>
+      <div class="col-sm-2 themed-grid-col activityBox">
         <p><%= image_tag 'upvote.png' %> :: <%= result.upvotes %></p>
         <p>Answers :: <%= result.answers.count %></p>
         <p><%= image_tag 'calendar.png' %> :: <%= result.created_at.to_date %></p>
@@ -38,14 +42,18 @@
         <% end%>
       </div>
 
-      <div class="col-md-8 themed-grid-col questionBox">
-        <h4><%= link_to  result.subject.first(70), question_show_path(result) %></h4>
-        <div class="questionContent">:: <%= result.content.first(50) + "..." %></div>
-        <div class="questionBoxInfo">Posted By :: <%= link_to result.user.user_name, "/users/#{result.user.id}" %></div>
-        <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
-        <div class="questionBoxInfo">Cohort :: <%= result.user.cohort %></div>
-        <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
-        Comments :: <%= result.comments.count %>
+      <div class="col-sm-8 themed-grid-col forum-box">
+        <h4><%= link_to  "Q :: #{result.subject.first(55)}...", question_show_path(result) %></h4>
+        <div class="questionContent">:: <%= result.content.first(70) + "..." %></div>
+        <div class='forum-user-info'>
+          <div class="questionBoxInfo">Posted By :: <%= link_to result.user.user_name, "/users/#{result.user.id}" %></div>
+          <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
+          <div class="questionBoxInfo">Cohort :: <%= result.user.cohort %></div>
+          <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
+          <div class='questionBoxInfo'>Comments :: <%= result.comments.count %></div>
+          <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
+          <div class='questionBoxInfo'>Medals :: <%= image_tag result.user.my_medals %></div>
+        </div>
       </div>
     </div>
   <% end %>

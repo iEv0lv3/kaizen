@@ -37,16 +37,26 @@ h1 {
   margin: .2em;
 }
 
-.answerSig {
-  margin-top: 2em;
+.answer-title-row {
+  margin-top: 4em;
+  margin-bottom: 1em;
 }
-
 
 .questionBox {
   background-color: white;
   border-radius: .5em;
-  padding: 1em;
+  padding-top: 2em;
+  padding-right: 2em;
+  padding-left: 2em;
+  padding-bottom: .5em;
   box-shadow: 0 0 5px 3px rgba(211, 211, 211, .5);
+}
+
+.post-user-info {
+  margin-top: 2.5em;
+  padding-top: .5em;
+  border-top: 1px solid rgba(211, 211, 211, 1);
+  text-align: right;
 }
 
 .commentBox {
@@ -90,7 +100,21 @@ h1 {
   font-size: .5em;
 }
 
-.leave-comment > a {
+.question-crud {
+  font-size: .7em;
+  text-align: right;
+}
+
+.question-crud-box {
+  margin-bottom: .5em;
+}
+
+.leave-comment {
+  margin-bottom: 1.5em;
+  margin-top: 1em;
+}
+
+.leave-comment-link {
   font-size: .7em;
 }
 
@@ -104,6 +128,7 @@ h1 {
 
 .answerQuestionLink {
   margin-top: -.5em;
+  margin-bottom: 1em;
 }
 
 .answerVerification a {

@@ -36,3 +36,9 @@
   background-color: #138496;
   border-color: #117a8b;
 }
+.kaizen-position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: .5em;
+}

@@ -69,8 +69,8 @@
 </div>
 
 <% @profile.recent_questions.each do |question| %>
-  <div id='question-<%= question.id %>' class='row justify-content-md-center profileCenterText card-spacing'>
-    <div class="col-md-3 themed-grid-col activityBox">
+  <div id='question-<%= question.id %>' class='row justify-content-md-center card-spacing'>
+    <div class="col-sm-2 themed-grid-col activityBox">
       <p><%= image_tag 'upvote.png' %> :: <%= question.upvotes %></p>
       <p>Answers :: <%= question.answers.count %></p>
       <p><%= image_tag 'calendar.png' %> :: <%= question.created_at.to_date %></p>
@@ -81,14 +81,18 @@
       <% end%>
     </div>
 
-    <div class="col-md-7 themed-grid-col questionBox">
+    <div class="col-sm-7 themed-grid-col forum-box">
       <h4><%= link_to question.subject, "/questions/#{question.id}" %></h4>
       <div class="questionContent">:: <%= question.content.first(70) + "..." %></div>
-      <div class="questionBoxInfo">Posted By :: <%= link_to question.user.user_name, "/users/#{question.user.id}" %></div>
-      <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
-      <div class="questionBoxInfo">Cohort :: <%= question.user.cohort %></div>
-      <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
-      Comments :: <%= question.comments.count %>
+      <div class='forum-user-info'>
+        <div class="questionBoxInfo">Posted By :: <%= link_to question.user.user_name, "/users/#{question.user.id}" %></div>
+        <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
+        <div class="questionBoxInfo">Cohort :: <%= question.user.cohort %></div>
+        <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
+        <div class='questionBoxInfo'>Comments :: <%= question.comments.count %></div>
+        <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
+        <div class='questionBoxInfo'>Medals :: <%= image_tag question.user.my_medals %></div>
+      </div>
     </div>
   </div>
 <% end %>

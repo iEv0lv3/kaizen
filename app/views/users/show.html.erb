@@ -70,13 +70,16 @@
   <div id='question-<%= question.id %>' class='row justify-content-center card-spacing'>
     <div class="col-sm-2 themed-grid-col activityBox">
       <p><%= image_tag 'upvote.png' %> :: <%= question.upvotes %></p>
-      <p>Answers :: <%= question.answers.count %></p>
-      <p><%= image_tag 'calendar.png' %> :: <%= question.created_at.to_date %></p>
       <% if question.has_verified_answer? %>
-          <%= image_tag 'green-check-small.png', class: 'green_verify' %>
-        <% else %>
-          <%= image_tag 'grey-check-small.png', class: 'grey_verify' %>
+        <%= image_tag 'green-check-small.png', class: 'green_verify' %>
+      <% else %>
+        <%= image_tag 'grey-check-small.png', class: 'grey_verify' %>
       <% end%>
+      <p>Answers :: <%= question.answers.count %></p>
+      <div>
+        <%= image_tag 'calendar.png' %>
+        <p class='text-center-h'><%= question.created_at.strftime("%B %-d, %Y") %></p>
+      </div>
     </div>
 
     <div class="col-sm-7 themed-grid-col forum-box">

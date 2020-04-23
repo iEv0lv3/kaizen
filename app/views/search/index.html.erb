@@ -4,18 +4,23 @@
   <% if result.class == Answer %>
     <div id='question-<%= result.question.id %>' class='row justify-content-center rowSpace'>
       <div class="col-sm-2 themed-grid-col activityBox">
+
+
         <p><%= image_tag 'upvote.png' %> :: <%= result.upvotes %></p>
-        <p>Answers :: <%= result.question.answers.count %></p>
-        <p><%= image_tag 'calendar.png' %> :: <%= result.created_at.to_date %></p>
         <% if result.verified? %>
           <%= image_tag 'green-check-small.png', class: 'green_verify' %>
         <% else %>
           <%= image_tag 'grey-check-small.png', class: 'grey_verify' %>
         <% end%>
+        <p>Answers :: <%= result.question.answers.count %></p>
+        <div>
+          <%= image_tag 'calendar.png' %>
+          <p class='text-center-h'><%= result.created_at.strftime("%B %-d, %Y") %></p>
+        </div>
       </div>
 
       <div class="col-sm-8 themed-grid-col forum-box">
-        <h4 class="answerSearchResult"><%= link_to "A :: #{result.question.subject.first(55)}...", question_show_path(result.question) %></h4>
+        <h4 class="answerSearchResult"><%= link_to result.question.subject.length > 60 ? "A :: #{result.question.subject.first(60)}..." : "A :: #{result.question.subject}", question_show_path(result.question) %></h4>
         <div class="questionContent">:: <%= result.content.first(70) + "..." %></div>
         <div class='forum-user-info'>
           <div class="questionBoxInfo">Posted By :: <%= link_to result.user.user_name, "/users/#{result.user.id}" %></div>
@@ -33,17 +38,20 @@
     <div id='question-<%= result.id %>' class='row justify-content-center rowSpace'>
       <div class="col-sm-2 themed-grid-col activityBox">
         <p><%= image_tag 'upvote.png' %> :: <%= result.upvotes %></p>
-        <p>Answers :: <%= result.answers.count %></p>
-        <p><%= image_tag 'calendar.png' %> :: <%= result.created_at.to_date %></p>
         <% if result.has_verified_answer? %>
           <%= image_tag 'green-check-small.png', class: 'green_verify' %>
         <% else %>
           <%= image_tag 'grey-check-small.png', class: 'grey_verify' %>
         <% end%>
+        <p>Answers :: <%= result.answers.count %></p>
+        <div>
+          <%= image_tag 'calendar.png' %>
+          <p class='text-center-h'><%= result.created_at.strftime("%B %-d, %Y") %></p>
+        </div>
       </div>
 
       <div class="col-sm-8 themed-grid-col forum-box">
-        <h4><%= link_to  "Q :: #{result.subject.first(55)}...", question_show_path(result) %></h4>
+        <h4><%= link_to result.subject.length > 60 ? "Q :: #{result.subject.first(60)}..." : "Q :: #{result.subject}", question_show_path(result) %></h4>
         <div class="questionContent">:: <%= result.content.first(70) + "..." %></div>
         <div class='forum-user-info'>
           <div class="questionBoxInfo">Posted By :: <%= link_to result.user.user_name, "/users/#{result.user.id}" %></div>

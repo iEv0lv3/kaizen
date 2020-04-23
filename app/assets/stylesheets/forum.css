@@ -9,6 +9,12 @@ h1 {
   margin-bottom: 2em !important;
 }
 
+.text-center-h {
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0em;
+}
+
 .forum-name {
   color: #12f1fc;
 }
@@ -20,6 +26,7 @@ h1 {
   padding: .3em;
   padding-top: .9em;
   text-align: center;
+  color: rgba(88, 88, 88, 1);
   box-shadow: 0 0 5px 3px rgba(211, 211, 211, 0.5);
 }
 

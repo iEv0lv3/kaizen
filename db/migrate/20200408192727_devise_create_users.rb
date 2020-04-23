@@ -40,7 +40,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :gh_token
       t.string :so_token
       t.text :bio
-      t.string :avatar, default: 'https://i.imgur.com/CjT8lBB.png'
+      t.string :avatar, default: 'https://i.imgur.com/LZfHe9N.jpg'
 
       t.timestamps null: false
     end

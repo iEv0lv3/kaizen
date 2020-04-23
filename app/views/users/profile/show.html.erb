@@ -1,7 +1,7 @@
 <div class="row justify-content-md-center profileCenterText">
   <div class="col-md-5-auto">
     <section class='profile-info'>
-      <div id='avatar' class="effect2"><%= image_tag 'https://i.imgur.com/CjT8lBB.png' %></div>
+      <div id='avatar' class="effect2"><%= image_tag @profile.user.avatar %></div>
       <h2><%= @profile.user.first_name %> <%= @profile.user.last_name %></h2>
       <div class="profile-info-space"><%= link_to "Edit", "/profile/edit" %>
       :: <%= link_to "Delete", destroy_user_path(@profile.user), method: :delete, data: { confirm: "You sure?" } %>
@@ -72,17 +72,20 @@
   <div id='question-<%= question.id %>' class='row justify-content-center card-spacing'>
     <div class="col-sm-2 themed-grid-col activityBox">
       <p><%= image_tag 'upvote.png' %> :: <%= question.upvotes %></p>
-      <p>Answers :: <%= question.answers.count %></p>
-      <p><%= image_tag 'calendar.png' %> :: <%= question.created_at.to_date %></p>
       <% if question.has_verified_answer? %>
         <%= image_tag 'green-check-small.png', class: 'green_verify' %>
       <% else %>
         <%= image_tag 'grey-check-small.png', class: 'grey_verify' %>
       <% end%>
+      <p>Answers :: <%= question.answers.count %></p>
+      <div>
+        <%= image_tag 'calendar.png' %>
+        <p class='text-center-h'><%= question.created_at.strftime("%B %-d, %Y") %></p>
+      </div>
     </div>
 
     <div class="col-sm-7 themed-grid-col forum-box">
-      <h4><%= link_to question.subject, "/questions/#{question.id}" %></h4>
+      <h4><%= link_to question.subject.length > 55 ? question.subject.first(55) + "..." : question.subject, "/questions/#{question.id}" %></h4>
       <div class="questionContent">:: <%= question.content.first(70) + "..." %></div>
       <div class='forum-user-info'>
         <div class="questionBoxInfo">Posted By :: <%= link_to question.user.user_name, "/users/#{question.user.id}" %></div>

@@ -3,7 +3,7 @@
 }
 
 .search-block-position {
-  margin-top: 20vh;
+  margin-top: 18vh;
 }
 
 .searchButton {
@@ -41,4 +41,5 @@
   align-items: center;
   justify-content: center;
   margin-bottom: .5em;
+  font-size: 1.5em;
 }

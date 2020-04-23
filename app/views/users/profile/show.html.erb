@@ -1,7 +1,7 @@
 <div class="row justify-content-md-center profileCenterText">
   <div class="col-md-5-auto">
     <section class='profile-info'>
-      <div id='avatar' class="effect2"><%= image_tag 'https://i.imgur.com/CjT8lBB.png' %></div>
+      <div id='avatar' class="effect2"><%= image_tag @profile.user.avatar %></div>
       <h2><%= @profile.user.first_name %> <%= @profile.user.last_name %></h2>
       <div class="profile-info-space"><%= link_to "Edit", "/profile/edit" %>
       :: <%= link_to "Delete", destroy_user_path(@profile.user), method: :delete, data: { confirm: "You sure?" } %>
@@ -85,7 +85,7 @@
     </div>
 
     <div class="col-sm-7 themed-grid-col forum-box">
-      <h4><%= link_to question.subject, "/questions/#{question.id}" %></h4>
+      <h4><%= link_to question.subject.length > 55 ? question.subject.first(55) + "..." : question.subject, "/questions/#{question.id}" %></h4>
       <div class="questionContent">:: <%= question.content.first(70) + "..." %></div>
       <div class='forum-user-info'>
         <div class="questionBoxInfo">Posted By :: <%= link_to question.user.user_name, "/users/#{question.user.id}" %></div>

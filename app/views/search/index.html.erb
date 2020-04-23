@@ -1,9 +1,17 @@
-<h1><span class='forum-name'>Search</span> Results</h1>
+<h1 class='forum-header'><span class='forum-name'>Search</span> Results</h1>
+
+<div class="row justify-content-md-center profileCenterText" id="recent-activity-h4">
+  <div class="col-md-10">
+    <div id="profile-spacer-div">
+      <%= image_tag 'turing_horizontal_spacer.png', id: 'profileSpacer' %>
+    </div>
+  </div>
+</div>
 
 <% @results.sorted.each do |result| %>
   <% if result.class == Answer %>
     <div id='question-<%= result.question.id %>' class='row justify-content-center rowSpace'>
-      <div class="col-sm-2 themed-grid-col activityBox">
+      <div class="col-sm-2 themed-grid-col activityBox effect7">
 
 
         <p><%= image_tag 'upvote.png' %> :: <%= result.upvotes %></p>
@@ -19,7 +27,7 @@
         </div>
       </div>
 
-      <div class="col-sm-8 themed-grid-col forum-box">
+      <div class="col-sm-8 themed-grid-col forum-box effect7">
         <h4 class="answerSearchResult"><%= link_to result.question.subject.length > 60 ? "A :: #{result.question.subject.first(60)}..." : "A :: #{result.question.subject}", question_show_path(result.question) %></h4>
         <div class="questionContent">:: <%= result.content.first(70) + "..." %></div>
         <div class='forum-user-info'>
@@ -36,7 +44,7 @@
 
   <% else %>
     <div id='question-<%= result.id %>' class='row justify-content-center rowSpace'>
-      <div class="col-sm-2 themed-grid-col activityBox">
+      <div class="col-sm-2 themed-grid-col activityBox effect7">
         <p><%= image_tag 'upvote.png' %> :: <%= result.upvotes %></p>
         <% if result.has_verified_answer? %>
           <%= image_tag 'green-check-small.png', class: 'green_verify' %>
@@ -50,7 +58,7 @@
         </div>
       </div>
 
-      <div class="col-sm-8 themed-grid-col forum-box">
+      <div class="col-sm-8 themed-grid-col forum-box effect7">
         <h4><%= link_to result.subject.length > 60 ? "Q :: #{result.subject.first(60)}..." : "Q :: #{result.subject}", question_show_path(result) %></h4>
         <div class="questionContent">:: <%= result.content.first(70) + "..." %></div>
         <div class='forum-user-info'>

@@ -68,7 +68,7 @@
 
 <% @user.recent_questions.each do |question| %>
   <div id='question-<%= question.id %>' class='row justify-content-center card-spacing'>
-    <div class="col-sm-2 themed-grid-col activityBox">
+    <div class="col-sm-2 themed-grid-col activityBox effect7">
       <p><%= image_tag 'upvote.png' %> :: <%= question.upvotes %></p>
       <% if question.has_verified_answer? %>
         <%= image_tag 'green-check-small.png', class: 'green_verify' %>
@@ -82,7 +82,7 @@
       </div>
     </div>
 
-    <div class="col-sm-7 themed-grid-col forum-box">
+    <div class="col-sm-7 themed-grid-col forum-box effect7">
       <h4><%= link_to question.subject.length > 55 ? question.subject.first(55) + "..." : question.subject, "/questions/#{question.id}" %></h4>
       <div class="questionContent">:: <%= question.content.first(70) + "..." %></div>
       <div class='forum-user-info'>

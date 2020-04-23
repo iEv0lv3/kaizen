@@ -1,8 +1,10 @@
 h1 {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2em;
   width: fit-content;
+  text-align: center;
+}
+
+.forum-header {
+  margin-bottom: -.7em;
 }
 
 .rowSpace {
@@ -27,7 +29,7 @@ h1 {
   padding-top: .9em;
   text-align: center;
   color: rgba(88, 88, 88, 1);
-  box-shadow: 0 0 5px 3px rgba(211, 211, 211, 0.5);
+  /* box-shadow: 0 0 5px 3px rgba(211, 211, 211, 0.5); */
 }
 
 .activityBox > p {
@@ -38,7 +40,7 @@ h1 {
   background-color: white;
   border-radius: .5em;
   padding: 1em;
-  box-shadow: 0 0 5px 3px rgba(211, 211, 211, .5);
+  /* box-shadow: 0 0 5px 3px rgba(211, 211, 211, .5); */
 }
 
 .forum-user-info {

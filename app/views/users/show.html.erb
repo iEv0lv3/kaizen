@@ -1,7 +1,7 @@
 <div class="row justify-content-center profileCenterText">
   <div class="col-sm-5-auto">
     <section class='profile-info'>
-      <div id='avatar' class='effect2'><%= image_tag 'https://i.imgur.com/CjT8lBB.png' %></div>
+      <div id='avatar' class='effect2'><%= image_tag @user.avatar %></div>
       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
     </section>
   </div>
@@ -83,7 +83,7 @@
     </div>
 
     <div class="col-sm-7 themed-grid-col forum-box">
-      <h4><%= link_to question.subject, "/questions/#{question.id}" %></h4>
+      <h4><%= link_to question.subject.length > 55 ? question.subject.first(55) + "..." : question.subject, "/questions/#{question.id}" %></h4>
       <div class="questionContent">:: <%= question.content.first(70) + "..." %></div>
       <div class='forum-user-info'>
         <div class="questionBoxInfo">Posted By :: <%= link_to question.user.user_name, "/users/#{question.user.id}" %></div>

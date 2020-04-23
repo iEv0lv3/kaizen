@@ -15,7 +15,7 @@ h1 {
   padding-top: .3em;
   padding-bottom: .3em;
   text-align: center;
-  box-shadow: 0 0 5px 3px rgba(211, 211, 211, 0.5);
+  /* box-shadow: 0 0 5px 3px rgba(211, 211, 211, 0.5); */
 }
 
 .sigBox > p {
@@ -49,7 +49,7 @@ h1 {
   padding-right: 2em;
   padding-left: 2em;
   padding-bottom: .5em;
-  box-shadow: 0 0 5px 3px rgba(211, 211, 211, .5);
+  /* box-shadow: 0 0 5px 3px rgba(211, 211, 211, .5); */
 }
 
 .post-user-info {
@@ -103,9 +103,6 @@ h1 {
 .question-crud {
   font-size: .7em;
   text-align: right;
-}
-
-.question-crud-box {
   margin-bottom: .5em;
 }
 

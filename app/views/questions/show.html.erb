@@ -23,7 +23,7 @@
 <div class='row justify-content-center question-crud-box'>
   <% if current_user && current_user.id == @question.user.id %>
     <div class="col-md-7 themed-grid-col"></div>
-    <div class="col-sm-3 themed-grid-col question-crud" id='question-crud-<%= @question.id %>'>
+    <div class="col-sm-3 themed-grid-col question-crud red-link" id='question-crud-<%= @question.id %>'>
       <%= link_to 'Update Question', "/questions/#{@question.id}/edit", method: :get %> ::
       <%= link_to 'Delete Question', "/questions/#{@question.id}", method: :delete, data: {confirm: "Are you sure?"} %>
     </div>
@@ -31,9 +31,9 @@
 </div>
 
 <div class='row justify-content-center'>
-  <div class="col-lg-10 questionBox">
+  <div class="col-lg-10 questionBox effect7">
     <%= @question.content %>
-    <div class='post-user-info'>
+    <div class='post-user-info red-link'>
       <div class="questionBoxInfo">Posted By :: <%= link_to @question.user.user_name, "/users/#{@question.user.id}" %></div>
       <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
       <div class="questionBoxInfo">Cohort :: <%= @question.user.cohort %></div>
@@ -46,7 +46,7 @@
 
   <div class="row leave-comment justify-content-center">
     <% if current_user %>
-      <div class='col-sm-2 themed-grid-col leave-comment-link'>
+      <div class='col-sm-2 themed-grid-col leave-comment-link red-link'>
         <%= link_to "Leave a Comment", "/questions/#{@question.id}/comments/new" %>
       </div>
       <div class="col-sm-8 themed-grid-col"></div>
@@ -60,7 +60,7 @@
       <div class='col-sm-2'></div>
       <div class="col-sm-8 themed-grid-col commentBox">
         <%= question_comment.content %>
-        <div class='post-user-info'>
+        <div class='post-user-info red-link'>
           <div class="questionBoxInfo">Posted By :: <%= link_to question_comment.user.user_name, "/users/#{question_comment.user.id}" %></div>
           <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
           <div class="questionBoxInfo">Cohort :: <%= question_comment.user.cohort %></div>
@@ -71,8 +71,8 @@
     </div>
 
     <div class='row justify-content-center'>
-      <div class="col-sm-2 themed-grid-col "></div>
-      <div class="col-sm-8 themed-grid-col commentModification", id="upvote-<%= question_comment.id %>">
+      <div class="col-sm-2 themed-grid-col"></div>
+      <div class="col-sm-8 themed-grid-col commentModification red-link", id="upvote-<%= question_comment.id %>">
         <% if current_user.nil? %>
           <%= question_comment.upvotes %> ::
         <% elsif current_user.upvoted?(question_comment) || current_user.id == question_comment.user_id %>
@@ -82,7 +82,7 @@
         <% end %>
 
         <% if current_user && current_user.id == question_comment.user_id %>
-          <%= link_to "Edit", "/questions/#{@question.id}/comments/#{question_comment.id}/edit"%> ::
+          <%= link_to "Edit", "/questions/#{@question.id}/comments/#{question_comment.id}/edit" %> ::
           <%= link_to "Delete", "/questions/#{@question.id}/comments/#{question_comment.id}/delete", method: :delete %>
         <% end %>
       </div>
@@ -118,7 +118,7 @@
 
     <div class='row justify-content-center' id='question-links-<%= answer.id %>'>
       <div class="col-sm-7 themed-grid-col"></div>
-      <div class="col-sm-3 themed-grid-col question-crud">
+      <div class="col-sm-3 themed-grid-col question-crud red-link">
         <% if current_user && current_user.id == answer.user_id %>
           <%= link_to "Update Answer", "/questions/#{@question.id}/answers/#{answer.id}/edit" %> ::
           <%= link_to "Delete Answer", "/questions/#{@question.id}/answers/#{answer.id}/delete", method: :delete %>
@@ -127,9 +127,9 @@
     </div>
 
     <div class='row justify-content-center'>
-      <div class="col-sm-10 questionBox">
+      <div class="col-sm-10 questionBox effect7">
         <%= answer.content %>
-        <div class='post-user-info'>
+        <div class='post-user-info red-link'>
           <div class="questionBoxInfo">Posted By :: <%= link_to answer.user.user_name, "/users/#{answer.user.id}" %></div>
           <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
           <div class="questionBoxInfo">Cohort :: <%= answer.user.cohort %></div>
@@ -141,7 +141,7 @@
 
     <div class="row justify-content-center leave-comment">
       <% if current_user %>
-        <div class='col-sm-2 themed-grid-col leave-comment-link'>
+        <div class='col-sm-2 themed-grid-col leave-comment-link red-link'>
           <%= link_to "Leave a Comment", "/questions/#{@question.id}/answers/#{answer.id}/comments/new" %>
         </div>
         <div class="col-sm-8 themed-grid-col"></div>
@@ -155,7 +155,7 @@
           <div class="col-sm-8 themed-grid-col commentBox">
             <section id='answer_comment-<%= answer_comment.id %>'>
               <%= answer_comment.content %>
-              <div class='post-user-info'>
+              <div class='post-user-info red-link'>
                 <div class="questionBoxInfo">Posted By :: <%= link_to @question.user.user_name, "/users/#{@question.user.id}" %></div>
                 <div class='questionBoxSpacer'><%= image_tag 'turing_vertical_spacer.png' %></div>
                 <div class="questionBoxInfo">Cohort :: <%= @question.user.cohort %></div>
@@ -168,7 +168,7 @@
 
         <div class='row justify-content-center'>
           <div class="col-sm-2 themed-grid-col "></div>
-          <div class="col-sm-8 themed-grid-col commentModification", id="answer-comment-upvote-<%= answer_comment.id %>">
+          <div class="col-sm-8 themed-grid-col commentModification red-link", id="answer-comment-upvote-<%= answer_comment.id %>">
             <% if current_user.nil? %>
               <%= answer_comment.upvotes %> ::
             <% elsif current_user.upvoted?(answer_comment) || current_user.id == answer_comment.user_id %>

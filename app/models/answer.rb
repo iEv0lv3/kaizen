@@ -23,6 +23,6 @@ class Answer < ApplicationRecord
   end
 
   def verification_status
-    self.verified? ? 'green-check-small.png' : ''
+    verified? ? 'green-check-small.png' : ''
   end
 end

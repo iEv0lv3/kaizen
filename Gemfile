@@ -37,6 +37,9 @@ gem 'will_paginate'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+# Elasticsearch gems
+gem 'elasticsearch'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 
@@ -65,6 +68,7 @@ end
 
 group :test do
   # Easy installation and use of web drivers to run system tests with browsers
+  gem 'elasticsearch-extensions'
   gem 'webdrivers'
 end
 

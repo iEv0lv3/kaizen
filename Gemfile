@@ -32,6 +32,9 @@ gem 'omniauth-stackexchange', git: 'https://github.com/nashby/omniauth-stackexch
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Pagination
+gem 'will_paginate'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'elasticsearch-model'

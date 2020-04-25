@@ -1,4 +1,14 @@
+require 'elasticsearch/model'
 class Answer < ApplicationRecord
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
+  settings do
+    mappings dynamic: false do
+      indexes :content, type: :text, analyzer: :english
+    end
+  end
+
   validates_presence_of :content, :verification
   validates :content, length: { maximum: 200, too_long: '%{count} characters is the maximum allowed' }
 
@@ -12,10 +22,6 @@ class Answer < ApplicationRecord
 
   def increment_upvotes
     update_column(:upvotes, self.upvotes += 1)
-  end
-
-  def self.search(search_params)
-    where('content ILIKE :search', search: "%#{search_params}%").limit(5)
   end
 
   def verify_answer

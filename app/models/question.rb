@@ -4,7 +4,7 @@ class Question < ApplicationRecord
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
-  settings do
+  settings index: { number_of_shards: 1 } do
     mappings dynamic: false do
       indexes :subject, type: :text, analyzer: :english
       indexes :content, type: :text, analyzer: :english
@@ -41,3 +41,5 @@ class Question < ApplicationRecord
     !answers.find_by(verification: 'verified').nil?
   end
 end
+
+Question.import

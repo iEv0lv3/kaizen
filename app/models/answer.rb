@@ -3,9 +3,10 @@ class Answer < ApplicationRecord
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
-  settings do
+  settings index: { number_of_shards: 1 } do
     mappings dynamic: false do
       indexes :content, type: :text, analyzer: :english
+      indexes :verification, type: :byte
     end
   end
 
@@ -32,3 +33,5 @@ class Answer < ApplicationRecord
     verified? ? 'green-check-small.png' : ''
   end
 end
+
+Answer.import

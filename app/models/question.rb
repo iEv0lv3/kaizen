@@ -42,4 +42,4 @@ class Question < ApplicationRecord
   end
 end
 
-Question.import
+# Question.import

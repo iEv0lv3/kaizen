@@ -34,4 +34,4 @@ class Answer < ApplicationRecord
   end
 end
 
-Answer.import
+# Answer.import

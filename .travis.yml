@@ -1,3 +1,5 @@
+before_install:
+  - curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.8.7.deb && sudo dpkg -i --force-confnew elasticsearch-6.8.7.deb && sudo service elasticsearch restart
 services:
   - postgresql
   - elasticsearch

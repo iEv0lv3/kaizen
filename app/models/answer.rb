@@ -6,7 +6,7 @@ class Answer < ApplicationRecord
   settings index: { number_of_shards: 1 } do
     mappings dynamic: false do
       indexes :content, type: :text, analyzer: :english
-      indexes :verification, type: :byte
+      indexes :verification, type: :text, analyzer: :english
     end
   end
 

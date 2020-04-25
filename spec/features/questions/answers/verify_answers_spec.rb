@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'As a user' do
+RSpec.describe 'As a user', elasticsearch: true do
   before :each do
     @user_1 = create(:user)
     @user_2 = create(:user)

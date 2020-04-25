@@ -1,15 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe 'As a User' do
+RSpec.describe 'As a User', elasticsearch: true do
   describe 'When I visit the home page page', :vcr do
     before :each do
-      @user = User.create!({email: "user_1@turing.io",
-                            password: "password",
-                            first_name: "Luther",
-                            last_name: "Van Draws",
-                            cohort: "1811",
-                            status: 1,
-                            user_name: "Luther123"})
+      @user = User.create!(
+        { email: 'user_1@turing.io',
+          password: 'password',
+          first_name: 'Luther',
+          last_name: 'Van Draws',
+          cohort: '1811',
+          status: 1,
+          user_name: 'Luther123' }
+      )
       @user.confirm
 
       visit '/'
@@ -33,7 +35,6 @@ RSpec.describe 'As a User' do
     end
 
     it 'I can search' do
-
       within '#search-bar' do
         fill_in with: 'simplecov'
       end

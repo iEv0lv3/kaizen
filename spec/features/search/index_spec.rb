@@ -3,6 +3,12 @@ require 'rails_helper'
 RSpec.describe 'As a User', elasticsearch: true do
   describe 'When I visit the home page page', :vcr do
     before :each do
+      Question.__elasticsearch__.create_index! force: true
+      Question.__elasticsearch__.refresh_index!
+
+      Answer.__elasticsearch__.create_index! force: true
+      Answer.__elasticsearch__.refresh_index!
+
       @user = User.create!(
         { email: 'user_1@turing.io',
           password: 'password',

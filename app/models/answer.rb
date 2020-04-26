@@ -1,4 +1,5 @@
 require 'elasticsearch/model'
+
 class Answer < ApplicationRecord
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks

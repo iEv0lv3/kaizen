@@ -2,6 +2,8 @@
 require 'spec_helper'
 require 'simplecov'
 require 'elasticsearch/extensions/test/cluster'
+require 'elasticsearch/model'
+require 'elasticsearch'
 
 SimpleCov.start 'rails'
 ENV['RAILS_ENV'] ||= 'test'
@@ -70,9 +72,9 @@ RSpec.configure do |config|
   # end
 
   # Stop elasticsearch cluster after test run
-  config.after :suite do
-    Elasticsearch::Extensions::Test::Cluster.stop(port: 9250, nodes: 1) if Elasticsearch::Extensions::Test::Cluster.running?(on: 9250)
-  end
+  # config.after :suite do
+  #   Elasticsearch::Extensions::Test::Cluster.stop(port: 9250, nodes: 1) if Elasticsearch::Extensions::Test::Cluster.running?(on: 9250)
+  # end
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

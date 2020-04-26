@@ -103,11 +103,11 @@ GEM
     elasticsearch-extensions (0.0.31)
       ansi
       elasticsearch
-    elasticsearch-model (6.1.0)
+    elasticsearch-model (7.1.0)
       activesupport (> 3)
       elasticsearch (> 1)
       hashie
-    elasticsearch-rails (6.1.0)
+    elasticsearch-rails (7.1.0)
     elasticsearch-transport (7.6.0)
       faraday (~> 1)
       multi_json
@@ -314,10 +314,10 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
-  elasticsearch
+  elasticsearch (~> 7.6.0)
   elasticsearch-extensions
-  elasticsearch-model
-  elasticsearch-rails
+  elasticsearch-model (~> 7.1.0)
+  elasticsearch-rails (~> 7.1.0)
   factory_bot_rails
   faker
   faraday

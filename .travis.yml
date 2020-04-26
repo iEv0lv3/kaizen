@@ -21,6 +21,9 @@ before_install:
   - sudo chown -R elasticsearch:elasticsearch /etc/default/elasticsearch
   - sudo systemctl start elasticsearch
 
+install:
+  - bundle install
+
 services:
   - postgresql
 

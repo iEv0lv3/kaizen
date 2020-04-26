@@ -1,16 +1,23 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 require 'simplecov'
+require 'elasticsearch/extensions/test/cluster'
+require 'elasticsearch/model'
+require 'elasticsearch'
+
 SimpleCov.start 'rails'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
+
 # Prevent database truncation if the environment is production
 if Rails.env.production?
   abort('The Rails environment is running in production mode!')
 end
+
 require 'rspec/rails'
 require 'vcr'
 require 'webmock/rspec'
+
 VCR.configure do |config|
   config.ignore_localhost = true
   config.cassette_library_dir = 'spec/cassettes'
@@ -41,19 +48,34 @@ rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
 end
+
 Capybara.configure do |config|
   config.default_max_wait_time = 5
-end
-Capybara.configure do |config|
   config.server = :puma, { Silent: true }
 end
+
+# Capybara.configure do |config|
+#   config.server = :puma, { Silent: true }
+# end
+
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
     with.library :rails
   end
 end
+
 RSpec.configure do |config|
+  # Start an in-memory cluster for Elasticsearch as needed
+  # config.before :suite do
+  #   Elasticsearch::Extensions::Test::Cluster.start(port: 9200, nodes: 1, timeout: 120) unless Elasticsearch::Extensions::Test::Cluster.running?(on: 9200)
+  # end
+
+  # Stop elasticsearch cluster after test run
+  # config.after :suite do
+  #   Elasticsearch::Extensions::Test::Cluster.stop(port: 9250, nodes: 1) if Elasticsearch::Extensions::Test::Cluster.running?(on: 9250)
+  # end
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   # If you're not using ActiveRecord, or you'd prefer not to run each of your

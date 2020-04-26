@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'As a Visitor' do
+RSpec.describe 'As a Visitor', elasticsearch: true do
   describe 'When i visit a questions show page' do
     before :each do
       user = create(:user)

@@ -1,12 +1,11 @@
 class SearchController < ApplicationController
   def index
-    search_query = Question.search(params[:search]) + Answer.search(params[:search])
-    @results = SearchFacade.new(search_query)
+    @response = SearchFacade.new(params[:search])
 
     if params[:search].empty?
       flash[:warning] = 'You must enter something to search.'
       redirect_back(fallback_location: root_path)
-    elsif @results.sorted.empty?
+    elsif @response.results.empty?
       flash[:warning] = 'No results. Improve your query for better results.'
     end
   end

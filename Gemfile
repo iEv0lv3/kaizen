@@ -32,8 +32,16 @@ gem 'omniauth-stackexchange', git: 'https://github.com/nashby/omniauth-stackexch
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Pagination
+gem 'will_paginate'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+# Elasticsearch gems
+gem 'elasticsearch', '~> 7.6.0'
+gem 'elasticsearch-model', '~> 7.1.0'
+gem 'elasticsearch-rails', '~> 7.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -60,6 +68,7 @@ end
 
 group :test do
   # Easy installation and use of web drivers to run system tests with browsers
+  gem 'elasticsearch-extensions'
   gem 'webdrivers'
 end
 

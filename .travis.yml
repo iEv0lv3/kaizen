@@ -13,7 +13,8 @@ before_install:
   - gem update bundler -q
   - bundle version
   - bundle install
+  - curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.0-amd64.deb && sudo dpkg -i --force-confnew elasticsearch-7.6.0-amd64.deb && sudo service elasticsearch restart
 
 services:
   - postgresql
-  - elasticsearch
+

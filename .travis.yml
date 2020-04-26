@@ -10,12 +10,10 @@ before_script:
 
 before_install:
   - ls $PWD
-  - pkill -9 -f elasticsearch || true
   - gem --version
   - gem update bundler -q
   - bundle version
   - bundle install
-  - bundle exec rake setup
   - curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.0-amd64.deb && sudo dpkg -i --force-confnew elasticsearch-7.6.0-amd64.deb && sudo service elasticsearch restart
 
 install:

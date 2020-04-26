@@ -14,9 +14,6 @@ before_install:
   - bundle version
   - bundle install
 
-install:
-  - rake bundle:clean
-  - rake bundle:install
-
 services:
   - postgresql
+  - elasticsearch

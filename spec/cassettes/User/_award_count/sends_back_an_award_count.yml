@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 16 Apr 2020 16:23:16 GMT
+      - Mon, 27 Apr 2020 19:29:05 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -44,9 +44,9 @@ http_interactions:
       encoding: UTF-8
       string: '{"items":[{"user":{"reputation":1,"user_id":4947551,"user_type":"registered","profile_image":"https://lh6.googleusercontent.com/-YrHOf63VSnQ/AAAAAAAAAAI/AAAAAAAACew/o7Z3gRlNFzk/photo.jpg?sz=128","display_name":"Jordan
         Williams","link":"https://stackoverflow.com/users/4947551/jordan-williams"},"badge_type":"named","award_count":1,"rank":"bronze","badge_id":9,"link":"https://stackoverflow.com/badges/9/autobiographer","name":"Autobiographer"},{"user":{"reputation":1,"user_id":4947551,"user_type":"registered","profile_image":"https://lh6.googleusercontent.com/-YrHOf63VSnQ/AAAAAAAAAAI/AAAAAAAACew/o7Z3gRlNFzk/photo.jpg?sz=128","display_name":"Jordan
-        Williams","link":"https://stackoverflow.com/users/4947551/jordan-williams"},"badge_type":"named","award_count":1,"rank":"bronze","badge_id":2600,"link":"https://stackoverflow.com/badges/2600/informed","name":"Informed"}],"has_more":false,"quota_max":300,"quota_remaining":297}'
+        Williams","link":"https://stackoverflow.com/users/4947551/jordan-williams"},"badge_type":"named","award_count":1,"rank":"bronze","badge_id":2600,"link":"https://stackoverflow.com/badges/2600/informed","name":"Informed"}],"has_more":false,"quota_max":300,"quota_remaining":299}'
     http_version: null
-  recorded_at: Thu, 16 Apr 2020 16:23:17 GMT
+  recorded_at: Mon, 27 Apr 2020 19:29:05 GMT
 - request:
     method: get
     uri: https://quiet-harbor-86448.herokuapp.com/so_badges
@@ -70,7 +70,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 16 Apr 2020 16:23:17 GMT
+      - Mon, 27 Apr 2020 19:29:05 GMT
       Connection:
       - keep-alive
       Content-Type:
@@ -89,7 +89,7 @@ http_interactions:
       - 1.1 vegur
     body:
       encoding: UTF-8
-      string: '{"items":[],"has_more":false,"quota_max":300,"quota_remaining":296}'
+      string: '{"items":[],"has_more":false,"quota_max":300,"quota_remaining":298}'
     http_version: null
-  recorded_at: Thu, 16 Apr 2020 16:23:17 GMT
+  recorded_at: Mon, 27 Apr 2020 19:29:05 GMT
 recorded_with: VCR 5.1.0

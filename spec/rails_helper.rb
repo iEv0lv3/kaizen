@@ -54,10 +54,6 @@ Capybara.configure do |config|
   config.server = :puma, { Silent: true }
 end
 
-# Capybara.configure do |config|
-#   config.server = :puma, { Silent: true }
-# end
-
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
     with.test_framework :rspec
@@ -73,7 +69,7 @@ RSpec.configure do |config|
 
   # Stop elasticsearch cluster after test run
   # config.after :suite do
-  #   Elasticsearch::Extensions::Test::Cluster.stop(port: 9250, nodes: 1) if Elasticsearch::Extensions::Test::Cluster.running?(on: 9250)
+  #   Elasticsearch::Extensions::Test::Cluster.stop(port: 9200, nodes: 1) if Elasticsearch::Extensions::Test::Cluster.running?(on: 9250)
   # end
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures

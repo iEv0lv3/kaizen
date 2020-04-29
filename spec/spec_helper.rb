@@ -23,7 +23,6 @@ RSpec.configure do |config|
           model.__elasticsearch__.delete_index!
         rescue Elasticsearch::Transport::Transport::Errors::NotFound => e
           # This kills "Index does not exist" errors being written to console
-          # by this: https://github.com/elastic/elasticsearch-rails/blob/738c63efacc167b6e8faae3b01a1a0135cfc8bbb/elasticsearch-model/lib/elasticsearch/model/indexing.rb#L268
         rescue => e
           STDERR.puts "There was an error removing the elasticsearch index for #{model.name}: #{e.inspect}"
         end

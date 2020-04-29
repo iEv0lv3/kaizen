@@ -26,7 +26,9 @@ class AwsEsService
   end
 
   def api_search(query)
-    response = @elasticsearch.post '/_search' do |req|
+    # Below could be the index for the sample data
+    # /kibana_sample_data_flights/_search
+    response = @elasticsearch.post '/kibana_sample_data_flights/_search' do |req|
       req.headers[:content_type] = 'application/json'
       req.body = AwsSearch.new(query).json_build
     end
@@ -55,3 +57,33 @@ class AwsEsService
     end
   end
 end
+
+  #  :mappings=>
+  #   {:properties=>
+  #     {:AvgTicketPrice=>{:type=>"float"},
+  #      :Cancelled=>{:type=>"boolean"},
+  #      :Carrier=>{:type=>"keyword"},
+  #      :Dest=>{:type=>"keyword"},
+  #      :DestAirportID=>{:type=>"keyword"},
+  #      :DestCityName=>{:type=>"keyword"},
+  #      :DestCountry=>{:type=>"keyword"},
+  #      :DestLocation=>{:type=>"geo_point"},
+  #      :DestRegion=>{:type=>"keyword"},
+  #      :DestWeather=>{:type=>"keyword"},
+  #      :DistanceKilometers=>{:type=>"float"},
+  #      :DistanceMiles=>{:type=>"float"},
+  #      :FlightDelay=>{:type=>"boolean"},
+  #      :FlightDelayMin=>{:type=>"integer"},
+  #      :FlightDelayType=>{:type=>"keyword"},
+  #      :FlightNum=>{:type=>"keyword"},
+  #      :FlightTimeHour=>{:type=>"keyword"},
+  #      :FlightTimeMin=>{:type=>"float"},
+  #      :Origin=>{:type=>"keyword"},
+  #      :OriginAirportID=>{:type=>"keyword"},
+  #      :OriginCityName=>{:type=>"keyword"},
+  #      :OriginCountry=>{:type=>"keyword"},
+  #      :OriginLocation=>{:type=>"geo_point"},
+  #      :OriginRegion=>{:type=>"keyword"},
+  #      :OriginWeather=>{:type=>"keyword"},
+  #      :dayOfWeek=>{:type=>"integer"},
+  #      :timestamp=>{:type=>"date"}}},

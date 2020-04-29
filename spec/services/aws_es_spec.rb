@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe 'AWS Elasticsearch', :vcr, elasticsearch: true do
   before :each do
     @aws = AwsEsService.new
+    binding.pry
   end
 
   it 'cluster stats' do

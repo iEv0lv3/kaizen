@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_cluster/stats
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search?q=venice
     body:
       encoding: US-ASCII
       string: ''
@@ -12,12 +12,12 @@ http_interactions:
       Host:
       - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
       X-Amz-Date:
-      - 20200428T071352Z
+      - 20200429T072822Z
       X-Amz-Content-Sha256:
       - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200428/us-west-2/es/aws4_request,
-        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=5bcd484ca680ee980bcebf119490220cf2d30e3dd0b6edd62d691c15006752d5
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=f6bd085f5ac9c50c42c29ba850b3735257185d38789635a7cdf9ef79d97f35b6
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -28,20 +28,200 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 28 Apr 2020 07:13:53 GMT
+      - Wed, 29 Apr 2020 07:28:22 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '1977'
+      - '161'
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
       - "*"
     body:
       encoding: UTF-8
-      string: '{"_nodes":{"total":7,"successful":7,"failed":0},"cluster_name":"218497580724:kaizen","cluster_uuid":"l0iW_jwWQUiqyZh6c1VcRQ","timestamp":1588058033274,"status":"green","indices":{"count":4,"shards":{"total":10,"primaries":4,"replication":1.5,"index":{"shards":{"min":2,"max":4,"avg":2.5},"primaries":{"min":1,"max":1,"avg":1.0},"replication":{"min":1.0,"max":3.0,"avg":1.5}}},"docs":{"count":13127,"deleted":0},"store":{"size_in_bytes":13740612},"fielddata":{"memory_size_in_bytes":0,"evictions":0},"query_cache":{"memory_size_in_bytes":0,"total_count":0,"hit_count":0,"miss_count":0,"cache_size":0,"cache_count":0,"evictions":0},"completion":{"size_in_bytes":0},"segments":{"count":29,"memory_in_bytes":166738,"terms_memory_in_bytes":111251,"stored_fields_memory_in_bytes":10848,"term_vectors_memory_in_bytes":0,"norms_memory_in_bytes":4224,"points_memory_in_bytes":1731,"doc_values_memory_in_bytes":38684,"index_writer_memory_in_bytes":0,"version_map_memory_in_bytes":0,"fixed_bit_set_memory_in_bytes":432,"max_unsafe_auto_id_timestamp":-1,"file_sizes":{}}},"nodes":{"count":{"total":7,"coordinating_only":0,"data":4,"ingest":4,"master":3},"versions":["7.4.2"],"os":{"available_processors":14,"allocated_processors":14,"names":[{"count":7}],"pretty_names":[{"count":7}],"mem":{"total_in_bytes":115582222336,"free_in_bytes":8380059648,"used_in_bytes":107202162688,"free_percent":7,"used_percent":93}},"process":{"cpu":{"percent":0},"open_file_descriptors":{"min":1445,"max":1555,"avg":1490}},"jvm":{"max_uptime_in_millis":37871564,"mem":{"heap_used_in_bytes":2392023944,"heap_max_in_bytes":66449965056},"threads":968},"fs":{"total_in_bytes":64452354048,"free_in_bytes":56948072448,"available_in_bytes":56830631936},"network_types":{"transport_types":{"com.amazon.opendistroforelasticsearch.security.ssl.http.netty.OpenDistroSecuritySSLNettyTransport":7},"http_types":{"filter-jetty":7}},"discovery_types":{"zen":7},"packaging_types":[{"flavor":"oss","type":"tar","count":7}]}}'
+      string: '{"took":16,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
     http_version: null
-  recorded_at: Tue, 28 Apr 2020 07:13:53 GMT
+  recorded_at: Wed, 29 Apr 2020 07:28:22 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search?q=venice
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200429T072942Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=3411d516c9db575462a78a317f22d775f0e497d00fa7c440c2e1c823fd89397b
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Apr 2020 07:29:42 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '161'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"took":12,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
+    http_version: null
+  recorded_at: Wed, 29 Apr 2020 07:29:42 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200429T072955Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=dbb0bae93a3e8d2e2fd355bc86842f2b896a6824b03be7a046920d1dcd8c37b3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Apr 2020 07:29:55 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '18869'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"took":19,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":10000,"relation":"gte"},"max_score":1.0,"hits":[{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:aeb212e0-4c84-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Controls","visState":"{\"title\":\"[Flights] Controls\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1525098134264\",\"fieldName\":\"OriginCityName\",\"parent\":\"\",\"label\":\"Origin
+        City\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"},\"indexPatternRefName\":\"control_0_index_pattern\"},{\"id\":\"1525099277699\",\"fieldName\":\"DestCityName\",\"parent\":\"1525098134264\",\"label\":\"Destination
+        City\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"},\"indexPatternRefName\":\"control_1_index_pattern\"},{\"id\":\"1525099307278\",\"fieldName\":\"AvgTicketPrice\",\"parent\":\"\",\"label\":\"Average
+        Ticket Price\",\"type\":\"range\",\"options\":{\"decimalPlaces\":0,\"step\":10},\"indexPatternRefName\":\"control_2_index_pattern\"}],\"updateFiltersOnChange\":false,\"useTimeFilter\":true,\"pinFilters\":false},\"aggs\":[]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{}"}},"type":"visualization","references":[{"name":"control_0_index_pattern","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"},{"name":"control_1_index_pattern","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"},{"name":"control_2_index_pattern","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:c8fc3d30-4c87-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Flight Count and Average Ticket Price","visState":"{\"title\":\"[Flights]
+        Flight Count and Average Ticket Price\",\"type\":\"area\",\"params\":{\"type\":\"area\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Average
+        Ticket Price\"}},{\"id\":\"ValueAxis-2\",\"name\":\"RightAxis-1\",\"type\":\"value\",\"position\":\"right\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Flight
+        Count\"}}],\"seriesParams\":[{\"show\":true,\"mode\":\"stacked\",\"type\":\"area\",\"drawLinesBetweenPoints\":true,\"showCircles\":false,\"interpolate\":\"linear\",\"lineWidth\":2,\"data\":{\"id\":\"5\",\"label\":\"Flight
+        Count\"},\"valueAxis\":\"ValueAxis-2\"},{\"show\":true,\"mode\":\"stacked\",\"type\":\"line\",\"drawLinesBetweenPoints\":false,\"showCircles\":true,\"interpolate\":\"linear\",\"data\":{\"id\":\"4\",\"label\":\"Average
+        Ticket Price\"},\"valueAxis\":\"ValueAxis-1\",\"lineWidth\":2}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"radiusRatio\":13},\"aggs\":[{\"id\":\"3\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"5\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Flight
+        Count\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"AvgTicketPrice\",\"customLabel\":\"Average
+        Ticket Price\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"radius\",\"params\":{\"field\":\"AvgTicketPrice\"}}]}","uiStateJSON":"{\"vis\":{\"legendOpen\":true,\"colors\":{\"Average
+        Ticket Price\":\"#629E51\",\"Flight Count\":\"#AEA2E0\"}}}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"search:571aaf70-4c88-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"search":{"title":"[Flights]
+        Flight Log","description":"","hits":0,"columns":["Carrier","OriginCityName","OriginCountry","DestCityName","DestCountry","FlightTimeMin","AvgTicketPrice","Cancelled","FlightDelayType"],"sort":[["timestamp","desc"]],"version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"search","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"search":"7.4.0"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:8f4d0c00-4c86-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Airline Carrier","visState":"{\"title\":\"[Flights] Airline Carrier\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Carrier\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}","uiStateJSON":"{\"vis\":{\"legendOpen\":false}}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:f8290060-4c88-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Delay Type","visState":"{\"title\":\"[Flights] Delay Type\",\"type\":\"area\",\"params\":{\"type\":\"area\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"cardinal\",\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"FlightDelayType\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:bcb63b50-4c89-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Delays & Cancellations","visState":"{\"title\":\"[Flights] Delays & Cancellations\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"rgba(0,156,224,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"filter_ratio\",\"numerator\":\"FlightDelay:true\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"percent\",\"chart_type\":\"line\",\"line_width\":\"2\",\"point_size\":\"0\",\"fill\":0.5,\"stacked\":\"none\",\"label\":\"Percent
+        Delays\"}],\"time_field\":\"timestamp\",\"index_pattern\":\"kibana_sample_data_flights\",\"interval\":\">=1h\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"annotations\":[{\"fields\":\"FlightDelay,Cancelled,Carrier\",\"template\":\"{{Carrier}}:
+        Flight Delayed and Cancelled!\",\"index_pattern\":\"kibana_sample_data_flights\",\"query_string\":{\"query\":\"FlightDelay:true
+        AND Cancelled:true\",\"language\":\"lucene\"},\"id\":\"53b7dff0-4c89-11e8-a66a-6989ad5a0a39\",\"color\":\"rgba(0,98,177,1)\",\"time_field\":\"timestamp\",\"icon\":\"fa-exclamation-triangle\",\"ignore_global_filters\":1,\"ignore_panel_filters\":1}],\"legend_position\":\"bottom\"},\"aggs\":[]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{}"}},"type":"visualization","references":[],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:9886b410-4c8b-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Delay Buckets","visState":"{\"title\":\"[Flights] Delay Buckets\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"FlightDelayMin\",\"interval\":30,\"extended_bounds\":{},\"customLabel\":\"Flight
+        Delay Minutes\"}}]}","uiStateJSON":"{\"vis\":{\"legendOpen\":false}}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[{\"meta\":{\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"FlightDelayMin\",\"value\":\"0\",\"params\":{\"query\":0,\"type\":\"phrase\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"FlightDelayMin\":{\"query\":0,\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"},{"name":"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:76e3c090-4c8c-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Flight Delays","visState":"{\"title\":\"[Flights] Flight Delays\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"BottomAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"FlightDelay\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Flight
+        Delays\"}}]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:707665a0-4c8c-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Flight Cancellations","visState":"{\"title\":\"[Flights] Flight Cancellations\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"BottomAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Cancelled\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Flight
+        Cancellations\"}}]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:293b5a30-4c8f-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Destination Weather","visState":"{\"title\":\"[Flights] Destination Weather\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"linear\",\"orientation\":\"single\",\"minFontSize\":18,\"maxFontSize\":72,\"showLabel\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"DestWeather\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}}]}}'
+    http_version: null
+  recorded_at: Wed, 29 Apr 2020 07:29:55 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200429T073030Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=5c288062d0842987e1ff89f03bc95e03add11e35eabb8a1665a9ac74f2cbcebe
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Apr 2020 07:30:30 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '18869'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"took":12,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":10000,"relation":"gte"},"max_score":1.0,"hits":[{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:aeb212e0-4c84-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Controls","visState":"{\"title\":\"[Flights] Controls\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1525098134264\",\"fieldName\":\"OriginCityName\",\"parent\":\"\",\"label\":\"Origin
+        City\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"},\"indexPatternRefName\":\"control_0_index_pattern\"},{\"id\":\"1525099277699\",\"fieldName\":\"DestCityName\",\"parent\":\"1525098134264\",\"label\":\"Destination
+        City\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"},\"indexPatternRefName\":\"control_1_index_pattern\"},{\"id\":\"1525099307278\",\"fieldName\":\"AvgTicketPrice\",\"parent\":\"\",\"label\":\"Average
+        Ticket Price\",\"type\":\"range\",\"options\":{\"decimalPlaces\":0,\"step\":10},\"indexPatternRefName\":\"control_2_index_pattern\"}],\"updateFiltersOnChange\":false,\"useTimeFilter\":true,\"pinFilters\":false},\"aggs\":[]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{}"}},"type":"visualization","references":[{"name":"control_0_index_pattern","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"},{"name":"control_1_index_pattern","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"},{"name":"control_2_index_pattern","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:c8fc3d30-4c87-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Flight Count and Average Ticket Price","visState":"{\"title\":\"[Flights]
+        Flight Count and Average Ticket Price\",\"type\":\"area\",\"params\":{\"type\":\"area\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Average
+        Ticket Price\"}},{\"id\":\"ValueAxis-2\",\"name\":\"RightAxis-1\",\"type\":\"value\",\"position\":\"right\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Flight
+        Count\"}}],\"seriesParams\":[{\"show\":true,\"mode\":\"stacked\",\"type\":\"area\",\"drawLinesBetweenPoints\":true,\"showCircles\":false,\"interpolate\":\"linear\",\"lineWidth\":2,\"data\":{\"id\":\"5\",\"label\":\"Flight
+        Count\"},\"valueAxis\":\"ValueAxis-2\"},{\"show\":true,\"mode\":\"stacked\",\"type\":\"line\",\"drawLinesBetweenPoints\":false,\"showCircles\":true,\"interpolate\":\"linear\",\"data\":{\"id\":\"4\",\"label\":\"Average
+        Ticket Price\"},\"valueAxis\":\"ValueAxis-1\",\"lineWidth\":2}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"radiusRatio\":13},\"aggs\":[{\"id\":\"3\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"5\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Flight
+        Count\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"AvgTicketPrice\",\"customLabel\":\"Average
+        Ticket Price\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"radius\",\"params\":{\"field\":\"AvgTicketPrice\"}}]}","uiStateJSON":"{\"vis\":{\"legendOpen\":true,\"colors\":{\"Average
+        Ticket Price\":\"#629E51\",\"Flight Count\":\"#AEA2E0\"}}}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"search:571aaf70-4c88-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"search":{"title":"[Flights]
+        Flight Log","description":"","hits":0,"columns":["Carrier","OriginCityName","OriginCountry","DestCityName","DestCountry","FlightTimeMin","AvgTicketPrice","Cancelled","FlightDelayType"],"sort":[["timestamp","desc"]],"version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"search","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"search":"7.4.0"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:8f4d0c00-4c86-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Airline Carrier","visState":"{\"title\":\"[Flights] Airline Carrier\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Carrier\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}","uiStateJSON":"{\"vis\":{\"legendOpen\":false}}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:f8290060-4c88-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Delay Type","visState":"{\"title\":\"[Flights] Delay Type\",\"type\":\"area\",\"params\":{\"type\":\"area\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"cardinal\",\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"FlightDelayType\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:bcb63b50-4c89-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Delays & Cancellations","visState":"{\"title\":\"[Flights] Delays & Cancellations\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"rgba(0,156,224,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"filter_ratio\",\"numerator\":\"FlightDelay:true\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"percent\",\"chart_type\":\"line\",\"line_width\":\"2\",\"point_size\":\"0\",\"fill\":0.5,\"stacked\":\"none\",\"label\":\"Percent
+        Delays\"}],\"time_field\":\"timestamp\",\"index_pattern\":\"kibana_sample_data_flights\",\"interval\":\">=1h\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"annotations\":[{\"fields\":\"FlightDelay,Cancelled,Carrier\",\"template\":\"{{Carrier}}:
+        Flight Delayed and Cancelled!\",\"index_pattern\":\"kibana_sample_data_flights\",\"query_string\":{\"query\":\"FlightDelay:true
+        AND Cancelled:true\",\"language\":\"lucene\"},\"id\":\"53b7dff0-4c89-11e8-a66a-6989ad5a0a39\",\"color\":\"rgba(0,98,177,1)\",\"time_field\":\"timestamp\",\"icon\":\"fa-exclamation-triangle\",\"ignore_global_filters\":1,\"ignore_panel_filters\":1}],\"legend_position\":\"bottom\"},\"aggs\":[]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{}"}},"type":"visualization","references":[],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:9886b410-4c8b-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Delay Buckets","visState":"{\"title\":\"[Flights] Delay Buckets\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"FlightDelayMin\",\"interval\":30,\"extended_bounds\":{},\"customLabel\":\"Flight
+        Delay Minutes\"}}]}","uiStateJSON":"{\"vis\":{\"legendOpen\":false}}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[{\"meta\":{\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"FlightDelayMin\",\"value\":\"0\",\"params\":{\"query\":0,\"type\":\"phrase\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"FlightDelayMin\":{\"query\":0,\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"},{"name":"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:76e3c090-4c8c-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Flight Delays","visState":"{\"title\":\"[Flights] Flight Delays\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"BottomAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"FlightDelay\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Flight
+        Delays\"}}]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:707665a0-4c8c-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Flight Cancellations","visState":"{\"title\":\"[Flights] Flight Cancellations\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"BottomAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Cancelled\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Flight
+        Cancellations\"}}]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:293b5a30-4c8f-11e8-b3d7-01146121b73d","_score":1.0,"_source":{"visualization":{"title":"[Flights]
+        Destination Weather","visState":"{\"title\":\"[Flights] Destination Weather\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"linear\",\"orientation\":\"single\",\"minFontSize\":18,\"maxFontSize\":72,\"showLabel\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"DestWeather\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}}]}}'
+    http_version: null
+  recorded_at: Wed, 29 Apr 2020 07:30:30 GMT
 - request:
     method: get
     uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search?q=flight
@@ -54,12 +234,12 @@ http_interactions:
       Host:
       - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
       X-Amz-Date:
-      - 20200428T180311Z
+      - 20200429T073042Z
       X-Amz-Content-Sha256:
       - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200428/us-west-2/es/aws4_request,
-        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=306f287b3a916320ffd7ebd1c77714fee68e03c6c0dd68b8612518f6d5414dff
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=c2a9c1c59c9ecd0706e13437d02182533f1f817295dd2d3550d2eb128e8aa551
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -70,18 +250,18 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 28 Apr 2020 18:03:11 GMT
+      - Wed, 29 Apr 2020 07:30:42 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '24635'
+      - '24634'
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
       - "*"
     body:
       encoding: UTF-8
-      string: '{"took":111,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":10,"relation":"eq"},"max_score":1.6199708,"hits":[{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:c8fc3d30-4c87-11e8-b3d7-01146121b73d","_score":1.6199708,"_source":{"visualization":{"title":"[Flights]
+      string: '{"took":11,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":10,"relation":"eq"},"max_score":1.6199708,"hits":[{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:c8fc3d30-4c87-11e8-b3d7-01146121b73d","_score":1.6199708,"_source":{"visualization":{"title":"[Flights]
         Flight Count and Average Ticket Price","visState":"{\"title\":\"[Flights]
         Flight Count and Average Ticket Price\",\"type\":\"area\",\"params\":{\"type\":\"area\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Average
         Ticket Price\"}},{\"id\":\"ValueAxis-2\",\"name\":\"RightAxis-1\",\"type\":\"value\",\"position\":\"right\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Flight
@@ -127,10 +307,10 @@ http_interactions:
         minutes","pause":false,"section":2,"value":900000},"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"}},"type":"dashboard","references":[{"name":"panel_0","type":"visualization","id":"aeb212e0-4c84-11e8-b3d7-01146121b73d"},{"name":"panel_1","type":"visualization","id":"c8fc3d30-4c87-11e8-b3d7-01146121b73d"},{"name":"panel_2","type":"search","id":"571aaf70-4c88-11e8-b3d7-01146121b73d"},{"name":"panel_3","type":"visualization","id":"8f4d0c00-4c86-11e8-b3d7-01146121b73d"},{"name":"panel_4","type":"visualization","id":"f8290060-4c88-11e8-b3d7-01146121b73d"},{"name":"panel_5","type":"visualization","id":"bcb63b50-4c89-11e8-b3d7-01146121b73d"},{"name":"panel_6","type":"visualization","id":"9886b410-4c8b-11e8-b3d7-01146121b73d"},{"name":"panel_7","type":"visualization","id":"76e3c090-4c8c-11e8-b3d7-01146121b73d"},{"name":"panel_8","type":"visualization","id":"707665a0-4c8c-11e8-b3d7-01146121b73d"},{"name":"panel_10","type":"visualization","id":"293b5a30-4c8f-11e8-b3d7-01146121b73d"},{"name":"panel_11","type":"visualization","id":"129be430-4c93-11e8-b3d7-01146121b73d"},{"name":"panel_12","type":"visualization","id":"334084f0-52fd-11e8-a160-89cc2ad9e8e2"},{"name":"panel_13","type":"visualization","id":"f8283bf0-52fd-11e8-a160-89cc2ad9e8e2"},{"name":"panel_14","type":"visualization","id":"08884800-52fe-11e8-a160-89cc2ad9e8e2"},{"name":"panel_15","type":"visualization","id":"e6944e50-52fe-11e8-a160-89cc2ad9e8e2"},{"name":"panel_16","type":"visualization","id":"01c413e0-5395-11e8-99bf-1ba7b1bdaa61"},{"name":"panel_17","type":"visualization","id":"2edf78b0-5395-11e8-99bf-1ba7b1bdaa61"},{"name":"panel_18","type":"visualization","id":"ed78a660-53a0-11e8-acbd-0be0ad9d822b"}],"migrationVersion":{"dashboard":"7.3.0"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"search:571aaf70-4c88-11e8-b3d7-01146121b73d","_score":0.2876821,"_source":{"search":{"title":"[Flights]
         Flight Log","description":"","hits":0,"columns":["Carrier","OriginCityName","OriginCountry","DestCityName","DestCountry","FlightTimeMin","AvgTicketPrice","Cancelled","FlightDelayType"],"sort":[["timestamp","desc"]],"version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"search","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"search":"7.4.0"},"updated_at":"2020-04-28T01:01:24.234Z"}}]}}'
     http_version: null
-  recorded_at: Tue, 28 Apr 2020 18:03:12 GMT
+  recorded_at: Wed, 29 Apr 2020 07:30:42 GMT
 - request:
     method: get
-    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search?q=ruby
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search?q=venice
     body:
       encoding: US-ASCII
       string: ''
@@ -140,12 +320,12 @@ http_interactions:
       Host:
       - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
       X-Amz-Date:
-      - 20200428T210757Z
+      - 20200429T073121Z
       X-Amz-Content-Sha256:
       - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200428/us-west-2/es/aws4_request,
-        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=6c2409a176118298214d3182f004ee6f8f531e53ad276f3560d917307827a1e0
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=600c9325c484c13c622674d8b8bf46d91a01e1501215f568dcaa9c5e57ab6dc0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -156,7 +336,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 28 Apr 2020 21:07:57 GMT
+      - Wed, 29 Apr 2020 07:31:21 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -167,104 +347,99 @@ http_interactions:
       - "*"
     body:
       encoding: UTF-8
-      string: '{"took":20,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
+      string: '{"took":23,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
     http_version: null
-  recorded_at: Tue, 28 Apr 2020 21:07:58 GMT
+  recorded_at: Wed, 29 Apr 2020 07:31:22 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/kibana_sample_data_flights/_search?q=venice
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200429T073200Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=7f3209ba5fdf5c4ec5885286c58fd998a24db27326c50f517a1315446c41692d
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Apr 2020 07:32:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '160'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"took":4,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
+    http_version: null
+  recorded_at: Wed, 29 Apr 2020 07:32:00 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/kibana_sample_data_flights/_explain
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200429T073306Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=2b5bcc04d963c2f662c3f56fb32750efc3f1976039078b53c11e1d738a78cbba
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 405
+      message: Method Not Allowed
+    headers:
+      Date:
+      - Wed, 29 Apr 2020 07:33:06 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '127'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"error":"Incorrect HTTP method for uri [/kibana_sample_data_flights/_explain]
+        and method [GET], allowed: [POST]","status":405}'
+    http_version: null
+  recorded_at: Wed, 29 Apr 2020 07:33:06 GMT
 - request:
     method: post
-    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/kibana_sample_data_flights/_explain
     body:
       encoding: UTF-8
-      string: '{"size":20,"query":{"multi_match":{"query":"flight","fields":["subject","content"]}}}'
-    headers:
-      User-Agent:
-      - Faraday v1.0.1
-      Content-Type:
-      - application/json
-      Host:
-      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
-      X-Amz-Date:
-      - 20200428T230327Z
-      X-Amz-Content-Sha256:
-      - 23b16b3dbe520037bd9422601abe6f88ff8d47d20f3d5e0947ff4868634e1808
-      Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200428/us-west-2/es/aws4_request,
-        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
-        Signature=0094ba19658fba8fffbc60dc7283996ae311e6c48cd93ed69077b96d3027c321
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Tue, 28 Apr 2020 23:03:27 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '161'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"took":15,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
-    http_version: null
-  recorded_at: Tue, 28 Apr 2020 23:03:28 GMT
-- request:
-    method: get
-    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search
-    body:
-      encoding: UTF-8
-      string: '{"size":20,"query":{"multi_match":{"query":"flight","fields":["title","visState"]}}}'
-    headers:
-      User-Agent:
-      - Faraday v1.0.1
-      Content-Type:
-      - application/json
-      Host:
-      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
-      X-Amz-Date:
-      - 20200428T232326Z
-      X-Amz-Content-Sha256:
-      - 1842ccf86da0a7a07debc5cacf8d134e226564f027a4949ef80e22e513702406
-      Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200428/us-west-2/es/aws4_request,
-        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
-        Signature=0937aa830fee8f573b522f7807a691fdca1412d273ce8d22d8ed7a40ab013958
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Tue, 28 Apr 2020 23:23:27 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '161'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"took":14,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
-    http_version: null
-  recorded_at: Tue, 28 Apr 2020 23:23:27 GMT
-- request:
-    method: get
-    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search?flight
-    body:
-      encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
@@ -272,12 +447,14 @@ http_interactions:
       Host:
       - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
       X-Amz-Date:
-      - 20200428T232833Z
+      - 20200429T073352Z
       X-Amz-Content-Sha256:
       - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200428/us-west-2/es/aws4_request,
-        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=91bb506d32f796a6450e24ff9134bacf311b793210a546a50bc15436a1a713d1
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=f047fe69662c8bd3ec4b04440a15074e9896681fcf553826d70d7ca6742f0d7b
+      Content-Length:
+      - '0'
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -288,28 +465,27 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Tue, 28 Apr 2020 23:28:33 GMT
+      - Wed, 29 Apr 2020 07:33:53 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '257'
+      - '163'
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
       - "*"
     body:
       encoding: UTF-8
-      string: '{"error":{"root_cause":[{"type":"illegal_argument_exception","reason":"request
-        [/_search] contains unrecognized parameter: [flight]"}],"type":"illegal_argument_exception","reason":"request
-        [/_search] contains unrecognized parameter: [flight]"},"status":400}'
+      string: '{"error":{"root_cause":[{"type":"parse_exception","reason":"request
+        body is required"}],"type":"parse_exception","reason":"request body is required"},"status":400}'
     http_version: null
-  recorded_at: Tue, 28 Apr 2020 23:28:33 GMT
+  recorded_at: Wed, 29 Apr 2020 07:33:53 GMT
 - request:
     method: post
-    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/.kibana_-1154271068_jordan/_search
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/kibana_sample_data_flights/_search
     body:
       encoding: UTF-8
-      string: '{"size":20,"query":{"multi_match":{"query":"flight","fields":["title","visState"]}}}'
+      string: '{"size":20,"query":{"multi_match":{"query":"kibana","fields":["Carrier","OriginCityName","DestCityName"]}}}'
     headers:
       User-Agent:
       - Faraday v1.0.1
@@ -318,13 +494,13 @@ http_interactions:
       Host:
       - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
       X-Amz-Date:
-      - 20200428T233859Z
+      - 20200429T073504Z
       X-Amz-Content-Sha256:
-      - 1842ccf86da0a7a07debc5cacf8d134e226564f027a4949ef80e22e513702406
+      - 4a6259fa4fe5d39c3a8b3d2131a320dd58b8b097b007a618ac84e6542741f373
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200428/us-west-2/es/aws4_request,
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
         SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
-        Signature=164caeb4bfac2d84dfaac6764cffc2da775878f423c77579725f92fca512ccb9
+        Signature=e4084a28f770f74ce6b4b712ff90b2382c5cb8e4229e444bc3f86adf84bbae1f
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -335,7 +511,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 28 Apr 2020 23:38:59 GMT
+      - Wed, 29 Apr 2020 07:35:04 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -346,12 +522,102 @@ http_interactions:
       - "*"
     body:
       encoding: UTF-8
-      string: '{"took":1,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
+      string: '{"took":2,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
     http_version: null
-  recorded_at: Tue, 28 Apr 2020 23:39:00 GMT
+  recorded_at: Wed, 29 Apr 2020 07:35:04 GMT
+- request:
+    method: post
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/kibana_sample_data_flights/_search
+    body:
+      encoding: UTF-8
+      string: '{"size":20,"query":{"multi_match":{"query":"venice","fields":["Carrier","OriginCityName","DestCityName"]}}}'
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200429T073707Z
+      X-Amz-Content-Sha256:
+      - 978a912ad8499e9284b5f5f945a6351b72adc6d13d7c70b96fa54d0eb9384d48
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=635dfafac41e9574406d654be8c8de16e3d90fef46337915d8d355defefaf369
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Apr 2020 07:37:07 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '160'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"took":2,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
+    http_version: null
+  recorded_at: Wed, 29 Apr 2020 07:37:07 GMT
+- request:
+    method: post
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/kibana_sample_data_flights/_search
+    body:
+      encoding: UTF-8
+      string: '{"size":20,"query":{"multi_match":{"query":"venice","fields":["Carrier","OriginCityName","DestCityName"]}}}'
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200429T073757Z
+      X-Amz-Content-Sha256:
+      - 978a912ad8499e9284b5f5f945a6351b72adc6d13d7c70b96fa54d0eb9384d48
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=e9e6a6edd16332b82c6ab39d056f6f508274766dafd15a86dabed53bb2f31d82
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Apr 2020 07:37:57 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '160'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"took":3,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
+    http_version: null
+  recorded_at: Wed, 29 Apr 2020 07:37:57 GMT
 - request:
     method: get
-    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search?q=flight%20price
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_cat/indices?v
     body:
       encoding: US-ASCII
       string: ''
@@ -361,12 +627,12 @@ http_interactions:
       Host:
       - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
       X-Amz-Date:
-      - 20200428T234214Z
+      - 20200429T200944Z
       X-Amz-Content-Sha256:
       - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
       Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200428/us-west-2/es/aws4_request,
-        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=aa7c76c6a4d51ea5aeba3f8bd664893f6273522d636ab7c60f58d04f91c602b8
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=9dd9ce0147e3ab49c57cddc3af61504f952b4e6e97c94bce39416933b35474b2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -377,186 +643,146 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 28 Apr 2020 23:42:22 GMT
+      - Wed, 29 Apr 2020 20:09:44 GMT
       Content-Type:
-      - application/json; charset=UTF-8
+      - text/plain;charset=UTF-8
       Content-Length:
-      - '20134'
+      - '610'
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
       - "*"
     body:
       encoding: UTF-8
-      string: '{"took":34,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":12,"relation":"eq"},"max_score":3.6380866,"hits":[{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:c8fc3d30-4c87-11e8-b3d7-01146121b73d","_score":3.6380866,"_source":{"visualization":{"title":"[Flights]
-        Flight Count and Average Ticket Price","visState":"{\"title\":\"[Flights]
-        Flight Count and Average Ticket Price\",\"type\":\"area\",\"params\":{\"type\":\"area\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Average
-        Ticket Price\"}},{\"id\":\"ValueAxis-2\",\"name\":\"RightAxis-1\",\"type\":\"value\",\"position\":\"right\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Flight
-        Count\"}}],\"seriesParams\":[{\"show\":true,\"mode\":\"stacked\",\"type\":\"area\",\"drawLinesBetweenPoints\":true,\"showCircles\":false,\"interpolate\":\"linear\",\"lineWidth\":2,\"data\":{\"id\":\"5\",\"label\":\"Flight
-        Count\"},\"valueAxis\":\"ValueAxis-2\"},{\"show\":true,\"mode\":\"stacked\",\"type\":\"line\",\"drawLinesBetweenPoints\":false,\"showCircles\":true,\"interpolate\":\"linear\",\"data\":{\"id\":\"4\",\"label\":\"Average
-        Ticket Price\"},\"valueAxis\":\"ValueAxis-1\",\"lineWidth\":2}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false,\"radiusRatio\":13},\"aggs\":[{\"id\":\"3\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"timestamp\",\"interval\":\"auto\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"5\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Flight
-        Count\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"AvgTicketPrice\",\"customLabel\":\"Average
-        Ticket Price\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"radius\",\"params\":{\"field\":\"AvgTicketPrice\"}}]}","uiStateJSON":"{\"vis\":{\"legendOpen\":true,\"colors\":{\"Average
-        Ticket Price\":\"#629E51\",\"Flight Count\":\"#AEA2E0\"}}}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:2edf78b0-5395-11e8-99bf-1ba7b1bdaa61","_score":2.6588438,"_source":{"visualization":{"title":"[Flights]
-        Average Ticket Price","visState":"{\"title\":\"[Flights] Average Ticket Price\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green
-        to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":36}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"AvgTicketPrice\",\"customLabel\":\"Avg.
-        Ticket Price\"}}]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:aeb212e0-4c84-11e8-b3d7-01146121b73d","_score":2.010451,"_source":{"visualization":{"title":"[Flights]
-        Controls","visState":"{\"title\":\"[Flights] Controls\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1525098134264\",\"fieldName\":\"OriginCityName\",\"parent\":\"\",\"label\":\"Origin
-        City\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"},\"indexPatternRefName\":\"control_0_index_pattern\"},{\"id\":\"1525099277699\",\"fieldName\":\"DestCityName\",\"parent\":\"1525098134264\",\"label\":\"Destination
-        City\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"size\":100,\"order\":\"desc\"},\"indexPatternRefName\":\"control_1_index_pattern\"},{\"id\":\"1525099307278\",\"fieldName\":\"AvgTicketPrice\",\"parent\":\"\",\"label\":\"Average
-        Ticket Price\",\"type\":\"range\",\"options\":{\"decimalPlaces\":0,\"step\":10},\"indexPatternRefName\":\"control_2_index_pattern\"}],\"updateFiltersOnChange\":false,\"useTimeFilter\":true,\"pinFilters\":false},\"aggs\":[]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{}"}},"type":"visualization","references":[{"name":"control_0_index_pattern","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"},{"name":"control_1_index_pattern","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"},{"name":"control_2_index_pattern","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:76e3c090-4c8c-11e8-b3d7-01146121b73d","_score":1.3001854,"_source":{"visualization":{"title":"[Flights]
-        Flight Delays","visState":"{\"title\":\"[Flights] Flight Delays\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"BottomAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"FlightDelay\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Flight
-        Delays\"}}]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:707665a0-4c8c-11e8-b3d7-01146121b73d","_score":1.3001854,"_source":{"visualization":{"title":"[Flights]
-        Flight Cancellations","visState":"{\"title\":\"[Flights] Flight Cancellations\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"BottomAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"Cancelled\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Flight
-        Cancellations\"}}]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:f8283bf0-52fd-11e8-a160-89cc2ad9e8e2","_score":1.1636525,"_source":{"visualization":{"title":"[Flights]
-        Total Flight Delays","visState":"{\"title\":\"[Flights] Total Flight Delays\",\"type\":\"gauge\",\"params\":{\"type\":\"gauge\",\"addTooltip\":true,\"addLegend\":true,\"isDisplayWarning\":false,\"gauge\":{\"extendRange\":true,\"percentageMode\":false,\"gaugeType\":\"Arc\",\"gaugeStyle\":\"Full\",\"backStyle\":\"Full\",\"orientation\":\"vertical\",\"colorSchema\":\"Blues\",\"gaugeColorMode\":\"Labels\",\"colorsRange\":[{\"from\":0,\"to\":75},{\"from\":75,\"to\":150},{\"from\":150,\"to\":225},{\"from\":225,\"to\":300}],\"invertColors\":true,\"labels\":{\"show\":false,\"color\":\"black\"},\"scale\":{\"show\":false,\"labels\":false,\"color\":\"#333\"},\"type\":\"meter\",\"style\":{\"bgWidth\":0.9,\"width\":0.9,\"mask\":false,\"bgMask\":false,\"maskBars\":50,\"bgFill\":\"#eee\",\"bgColor\":false,\"subText\":\"\",\"fontSize\":60,\"labelColor\":true},\"alignment\":\"horizontal\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Total
-        Delays\"}}]}","uiStateJSON":"{\"vis\":{\"defaultColors\":{\"0 - 75\":\"rgb(8,48,107)\",\"75
-        - 150\":\"rgb(55,135,192)\",\"150 - 225\":\"rgb(171,208,230)\",\"225 - 300\":\"rgb(247,251,255)\"}}}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[{\"meta\":{\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"FlightDelay\",\"value\":\"true\",\"params\":{\"query\":true,\"type\":\"phrase\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"FlightDelay\":{\"query\":true,\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"},{"name":"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:08884800-52fe-11e8-a160-89cc2ad9e8e2","_score":1.1636525,"_source":{"visualization":{"title":"[Flights]
-        Total Flight Cancellations","visState":"{\"title\":\"[Flights] Total Flight
-        Cancellations\",\"type\":\"gauge\",\"params\":{\"type\":\"gauge\",\"addTooltip\":true,\"addLegend\":true,\"isDisplayWarning\":false,\"gauge\":{\"extendRange\":true,\"percentageMode\":false,\"gaugeType\":\"Arc\",\"gaugeStyle\":\"Full\",\"backStyle\":\"Full\",\"orientation\":\"vertical\",\"colorSchema\":\"Blues\",\"gaugeColorMode\":\"Labels\",\"colorsRange\":[{\"from\":0,\"to\":75},{\"from\":75,\"to\":150},{\"from\":150,\"to\":225},{\"from\":225,\"to\":300}],\"invertColors\":true,\"labels\":{\"show\":false,\"color\":\"black\"},\"scale\":{\"show\":false,\"labels\":false,\"color\":\"#333\"},\"type\":\"meter\",\"style\":{\"bgWidth\":0.9,\"width\":0.9,\"mask\":false,\"bgMask\":false,\"maskBars\":50,\"bgFill\":\"#eee\",\"bgColor\":false,\"subText\":\"\",\"fontSize\":60,\"labelColor\":true},\"alignment\":\"horizontal\"}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Total
-        Cancellations\"}}]}","uiStateJSON":"{\"vis\":{\"defaultColors\":{\"0 - 75\":\"rgb(8,48,107)\",\"75
-        - 150\":\"rgb(55,135,192)\",\"150 - 225\":\"rgb(171,208,230)\",\"225 - 300\":\"rgb(247,251,255)\"}}}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[{\"meta\":{\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"Cancelled\",\"value\":\"true\",\"params\":{\"query\":true,\"type\":\"phrase\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"Cancelled\":{\"query\":true,\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"},{"name":"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:129be430-4c93-11e8-b3d7-01146121b73d","_score":0.99718195,"_source":{"visualization":{"title":"[Flights]
+      string: |
+        health status index                      uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+        green  open   .kibana_-1154271068_jordan h-xP5cJeSOm3tXpBcI6NJA   1   1         59            0    107.7kb         53.8kb
+        green  open   kibana_sample_data_flights Em5XUFIVQSO5Zn8p9bFHeA   1   1      13059            0     12.8mb          6.4mb
+        green  open   .kibana_1                  A25KReOOSGqARCKcjkOdvg   1   1          3            0     22.6kb          7.3kb
+        green  open   .opendistro_security       ZrBmgdjgSnqZGOkWd4J51Q   1   3          6            0    112.2kb           28kb
+    http_version: null
+  recorded_at: Wed, 29 Apr 2020 20:09:44 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search?q=kibana
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200429T201503Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=3b807de9d831a53dbcacc4c4c342d1edb2c0bc799d3bcc127fbceb7b3ebd66df
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Apr 2020 20:15:03 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '16398'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"took":21,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":4,"relation":"eq"},"max_score":2.7135832,"hits":[{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:129be430-4c93-11e8-b3d7-01146121b73d","_score":2.7135832,"_source":{"visualization":{"title":"[Flights]
         Markdown Instructions","visState":"{\"title\":\"[Flights] Markdown Instructions\",\"type\":\"markdown\",\"params\":{\"fontSize\":10,\"openLinksInNewTab\":true,\"markdown\":\"###
         Sample Flight data\\nThis dashboard contains sample data for you to play with.
         You can view it, search it, and interact with the visualizations. For more
-        information about Kibana, check our [docs](https://www.elastic.co/guide/en/kibana/current/index.html).\"},\"aggs\":[]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{}"}},"type":"visualization","references":[],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:bcb63b50-4c89-11e8-b3d7-01146121b73d","_score":0.7992248,"_source":{"visualization":{"title":"[Flights]
-        Delays & Cancellations","visState":"{\"title\":\"[Flights] Delays & Cancellations\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"rgba(0,156,224,1)\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"filter_ratio\",\"numerator\":\"FlightDelay:true\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"percent\",\"chart_type\":\"line\",\"line_width\":\"2\",\"point_size\":\"0\",\"fill\":0.5,\"stacked\":\"none\",\"label\":\"Percent
-        Delays\"}],\"time_field\":\"timestamp\",\"index_pattern\":\"kibana_sample_data_flights\",\"interval\":\">=1h\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"annotations\":[{\"fields\":\"FlightDelay,Cancelled,Carrier\",\"template\":\"{{Carrier}}:
-        Flight Delayed and Cancelled!\",\"index_pattern\":\"kibana_sample_data_flights\",\"query_string\":{\"query\":\"FlightDelay:true
-        AND Cancelled:true\",\"language\":\"lucene\"},\"id\":\"53b7dff0-4c89-11e8-a66a-6989ad5a0a39\",\"color\":\"rgba(0,98,177,1)\",\"time_field\":\"timestamp\",\"icon\":\"fa-exclamation-triangle\",\"ignore_global_filters\":1,\"ignore_panel_filters\":1}],\"legend_position\":\"bottom\"},\"aggs\":[]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{}"}},"type":"visualization","references":[],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:9886b410-4c8b-11e8-b3d7-01146121b73d","_score":0.7786157,"_source":{"visualization":{"title":"[Flights]
-        Delay Buckets","visState":"{\"title\":\"[Flights] Delay Buckets\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"FlightDelayMin\",\"interval\":30,\"extended_bounds\":{},\"customLabel\":\"Flight
-        Delay Minutes\"}}]}","uiStateJSON":"{\"vis\":{\"legendOpen\":false}}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[{\"meta\":{\"negate\":true,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"FlightDelayMin\",\"value\":\"0\",\"params\":{\"query\":0,\"type\":\"phrase\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"FlightDelayMin\":{\"query\":0,\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"},{"name":"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}}]}}'
+        information about Kibana, check our [docs](https://www.elastic.co/guide/en/kibana/current/index.html).\"},\"aggs\":[]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{}"}},"type":"visualization","references":[],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:334084f0-52fd-11e8-a160-89cc2ad9e8e2","_score":1.7557125,"_source":{"visualization":{"title":"[Flights]
+        Origin Country Ticket Prices","visState":"{\"title\":\"[Flights] Origin Country
+        Ticket Prices\",\"type\":\"region_map\",\"params\":{\"legendPosition\":\"bottomright\",\"addTooltip\":true,\"colorSchema\":\"Blues\",\"selectedLayer\":{\"attribution\":\"<p><a
+        href=\\\"http://www.naturalearthdata.com/about/terms-of-use\\\">Made with
+        NaturalEarth</a> | <a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic
+        Maps Service</a></p>&#10;\",\"name\":\"World Countries\",\"weight\":1,\"format\":{\"type\":\"geojson\"},\"url\":\"https://vector.maps.elastic.co/blob/5659313586569216?elastic_tile_service_tos=agree&my_app_version=6.3.0&license=686f9ec6-d775-44f0-b334-38caf85da617\",\"fields\":[{\"name\":\"iso2\",\"description\":\"Two
+        letter abbreviation\"},{\"name\":\"name\",\"description\":\"Country name\"},{\"name\":\"iso3\",\"description\":\"Three
+        letter abbreviation\"}],\"created_at\":\"2017-04-26T17:12:15.978370\",\"tags\":[],\"id\":5659313586569216,\"layerId\":\"elastic_maps_service.World
+        Countries\"},\"selectedJoinField\":{\"name\":\"iso2\",\"description\":\"Two
+        letter abbreviation\"},\"isDisplayWarning\":false,\"wms\":{\"enabled\":false,\"options\":{\"format\":\"image/png\",\"transparent\":true},\"baseLayersAreLoaded\":{},\"tmsLayers\":[{\"id\":\"road_map\",\"url\":\"https://tiles.maps.elastic.co/v2/default/{z}/{x}/{y}.png?elastic_tile_service_tos=agree&my_app_name=kibana&my_app_version=6.3.0&license=686f9ec6-d775-44f0-b334-38caf85da617\",\"minZoom\":0,\"maxZoom\":18,\"attribution\":\"<p>&#169;
+        <a href=\\\"http://www.openstreetmap.org/copyright\\\">OpenStreetMap</a> contributors
+        | <a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps
+        Service</a></p>&#10;\",\"subdomains\":[]}],\"selectedTmsLayer\":{\"id\":\"road_map\",\"url\":\"https://tiles.maps.elastic.co/v2/default/{z}/{x}/{y}.png?elastic_tile_service_tos=agree&my_app_name=kibana&my_app_version=6.3.0&license=686f9ec6-d775-44f0-b334-38caf85da617\",\"minZoom\":0,\"maxZoom\":18,\"attribution\":\"<p>&#169;
+        <a href=\\\"http://www.openstreetmap.org/copyright\\\">OpenStreetMap</a> contributors
+        | <a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps
+        Service</a></p>&#10;\",\"subdomains\":[]}},\"mapZoom\":2,\"mapCenter\":[0,0],\"outlineWeight\":1,\"showAllShapes\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"AvgTicketPrice\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"OriginCountry\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"}},"type":"visualization","references":[{"name":"kibanaSavedObjectMeta.searchSourceJSON.index","type":"index-pattern","id":"d3d7af60-4c81-11e8-b3d7-01146121b73d"}],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"visualization:ed78a660-53a0-11e8-acbd-0be0ad9d822b","_score":0.8812898,"_source":{"visualization":{"title":"[Flights]
+        Airport Connections (Hover Over Airport)","visState":"{\"aggs\":[],\"params\":{\"spec\":\"{\\n  $schema:
+        https://vega.github.io/schema/vega/v3.0.json\\n  config: {\\n    kibana: {type:
+        \\\"map\\\", latitude: 25, longitude: -70, zoom: 3}\\n  }\\n  data: [\\n    {\\n      name:
+        table\\n      url: {\\n        index: kibana_sample_data_flights\\n        %context%:
+        true\\n        // Uncomment to enable time filtering\\n        // %timefield%:
+        timestamp\\n        body: {\\n          size: 0\\n          aggs: {\\n            origins:
+        {\\n              terms: {field: \\\"OriginAirportID\\\", size: 10000}\\n              aggs:
+        {\\n                originLocation: {\\n                  top_hits: {\\n                    size:
+        1\\n                    _source: {\\n                      includes: [\\\"OriginLocation\\\",
+        \\\"Origin\\\"]\\n                    }\\n                  }\\n                }\\n                distinations:
+        {\\n                  terms: {field: \\\"DestAirportID\\\", size: 10000}\\n                  aggs:
+        {\\n                    destLocation: {\\n                      top_hits:
+        {\\n                        size: 1\\n                        _source: {\\n                          includes:
+        [\\\"DestLocation\\\"]\\n                        }\\n                      }\\n                    }\\n                  }\\n                }\\n              }\\n            }\\n          }\\n        }\\n      }\\n      format:
+        {property: \\\"aggregations.origins.buckets\\\"}\\n      transform: [\\n        {\\n          type:
+        geopoint\\n          projection: projection\\n          fields: [\\n            originLocation.hits.hits[0]._source.OriginLocation.lon\\n            originLocation.hits.hits[0]._source.OriginLocation.lat\\n          ]\\n        }\\n      ]\\n    }\\n    {\\n      name:
+        selectedDatum\\n      on: [\\n        {trigger: \\\"!selected\\\", remove:
+        true}\\n        {trigger: \\\"selected\\\", insert: \\\"selected\\\"}\\n      ]\\n    }\\n  ]\\n  signals:
+        [\\n    {\\n      name: selected\\n      value: null\\n      on: [\\n        {events:
+        \\\"@airport:mouseover\\\", update: \\\"datum\\\"}\\n        {events: \\\"@airport:mouseout\\\",
+        update: \\\"null\\\"}\\n      ]\\n    }\\n  ]\\n  scales: [\\n    {\\n      name:
+        airportSize\\n      type: linear\\n      domain: {data: \\\"table\\\", field:
+        \\\"doc_count\\\"}\\n      range: [\\n        {signal: \\\"zoom*zoom*0.2+1\\\"}\\n        {signal:
+        \\\"zoom*zoom*10+1\\\"}\\n      ]\\n    }\\n  ]\\n  marks: [\\n    {\\n      type:
+        group\\n      from: {\\n        facet: {\\n          name: facetedDatum\\n          data:
+        selectedDatum\\n          field: distinations.buckets\\n        }\\n      }\\n      data:
+        [\\n        {\\n          name: facetDatumElems\\n          source: facetedDatum\\n          transform:
+        [\\n            {\\n              type: geopoint\\n              projection:
+        projection\\n              fields: [\\n                destLocation.hits.hits[0]._source.DestLocation.lon\\n                destLocation.hits.hits[0]._source.DestLocation.lat\\n              ]\\n            }\\n            {type:
+        \\\"formula\\\", expr: \\\"{x:parent.x, y:parent.y}\\\", as: \\\"source\\\"}\\n            {type:
+        \\\"formula\\\", expr: \\\"{x:datum.x, y:datum.y}\\\", as: \\\"target\\\"}\\n            {type:
+        \\\"linkpath\\\", shape: \\\"diagonal\\\"}\\n          ]\\n        }\\n      ]\\n      scales:
+        [\\n        {\\n          name: lineThickness\\n          type: linear\\n          domain:
+        {data: \\\"facetDatumElems\\\", field: \\\"doc_count\\\"}\\n          range:
+        [1, 8]\\n        }\\n        {\\n          name: lineOpacity\\n          type:
+        linear\\n          domain: {data: \\\"facetDatumElems\\\", field: \\\"doc_count\\\"}\\n          range:
+        [0.2, 0.8]\\n        }\\n      ]\\n      marks: [\\n        {\\n          from:
+        {data: \\\"facetDatumElems\\\"}\\n          type: path\\n          interactive:
+        false\\n          encode: {\\n            update: {\\n              path:
+        {field: \\\"path\\\"}\\n              stroke: {value: \\\"black\\\"}\\n              strokeWidth:
+        {scale: \\\"lineThickness\\\", field: \\\"doc_count\\\"}\\n              strokeOpacity:
+        {scale: \\\"lineOpacity\\\", field: \\\"doc_count\\\"}\\n            }\\n          }\\n        }\\n      ]\\n    }\\n    {\\n      name:
+        airport\\n      type: symbol\\n      from: {data: \\\"table\\\"}\\n      encode:
+        {\\n        update: {\\n          size: {scale: \\\"airportSize\\\", field:
+        \\\"doc_count\\\"}\\n          xc: {signal: \\\"datum.x\\\"}\\n          yc:
+        {signal: \\\"datum.y\\\"}\\n          tooltip: {\\n            signal: \\\"{title:
+        datum.originLocation.hits.hits[0]._source.Origin + '' ('' + datum.key + '')'',
+        connnections: length(datum.distinations.buckets), flights: datum.doc_count}\\\"\\n          }\\n        }\\n      }\\n    }\\n  ]\\n}\"},\"title\":\"[Flights]
+        Airport Connections (Hover Over Airport)\",\"type\":\"vega\"}","uiStateJSON":"{}","description":"","version":1,"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"}},"type":"visualization","references":[],"migrationVersion":{"visualization":"7.4.2"},"updated_at":"2020-04-28T01:01:24.234Z"}},{"_index":".kibana_-1154271068_jordan","_type":"_doc","_id":"dashboard:7adfa750-4c81-11e8-b3d7-01146121b73d","_score":0.29440174,"_source":{"dashboard":{"title":"[Flights]
+        Global Flight Dashboard","hits":0,"description":"Analyze mock flight data
+        for ES-Air, Logstash Airways, Kibana Airlines and JetBeats","panelsJSON":"[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":32,\"h\":7,\"i\":\"1\"},\"embeddableConfig\":{},\"version\":\"7.3.0\",\"panelRefName\":\"panel_0\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":17,\"y\":7,\"w\":23,\"h\":12,\"i\":\"3\"},\"embeddableConfig\":{\"vis\":{\"colors\":{\"Average
+        Ticket Price\":\"#0A50A1\",\"Flight Count\":\"#82B5D8\"},\"legendOpen\":false}},\"version\":\"7.3.0\",\"panelRefName\":\"panel_1\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":0,\"y\":85,\"w\":48,\"h\":15,\"i\":\"4\"},\"embeddableConfig\":{},\"version\":\"7.3.0\",\"panelRefName\":\"panel_2\"},{\"panelIndex\":\"5\",\"gridData\":{\"x\":0,\"y\":7,\"w\":17,\"h\":12,\"i\":\"5\"},\"embeddableConfig\":{\"vis\":{\"colors\":{\"ES-Air\":\"#447EBC\",\"JetBeats\":\"#65C5DB\",\"Kibana
+        Airlines\":\"#BA43A9\",\"Logstash Airways\":\"#E5AC0E\"},\"legendOpen\":false}},\"version\":\"7.3.0\",\"panelRefName\":\"panel_3\"},{\"panelIndex\":\"6\",\"gridData\":{\"x\":24,\"y\":33,\"w\":24,\"h\":14,\"i\":\"6\"},\"embeddableConfig\":{\"vis\":{\"colors\":{\"Carrier
+        Delay\":\"#5195CE\",\"Late Aircraft Delay\":\"#1F78C1\",\"NAS Delay\":\"#70DBED\",\"No
+        Delay\":\"#BADFF4\",\"Security Delay\":\"#052B51\",\"Weather Delay\":\"#6ED0E0\"}}},\"version\":\"7.3.0\",\"panelRefName\":\"panel_4\"},{\"panelIndex\":\"7\",\"gridData\":{\"x\":24,\"y\":19,\"w\":24,\"h\":14,\"i\":\"7\"},\"embeddableConfig\":{},\"version\":\"7.3.0\",\"panelRefName\":\"panel_5\"},{\"panelIndex\":\"10\",\"gridData\":{\"x\":0,\"y\":35,\"w\":24,\"h\":12,\"i\":\"10\"},\"embeddableConfig\":{\"vis\":{\"colors\":{\"Count\":\"#1F78C1\"},\"legendOpen\":false}},\"version\":\"7.3.0\",\"panelRefName\":\"panel_6\"},{\"panelIndex\":\"13\",\"gridData\":{\"x\":10,\"y\":19,\"w\":14,\"h\":8,\"i\":\"13\"},\"embeddableConfig\":{\"vis\":{\"colors\":{\"Count\":\"#1F78C1\"},\"legendOpen\":false}},\"version\":\"7.3.0\",\"panelRefName\":\"panel_7\"},{\"panelIndex\":\"14\",\"gridData\":{\"x\":10,\"y\":27,\"w\":14,\"h\":8,\"i\":\"14\"},\"embeddableConfig\":{\"vis\":{\"colors\":{\"Count\":\"#1F78C1\"},\"legendOpen\":false}},\"version\":\"7.3.0\",\"panelRefName\":\"panel_8\"},{\"panelIndex\":\"21\",\"gridData\":{\"x\":0,\"y\":62,\"w\":48,\"h\":8,\"i\":\"21\"},\"embeddableConfig\":{},\"version\":\"7.3.0\",\"panelRefName\":\"panel_10\"},{\"panelIndex\":\"22\",\"gridData\":{\"x\":32,\"y\":0,\"w\":16,\"h\":7,\"i\":\"22\"},\"embeddableConfig\":{},\"version\":\"7.3.0\",\"panelRefName\":\"panel_11\"},{\"panelIndex\":\"23\",\"gridData\":{\"x\":0,\"y\":70,\"w\":48,\"h\":15,\"i\":\"23\"},\"embeddableConfig\":{\"mapCenter\":[42.19556096274418,9.536742995308601e-7],\"mapZoom\":1},\"version\":\"7.3.0\",\"panelRefName\":\"panel_12\"},{\"panelIndex\":\"25\",\"gridData\":{\"x\":0,\"y\":19,\"w\":10,\"h\":8,\"i\":\"25\"},\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0
+        - 50\":\"rgb(247,251,255)\",\"100 - 150\":\"rgb(107,174,214)\",\"150 - 200\":\"rgb(33,113,181)\",\"200
+        - 250\":\"rgb(8,48,107)\",\"50 - 100\":\"rgb(198,219,239)\"},\"legendOpen\":false}},\"version\":\"7.3.0\",\"panelRefName\":\"panel_13\"},{\"panelIndex\":\"27\",\"gridData\":{\"x\":0,\"y\":27,\"w\":10,\"h\":8,\"i\":\"27\"},\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0
+        - 50\":\"rgb(247,251,255)\",\"100 - 150\":\"rgb(107,174,214)\",\"150 - 200\":\"rgb(33,113,181)\",\"200
+        - 250\":\"rgb(8,48,107)\",\"50 - 100\":\"rgb(198,219,239)\"},\"legendOpen\":false}},\"version\":\"7.3.0\",\"panelRefName\":\"panel_14\"},{\"panelIndex\":\"28\",\"gridData\":{\"x\":0,\"y\":47,\"w\":24,\"h\":15,\"i\":\"28\"},\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0
+        - 11\":\"rgb(247,251,255)\",\"11 - 22\":\"rgb(208,225,242)\",\"22 - 33\":\"rgb(148,196,223)\",\"33
+        - 44\":\"rgb(74,152,201)\",\"44 - 55\":\"rgb(23,100,171)\"},\"legendOpen\":false}},\"version\":\"7.3.0\",\"panelRefName\":\"panel_15\"},{\"panelIndex\":\"29\",\"gridData\":{\"x\":40,\"y\":7,\"w\":8,\"h\":6,\"i\":\"29\"},\"embeddableConfig\":{},\"version\":\"7.3.0\",\"panelRefName\":\"panel_16\"},{\"panelIndex\":\"30\",\"gridData\":{\"x\":40,\"y\":13,\"w\":8,\"h\":6,\"i\":\"30\"},\"embeddableConfig\":{},\"version\":\"7.3.0\",\"panelRefName\":\"panel_17\"},{\"panelIndex\":\"31\",\"gridData\":{\"x\":24,\"y\":47,\"w\":24,\"h\":15,\"i\":\"31\"},\"embeddableConfig\":{},\"version\":\"7.3.0\",\"panelRefName\":\"panel_18\"}]","optionsJSON":"{\"hidePanelTitles\":false,\"useMargins\":true}","version":1,"timeRestore":true,"timeTo":"now","timeFrom":"now-24h","refreshInterval":{"display":"15
+        minutes","pause":false,"section":2,"value":900000},"kibanaSavedObjectMeta":{"searchSourceJSON":"{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"}},"type":"dashboard","references":[{"name":"panel_0","type":"visualization","id":"aeb212e0-4c84-11e8-b3d7-01146121b73d"},{"name":"panel_1","type":"visualization","id":"c8fc3d30-4c87-11e8-b3d7-01146121b73d"},{"name":"panel_2","type":"search","id":"571aaf70-4c88-11e8-b3d7-01146121b73d"},{"name":"panel_3","type":"visualization","id":"8f4d0c00-4c86-11e8-b3d7-01146121b73d"},{"name":"panel_4","type":"visualization","id":"f8290060-4c88-11e8-b3d7-01146121b73d"},{"name":"panel_5","type":"visualization","id":"bcb63b50-4c89-11e8-b3d7-01146121b73d"},{"name":"panel_6","type":"visualization","id":"9886b410-4c8b-11e8-b3d7-01146121b73d"},{"name":"panel_7","type":"visualization","id":"76e3c090-4c8c-11e8-b3d7-01146121b73d"},{"name":"panel_8","type":"visualization","id":"707665a0-4c8c-11e8-b3d7-01146121b73d"},{"name":"panel_10","type":"visualization","id":"293b5a30-4c8f-11e8-b3d7-01146121b73d"},{"name":"panel_11","type":"visualization","id":"129be430-4c93-11e8-b3d7-01146121b73d"},{"name":"panel_12","type":"visualization","id":"334084f0-52fd-11e8-a160-89cc2ad9e8e2"},{"name":"panel_13","type":"visualization","id":"f8283bf0-52fd-11e8-a160-89cc2ad9e8e2"},{"name":"panel_14","type":"visualization","id":"08884800-52fe-11e8-a160-89cc2ad9e8e2"},{"name":"panel_15","type":"visualization","id":"e6944e50-52fe-11e8-a160-89cc2ad9e8e2"},{"name":"panel_16","type":"visualization","id":"01c413e0-5395-11e8-99bf-1ba7b1bdaa61"},{"name":"panel_17","type":"visualization","id":"2edf78b0-5395-11e8-99bf-1ba7b1bdaa61"},{"name":"panel_18","type":"visualization","id":"ed78a660-53a0-11e8-acbd-0be0ad9d822b"}],"migrationVersion":{"dashboard":"7.3.0"},"updated_at":"2020-04-28T01:01:24.234Z"}}]}}'
     http_version: null
-  recorded_at: Tue, 28 Apr 2020 23:42:22 GMT
-- request:
-    method: post
-    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search
-    body:
-      encoding: UTF-8
-      string: '{"size":20,"query":{"multi_match":{"query":"flight","fields":["title","visState"]}}}'
-    headers:
-      User-Agent:
-      - Faraday v1.0.1
-      Host:
-      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
-      X-Amz-Date:
-      - 20200428T235827Z
-      X-Amz-Content-Sha256:
-      - 1842ccf86da0a7a07debc5cacf8d134e226564f027a4949ef80e22e513702406
-      Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200428/us-west-2/es/aws4_request,
-        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=a3ae0f5563a9c5948019ef052c9f9fba9c43587c1af16afaa96f35a7e5e2740e
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 406
-      message: Not Acceptable
-    headers:
-      Date:
-      - Tue, 28 Apr 2020 23:58:27 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '97'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"error":"Content-Type header [application/x-www-form-urlencoded] is
-        not supported","status":406}'
-    http_version: null
-  recorded_at: Tue, 28 Apr 2020 23:58:27 GMT
-- request:
-    method: post
-    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search
-    body:
-      encoding: UTF-8
-      string: '{"size":20,"query":{"multi_match":{"query":"plane","fields":["title","visState"]}}}'
-    headers:
-      User-Agent:
-      - Faraday v1.0.1
-      Host:
-      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
-      X-Amz-Date:
-      - 20200428T235859Z
-      X-Amz-Content-Sha256:
-      - f9faa3fe7aa382ff07d322d70f08d11f20cc11a2e54972190ce59deb96f1ae71
-      Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200428/us-west-2/es/aws4_request,
-        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=ef67312c09c811d89a6ae166dca9644382439add11ceb6bd618b7b70004457cb
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 406
-      message: Not Acceptable
-    headers:
-      Date:
-      - Tue, 28 Apr 2020 23:58:59 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '97'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"error":"Content-Type header [application/x-www-form-urlencoded] is
-        not supported","status":406}'
-    http_version: null
-  recorded_at: Tue, 28 Apr 2020 23:58:59 GMT
-- request:
-    method: post
-    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search?routing=type
-    body:
-      encoding: UTF-8
-      string: '{"size":20,"query":{"multi_match":{"query":"flight","fields":["title","visState"]}}}'
-    headers:
-      User-Agent:
-      - Faraday v1.0.1
-      Content-Type:
-      - application/json
-      Host:
-      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
-      X-Amz-Date:
-      - 20200429T045918Z
-      X-Amz-Content-Sha256:
-      - 1842ccf86da0a7a07debc5cacf8d134e226564f027a4949ef80e22e513702406
-      Authorization:
-      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200429/us-west-2/es/aws4_request,
-        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
-        Signature=2fe9c9e881540bf6953ec967b6e6886f3a7373e7dc05c9a98824af58045aab28
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Wed, 29 Apr 2020 04:59:19 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '160'
-      Connection:
-      - keep-alive
-      Access-Control-Allow-Origin:
-      - "*"
-    body:
-      encoding: UTF-8
-      string: '{"took":8,"timed_out":false,"_shards":{"total":4,"successful":4,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
-    http_version: null
-  recorded_at: Wed, 29 Apr 2020 04:59:19 GMT
+  recorded_at: Wed, 29 Apr 2020 20:15:03 GMT
 recorded_with: VCR 5.1.0

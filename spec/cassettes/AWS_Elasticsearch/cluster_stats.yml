@@ -2299,4 +2299,498 @@ http_interactions:
         Marco Polo Airport","OriginLocation":{"lat":"45.505299","lon":"12.3519"},"DestRegion":"PL-MZ","OriginAirportID":"VE05","OriginRegion":"IT-34","DestCityName":"Warsaw","FlightTimeHour":0.9535363122883657,"FlightDelayMin":0}}]}}'
     http_version: null
   recorded_at: Thu, 30 Apr 2020 02:51:02 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/questions/_search?q=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - 'elasticsearch-ruby/7.6.0 (RUBY_VERSION: 2.7.1; darwin x86_64; Faraday v1.0.1)'
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200501T005024Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200501/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=d7df7e6b7ab5fd368fe5e80f6b5375181b6653d8142ebc97e91c224edcebe41f
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Fri, 01 May 2020 00:50:24 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '383'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"error":{"root_cause":[{"type":"index_not_found_exception","reason":"no
+        such index [questions]","resource.type":"index_or_alias","resource.id":"questions","index_uuid":"_na_","index":"questions"}],"type":"index_not_found_exception","reason":"no
+        such index [questions]","resource.type":"index_or_alias","resource.id":"questions","index_uuid":"_na_","index":"questions"},"status":404}'
+    http_version: null
+  recorded_at: Fri, 01 May 2020 00:50:24 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/questions/_search?q=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - 'elasticsearch-ruby/7.6.0 (RUBY_VERSION: 2.7.1; darwin x86_64; Faraday v1.0.1)'
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200501T005121Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200501/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=f966955b59092ae56f196f7124c947b60964c8dcd3f5b36a05367ad4ef871539
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Fri, 01 May 2020 00:51:22 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '383'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"error":{"root_cause":[{"type":"index_not_found_exception","reason":"no
+        such index [questions]","resource.type":"index_or_alias","resource.id":"questions","index_uuid":"_na_","index":"questions"}],"type":"index_not_found_exception","reason":"no
+        such index [questions]","resource.type":"index_or_alias","resource.id":"questions","index_uuid":"_na_","index":"questions"},"status":404}'
+    http_version: null
+  recorded_at: Fri, 01 May 2020 00:51:22 GMT
+- request:
+    method: delete
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/questions
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - 'elasticsearch-ruby/7.6.0 (RUBY_VERSION: 2.7.1; darwin x86_64; Faraday v1.0.1)'
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200501T005226Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200501/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=5c2017f64b7778acb635f167c7ae17f214aafdd18b86cc928d2acf390c911543
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Fri, 01 May 2020 00:52:27 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '383'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"error":{"root_cause":[{"type":"index_not_found_exception","reason":"no
+        such index [questions]","index_uuid":"_na_","resource.type":"index_or_alias","resource.id":"questions","index":"questions"}],"type":"index_not_found_exception","reason":"no
+        such index [questions]","index_uuid":"_na_","resource.type":"index_or_alias","resource.id":"questions","index":"questions"},"status":404}'
+    http_version: null
+  recorded_at: Fri, 01 May 2020 00:52:27 GMT
+- request:
+    method: head
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/questions
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - 'elasticsearch-ruby/7.6.0 (RUBY_VERSION: 2.7.1; darwin x86_64; Faraday v1.0.1)'
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200501T005227Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200501/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=16b381ad45c054760a633e2b85c7d52323ad1ac40167de49b0d42c71a3b4f0ba
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Fri, 01 May 2020 00:52:27 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '383'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: null
+  recorded_at: Fri, 01 May 2020 00:52:27 GMT
+- request:
+    method: put
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/questions
+    body:
+      encoding: UTF-8
+      string: '{"settings":{"index":{"number_of_shards":1}},"mappings":{"dynamic":false,"properties":{"subject":{"type":"text","analyzer":"english"},"content":{"type":"text","analyzer":"english"}}}}'
+    headers:
+      User-Agent:
+      - 'elasticsearch-ruby/7.6.0 (RUBY_VERSION: 2.7.1; darwin x86_64; Faraday v1.0.1)'
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200501T005227Z
+      X-Amz-Content-Sha256:
+      - caad54a4213de974fa71bd770c2373fbde4391adfc0913e8e7ab1b23ed8b0fcf
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200501/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=7362aa67bd6081d453c1d68724d50968067ce52e459498054dafc5824fe4bff9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 01 May 2020 00:52:27 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '68'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"acknowledged":true,"shards_acknowledged":true,"index":"questions"}'
+    http_version: null
+  recorded_at: Fri, 01 May 2020 00:52:27 GMT
+- request:
+    method: head
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/questions
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - 'elasticsearch-ruby/7.6.0 (RUBY_VERSION: 2.7.1; darwin x86_64; Faraday v1.0.1)'
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200501T005419Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200501/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=e5aeb27d4dd88236886286af92e7af6588c51b8490c395bed9d399c705f5a358
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 01 May 2020 00:54:19 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '363'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: null
+  recorded_at: Fri, 01 May 2020 00:54:19 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/questions/_search?q=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - 'elasticsearch-ruby/7.6.0 (RUBY_VERSION: 2.7.1; darwin x86_64; Faraday v1.0.1)'
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200501T005633Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200501/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=1160882b0d55210cd8b683b65cbead989228c874b5d01bbc8fdf50bf9ef87a9e
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 01 May 2020 00:56:34 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '160'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"took":8,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
+    http_version: null
+  recorded_at: Fri, 01 May 2020 00:56:34 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/questions/_search?q=help
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - 'elasticsearch-ruby/7.6.0 (RUBY_VERSION: 2.7.1; darwin x86_64; Faraday v1.0.1)'
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200501T005702Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200501/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=af05a4ac26ac114e04b908eac3443cdec4803e7f06b24091ca9a119cc7224334
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 01 May 2020 00:57:02 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '160'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"took":2,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
+    http_version: null
+  recorded_at: Fri, 01 May 2020 00:57:02 GMT
+- request:
+    method: put
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/test_index/_doc/1
+    body:
+      encoding: UTF-8
+      string: '{"title":"Indexing from my client"}'
+    headers:
+      User-Agent:
+      - 'elasticsearch-ruby/7.6.0 (RUBY_VERSION: 2.7.1; darwin x86_64; Faraday v1.0.1)'
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200501T010534Z
+      X-Amz-Content-Sha256:
+      - b2dc4708bd922ff3673eff848fc09d850a82f9681947bb3d29fe8a2e68c34090
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200501/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=a8653353fdae66a5f7675dbb5e10b4d5abdd9b6fb764b6ba6f583cd8d6bc072d
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Fri, 01 May 2020 01:05:35 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '158'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"_index":"test_index","_type":"_doc","_id":"1","_version":1,"result":"created","_shards":{"total":2,"successful":1,"failed":0},"_seq_no":0,"_primary_term":1}'
+    http_version: null
+  recorded_at: Fri, 01 May 2020 01:05:35 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_cluster/stats
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200501T013223Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200501/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=88f3f3e54bee6311ba0ffea77e8aea7236ab3f7cb46e4ed258e4a784e2213bf3
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 01 May 2020 01:32:24 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '2025'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"_nodes":{"total":7,"successful":7,"failed":0},"cluster_name":"218497580724:kaizen","cluster_uuid":"l0iW_jwWQUiqyZh6c1VcRQ","timestamp":1588296744719,"status":"green","indices":{"count":6,"shards":{"total":22,"primaries":10,"replication":1.2,"index":{"shards":{"min":2,"max":10,"avg":3.6666666666666665},"primaries":{"min":1,"max":5,"avg":1.6666666666666667},"replication":{"min":1.0,"max":3.0,"avg":1.3333333333333333}}},"docs":{"count":13128,"deleted":1},"store":{"size_in_bytes":13810670},"fielddata":{"memory_size_in_bytes":0,"evictions":0},"query_cache":{"memory_size_in_bytes":0,"total_count":0,"hit_count":0,"miss_count":0,"cache_size":0,"cache_count":0,"evictions":0},"completion":{"size_in_bytes":0},"segments":{"count":33,"memory_in_bytes":176028,"terms_memory_in_bytes":117623,"stored_fields_memory_in_bytes":12096,"term_vectors_memory_in_bytes":0,"norms_memory_in_bytes":4864,"points_memory_in_bytes":1737,"doc_values_memory_in_bytes":39708,"index_writer_memory_in_bytes":0,"version_map_memory_in_bytes":0,"fixed_bit_set_memory_in_bytes":528,"max_unsafe_auto_id_timestamp":-1,"file_sizes":{}}},"nodes":{"count":{"total":7,"coordinating_only":0,"data":4,"ingest":4,"master":3},"versions":["7.4.2"],"os":{"available_processors":14,"allocated_processors":14,"names":[{"count":7}],"pretty_names":[{"count":7}],"mem":{"total_in_bytes":115582222336,"free_in_bytes":8209469440,"used_in_bytes":107372752896,"free_percent":7,"used_percent":93}},"process":{"cpu":{"percent":0},"open_file_descriptors":{"min":1443,"max":1554,"avg":1491}},"jvm":{"max_uptime_in_millis":276583014,"mem":{"heap_used_in_bytes":2883749840,"heap_max_in_bytes":66449965056},"threads":945},"fs":{"total_in_bytes":64452354048,"free_in_bytes":56811913216,"available_in_bytes":56694472704},"network_types":{"transport_types":{"com.amazon.opendistroforelasticsearch.security.ssl.http.netty.OpenDistroSecuritySSLNettyTransport":7},"http_types":{"filter-jetty":7}},"discovery_types":{"zen":7},"packaging_types":[{"flavor":"oss","type":"tar","count":7}]}}'
+    http_version: null
+  recorded_at: Fri, 01 May 2020 01:32:24 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_cluster/health
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - 'elasticsearch-ruby/7.6.0 (RUBY_VERSION: 2.7.1; darwin x86_64; Faraday v1.0.1)'
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200501T040957Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200501/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=81ba5c07528a35c67d9a36fe4003483173ecd8640c132a19077bda10a8cf5adb
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 01 May 2020 04:09:58 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '422'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"cluster_name":"218497580724:kaizen","status":"green","timed_out":false,"number_of_nodes":7,"number_of_data_nodes":4,"discovered_master":true,"active_primary_shards":10,"active_shards":22,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":0,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":100.0}'
+    http_version: null
+  recorded_at: Fri, 01 May 2020 04:09:58 GMT
 recorded_with: VCR 5.1.0

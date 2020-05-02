@@ -1,4 +1,5 @@
 require 'redis'
+require 'sidekiq'
 
 $redis = Redis.new(url: ENV['REDIS_URL'])
 

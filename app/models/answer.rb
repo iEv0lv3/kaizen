@@ -34,5 +34,3 @@ class Answer < ApplicationRecord
     verified? ? 'green-check-small.png' : ''
   end
 end
-
-# Answer.import

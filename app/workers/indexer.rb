@@ -6,16 +6,16 @@ class Indexer
 
   def initialize
     @logger = Sidekiq.logger.level == Logger::DEBUG ? Sidekiq.logger : nil
-    @client = AwsEsApiService.new.elasticsearch
+    @client = AwsEsService.new
   end
 
   def perform(operation, index, id, model_json)
     @logger.debug [operation, "ID: #{index}"]
 
     if operation == 'delete'
-      @client.delete index: index, id: id
+      @client.api_delete_doc(index, id)
     else
-      @client.index  index: index, id: id, body: model_json
+      @client.api_create_doc(index, id, model_json)
     end
   end
 end

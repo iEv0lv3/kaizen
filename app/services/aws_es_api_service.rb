@@ -6,7 +6,7 @@ require 'faraday'
 require 'faraday_middleware'
 require 'faraday_middleware/aws_sigv4'
 
-class AwsEsService
+class AwsEsApiService
   include Elasticsearch::API
 
   attr_reader :elasticsearch

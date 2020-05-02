@@ -13,7 +13,7 @@ class AwsSearch
       json.query do
         json.multi_match do
           json.query query
-          json.fields ['Carrier', 'OriginCityName', 'DestCityName']
+          json.fields ['subject', 'content']
         end
       end
     end

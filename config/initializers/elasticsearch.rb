@@ -5,7 +5,7 @@ if Rails.env == 'production'
   require 'faraday_middleware'
   require 'faraday_middleware/aws_sigv4'
 
-  Elasticsearch::Model.client = Faraday.new(url: ENV['AWS_ES']) do |faraday|
+  Elasticsearch::Model.client = Elasticsearch::Client.new(host: ENV['AWS_ES'], port: 443) do |faraday|
     faraday.request :aws_sigv4,
                     service: 'es',
                     region: 'us-west-2',

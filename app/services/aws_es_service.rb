@@ -18,8 +18,10 @@ class AwsEsService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def api_put(endpoint)
-    response = @elasticsearch.put endpoint.to_s
+  def api_put(endpoint, body_json)
+    response = @elasticsearch.put endpoint.to_s do |req|
+      req.body = body_json
+    end
     JSON.parse(response.body, symbolize_names: true)
   end
 

@@ -20,6 +20,7 @@ class AwsEsService
 
   def api_put(endpoint, body_json)
     response = @elasticsearch.put endpoint.to_s do |req|
+      req.headers[:content_type] = 'application/json'
       req.body = body_json
     end
     JSON.parse(response.body, symbolize_names: true)
@@ -40,6 +41,7 @@ class AwsEsService
 
   def api_create_doc(class_name, id, model_json)
     response = @elasticsearch.put "/#{class_name}/_doc/#{id}" do |req|
+      req.headers[:content_type] = 'application/json'
       req.body = model_json
     end
     JSON.parse(response.body, symbolize_names: true)
@@ -52,6 +54,7 @@ class AwsEsService
 
   def api_create_index(class_name, index_json)
     response = @elasticsearch.put "/#{class_name}" do |req|
+      req.headers[:content_type] = 'application/json'
       req.body = index_json
     end
     JSON.parse(response.body, symbolize_names: true)

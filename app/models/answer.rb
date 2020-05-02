@@ -2,13 +2,23 @@ require 'elasticsearch/model'
 
 class Answer < ApplicationRecord
   include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
+  # include Elasticsearch::Model::Callbacks
 
-  settings index: { number_of_shards: 1 } do
-    mappings dynamic: false do
-      indexes :content, type: :text, analyzer: :english
-      indexes :verification, type: :text, analyzer: :english
-    end
+  # settings index: { number_of_shards: 1 } do
+  #   mappings dynamic: false do
+  #     indexes :content, type: :text, analyzer: :english
+  #     indexes :verification, type: :text, analyzer: :english
+  #   end
+  # end
+
+  after_save do |answer|
+    doc_json = answer.create_doc
+    Indexer.perform_async('create', 'answers', answer.id, doc_json)
+  end
+
+  before_destroy do |answer|
+    doc_json = answer.create_doc
+    Indexer.perform_async('destroy', 'answers', answer.id, doc_json)
   end
 
   validates_presence_of :content, :verification
@@ -22,6 +32,29 @@ class Answer < ApplicationRecord
 
   enum verification: %i[unverified verified]
 
+  def self.create_index
+    Jbuilder.encode do |json|
+      json.mappings do
+        json.properties do
+          json.id do
+            json.type 'keyword'
+          end
+          json.content do
+            json.type 'text'
+            json.analyzer 'english'
+          end
+        end
+      end
+    end
+  end
+
+  def create_doc
+    Jbuilder.encode do |json|
+      json.id id
+      json.content content
+    end
+  end
+
   def increment_upvotes
     update_column(:upvotes, self.upvotes += 1)
   end
@@ -34,5 +67,3 @@ class Answer < ApplicationRecord
     verified? ? 'green-check-small.png' : ''
   end
 end
-
-# Answer.import

@@ -2,13 +2,23 @@ require 'elasticsearch/model'
 
 class Question < ApplicationRecord
   include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
+  # include Elasticsearch::Model::Callbacks
 
-  settings index: { number_of_shards: 1 } do
-    mappings dynamic: false do
-      indexes :subject, type: :text, analyzer: :english
-      indexes :content, type: :text, analyzer: :english
-    end
+  # settings index: { number_of_shards: 1 } do
+  #   mappings dynamic: false do
+  #     indexes :subject, type: :text, analyzer: :english
+  #     indexes :content, type: :text, analyzer: :english
+  #   end
+  # end
+
+  after_save do |question|
+    doc_json = question.create_doc
+    Indexer.perform_async('create', 'questions', question.id, doc_json)
+  end
+
+  before_destroy do |question|
+    doc_json = question.create_doc
+    Indexer.perform_async('destroy', 'questions', question.id, doc_json)
   end
 
   validates_presence_of :subject
@@ -24,6 +34,34 @@ class Question < ApplicationRecord
   has_many :answers, dependent: :destroy
 
   belongs_to :user
+
+  def self.create_index
+    Jbuilder.encode do |json|
+      json.mappings do
+        json.properties do
+          json.id do
+            json.type 'keyword'
+          end
+          json.subject do
+            json.type 'text'
+            json.analyzer 'english'
+          end
+          json.content do
+            json.type 'text'
+            json.analyzer 'english'
+          end
+        end
+      end
+    end
+  end
+
+  def create_doc
+    Jbuilder.encode do |json|
+      json.id id
+      json.subject subject
+      json.content content
+    end
+  end
 
   def self.technical_questions
     select('questions.*').where(forum: 0).order(created_at: :DESC)
@@ -41,5 +79,3 @@ class Question < ApplicationRecord
     !answers.find_by(verification: 'verified').nil?
   end
 end
-
-# Question.import

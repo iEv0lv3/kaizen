@@ -14,9 +14,9 @@ class KaizenApiService
   private
 
   def connection(url)
-    Faraday.new("https://quiet-harbor-86448.herokuapp.com/#{url}") do |f|
-      f.headers['UID'] = @uid
-      f.headers['USERNAME'] = @username
+    Faraday.new("https://mighty-basin-93040.herokuapp.com/#{url}") do |f|
+      f.headers['User_id'] = @uid
+      f.headers['Username'] = @username
     end
   end
 end

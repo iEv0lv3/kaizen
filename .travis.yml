@@ -2,18 +2,12 @@ env:
   global:
     - ENV['RAILS_ENV'] = 'test'
 
-before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
-  - sleep 10
+services:
+  - postgresql
+  - redis-server
 
 before_install:
   - curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.0-amd64.deb
-
-install:
-  - gem --version
-  - gem update bundler -q
-  - bundle version
-  - bundle install
   - sudo dpkg -i --force-confnew elasticsearch-7.6.0-amd64.deb
   - sudo sed -i.old 's/-Xms1g/-Xms128m/' /etc/elasticsearch/jvm.options
   - sudo sed -i.old 's/-Xmx1g/-Xmx128m/' /etc/elasticsearch/jvm.options
@@ -21,9 +15,12 @@ install:
   - sudo chown -R elasticsearch:elasticsearch /etc/default/elasticsearch
   - sudo service elasticsearch start
 
-services:
-  - postgresql
-  - redis-server
+install:
+  - gem --version
+  - gem update bundler -q
+  - bundle version
+  - bundle install
 
-
-
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - sleep 10

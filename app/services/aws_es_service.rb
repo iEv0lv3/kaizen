@@ -1,4 +1,5 @@
 require 'elasticsearch'
+require 'elasticsearch/model'
 require 'elasticsearch/api'
 require 'elasticsearch/rails'
 require 'faraday'
@@ -6,9 +7,7 @@ require 'faraday_middleware'
 require 'faraday_middleware/aws_sigv4'
 
 class AwsEsService
-  include Elasticsearch::API
-
-  attr_reader :elasticsearch, :es2
+  attr_reader :elasticsearch
 
   def initialize
     @elasticsearch = conn
@@ -32,10 +31,22 @@ class AwsEsService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  def api_create_doc(index, id)
+    response = @elasticsearch.put "/#{index}/_create/#{id}" do |req|
+      # req.body = 
+    end
+  end
+
+  def api_create_index(class_name, index)
+    response = @elasticsearch.put "/#{class_name}" do |req|
+      req.body = index
+    end
+  end
+
   private
 
   def conn
-    Elasticsearch::Model.client = Faraday.new(url: ENV['AWS_ES']) do |faraday|
+    Faraday.new(url: ENV['AWS_ES']) do |faraday|
       faraday.request :aws_sigv4,
                       service: 'es',
                       region: 'us-west-2',

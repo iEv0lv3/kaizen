@@ -1,4 +1,6 @@
 require 'elasticsearch/model'
+require 'sidekiq'
+require 'redis'
 
 class Answer < ApplicationRecord
   include Elasticsearch::Model
@@ -13,12 +15,12 @@ class Answer < ApplicationRecord
 
   after_save do |answer|
     doc_json = answer.create_doc
-    Indexer.perform_async('create', 'answers', answer.id, doc_json)
+    IndexerWorker.perform_async('create', 'answers', answer.id.to_s, doc_json)
   end
 
   before_destroy do |answer|
     doc_json = answer.create_doc
-    Indexer.perform_async('destroy', 'answers', answer.id, doc_json)
+    IndexerWorker.perform_async('destroy', 'answers', answer.id.to_s, doc_json)
   end
 
   validates_presence_of :content, :verification
@@ -50,7 +52,7 @@ class Answer < ApplicationRecord
 
   def create_doc
     Jbuilder.encode do |json|
-      json.id id
+      json.id id.to_s
       json.content content
     end
   end

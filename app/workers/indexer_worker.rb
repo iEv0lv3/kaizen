@@ -1,17 +1,15 @@
 require 'sidekiq'
+require 'redis'
 
-class Indexer
+class IndexerWorker
   include Sidekiq::Worker
   sidekiq_options queue: 'default', retry: false
 
   def initialize
-    @logger = Sidekiq.logger.level == Logger::DEBUG ? Sidekiq.logger : nil
     @client = AwsEsService.new
   end
 
   def perform(operation, index, id, model_json)
-    @logger.debug [operation, "ID: #{index}"]
-
     if operation == 'delete'
       @client.api_delete_doc(index, id)
     else

@@ -62,7 +62,7 @@ class AwsEsService
 
   def api_delete_index(index)
     response = @elasticsearch.delete "/#{index}"
-    JSON.parse(response, symbolize_names: true)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def api_delete_indexes

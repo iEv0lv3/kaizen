@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search?q=simplecov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200504T064927Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200504/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=5f70c8ad97a3c5d4b21e79013d89bcad98279801d6eee13f17caa65ec6a1b118
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 May 2020 06:49:27 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '697'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"took":17,"timed_out":false,"_shards":{"total":21,"successful":21,"skipped":0,"failed":0},"hits":{"total":{"value":2,"relation":"eq"},"max_score":0.7156682,"hits":[{"_index":"questions","_type":"_doc","_id":"2","_score":0.7156682,"_source":{"id":"2","subject":"How
+        do I make SimpleCov work?","content":"I am so confused, SimpleCov is not working
+        the gem is installed and it is in my test_helper, but it won''t work!! someone
+        please help!"}},{"_index":"answers","_type":"_doc","_id":"2","_score":0.5922034,"_source":{"id":"2","content":"It
+        seems like you forgot to put in SimpleCove.start, that is was makes it kick
+        in. just put it right below your ''require ''simplecove'''' in your test_helper."}}]}}'
+    http_version: null
+  recorded_at: Mon, 04 May 2020 06:49:27 GMT
+recorded_with: VCR 5.1.0

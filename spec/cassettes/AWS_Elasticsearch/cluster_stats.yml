@@ -1,0 +1,298 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_cat/indices
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200504T031256Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200504/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=1c3050f3aef4cc5e13266ca307d1d2ba21a671716b165b734eadefa2e89747e7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 May 2020 03:12:56 GMT
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Content-Length:
+      - '623'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: |
+        green open .kibana_-1154271068_jordan_2 kVZ5OEPgR9qsz0Xb5S9YEg 1 1    59 0   102kb  51kb
+        green open .kibana_-1154271068_jordan_1 f5r2FP7sQXC2q_VuuQHGLw 1 1    59 0   102kb  51kb
+        green open test_index                   bebVRBq8R3youj1ZZtCrWw 5 1     1 0   9.4kb 4.7kb
+        green open kibana_sample_data_flights   Em5XUFIVQSO5Zn8p9bFHeA 1 1 13059 0  12.8mb 6.4mb
+        green open .opendistro_security         ZrBmgdjgSnqZGOkWd4J51Q 1 3     6 0 112.2kb  28kb
+        green open .kibana_1                    A25KReOOSGqARCKcjkOdvg 1 1     3 0  14.6kb 7.3kb
+        green open .tasks                       c340pamCQBid8_yn0UHUyw 1 1     1 0  12.9kb 6.4kb
+    http_version: null
+  recorded_at: Mon, 04 May 2020 03:12:56 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search?q=Venice
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200504T031323Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200504/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=5f2ebd4462b6d769210fc0b463dce4c544cc23f0ee0bf22035786b77edf85c05
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 May 2020 03:13:23 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '9048'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"took":129,"timed_out":false,"_shards":{"total":11,"successful":11,"skipped":0,"failed":0},"hits":{"total":{"value":456,"relation":"eq"},"max_score":4.5983024,"hits":[{"_index":"kibana_sample_data_flights","_type":"_doc","_id":"ZCdNvnEBopXhqstgZuuu","_score":4.5983024,"_source":{"FlightNum":"UFK2WIZ","DestCountry":"IT","OriginWeather":"Rain","OriginCityName":"Venice","AvgTicketPrice":190.6369038508356,"DistanceMiles":0,"FlightDelay":false,"DestWeather":"Cloudy","Dest":"Venice
+        Marco Polo Airport","FlightDelayType":"No Delay","OriginCountry":"IT","dayOfWeek":0,"DistanceKilometers":0,"timestamp":"2020-04-20T17:11:14","DestLocation":{"lat":"45.505299","lon":"12.3519"},"DestAirportID":"VE05","Carrier":"Logstash
+        Airways","Cancelled":false,"FlightTimeMin":0,"Origin":"Venice Marco Polo Airport","OriginLocation":{"lat":"45.505299","lon":"12.3519"},"DestRegion":"IT-34","OriginAirportID":"VE05","OriginRegion":"IT-34","DestCityName":"Venice","FlightTimeHour":0,"FlightDelayMin":0}},{"_index":"kibana_sample_data_flights","_type":"_doc","_id":"bSdNvnEBopXhqstgZuuu","_score":4.5983024,"_source":{"FlightNum":"V30ITD0","DestCountry":"AT","OriginWeather":"Rain","OriginCityName":"Venice","AvgTicketPrice":704.4637710312036,"DistanceMiles":268.99172653633303,"FlightDelay":false,"DestWeather":"Cloudy","Dest":"Vienna
+        International Airport","FlightDelayType":"No Delay","OriginCountry":"IT","dayOfWeek":0,"DistanceKilometers":432.90022115088834,"timestamp":"2020-04-20T11:52:34","DestLocation":{"lat":"48.11029816","lon":"16.56970024"},"DestAirportID":"VIE","Carrier":"Logstash
+        Airways","Cancelled":false,"FlightTimeMin":36.07501842924069,"Origin":"Venice
+        Marco Polo Airport","OriginLocation":{"lat":"45.505299","lon":"12.3519"},"DestRegion":"AT-9","OriginAirportID":"VE05","OriginRegion":"IT-34","DestCityName":"Vienna","FlightTimeHour":0.6012503071540115,"FlightDelayMin":0}},{"_index":"kibana_sample_data_flights","_type":"_doc","_id":"1CdNvnEBopXhqstgZuuv","_score":4.5983024,"_source":{"FlightNum":"VPE3RP3","DestCountry":"CN","OriginWeather":"Rain","OriginCityName":"Venice","AvgTicketPrice":854.8449629694207,"DistanceMiles":4860.473272889239,"FlightDelay":false,"DestWeather":"Rain","Dest":"Xi''an
+        Xianyang International Airport","FlightDelayType":"No Delay","OriginCountry":"IT","dayOfWeek":0,"DistanceKilometers":7822.173498884659,"timestamp":"2020-04-20T12:48:06","DestLocation":{"lat":"34.447102","lon":"108.751999"},"DestAirportID":"XIY","Carrier":"JetBeats","Cancelled":false,"FlightTimeMin":558.7266784917614,"Origin":"Venice
+        Marco Polo Airport","OriginLocation":{"lat":"45.505299","lon":"12.3519"},"DestRegion":"SE-BD","OriginAirportID":"VE05","OriginRegion":"IT-34","DestCityName":"Xi''an","FlightTimeHour":9.312111308196023,"FlightDelayMin":0}},{"_index":"kibana_sample_data_flights","_type":"_doc","_id":"1idNvnEBopXhqstgZuuv","_score":4.5983024,"_source":{"FlightNum":"84V6C0F","DestCountry":"PL","OriginWeather":"Cloudy","OriginCityName":"Venice","AvgTicketPrice":702.6214016367292,"DistanceMiles":604.3499951123769,"FlightDelay":false,"DestWeather":"Clear","Dest":"Warsaw
+        Chopin Airport","FlightDelayType":"No Delay","OriginCountry":"IT","dayOfWeek":0,"DistanceKilometers":972.607038534133,"timestamp":"2020-04-20T15:11:41","DestLocation":{"lat":"52.16569901","lon":"20.96710014"},"DestAirportID":"WAW","Carrier":"JetBeats","Cancelled":false,"FlightTimeMin":46.31462088257776,"Origin":"Venice
+        Marco Polo Airport","OriginLocation":{"lat":"45.505299","lon":"12.3519"},"DestRegion":"PL-MZ","OriginAirportID":"VE05","OriginRegion":"IT-34","DestCityName":"Warsaw","FlightTimeHour":0.7719103480429628,"FlightDelayMin":0}},{"_index":"kibana_sample_data_flights","_type":"_doc","_id":"5ydNvnEBopXhqstgZuuv","_score":4.5983024,"_source":{"FlightNum":"FG2A3CB","DestCountry":"PL","OriginWeather":"Damaging
+        Wind","OriginCityName":"Venice","AvgTicketPrice":846.1614266892138,"DistanceMiles":604.3499951123769,"FlightDelay":true,"DestWeather":"Rain","Dest":"Warsaw
+        Chopin Airport","FlightDelayType":"NAS Delay","OriginCountry":"IT","dayOfWeek":0,"DistanceKilometers":972.607038534133,"timestamp":"2020-04-20T20:48:02","DestLocation":{"lat":"52.16569901","lon":"20.96710014"},"DestAirportID":"WAW","Carrier":"Kibana
+        Airlines","Cancelled":false,"FlightTimeMin":246.18984413337543,"Origin":"Venice
+        Marco Polo Airport","OriginLocation":{"lat":"45.505299","lon":"12.3519"},"DestRegion":"PL-MZ","OriginAirportID":"VE05","OriginRegion":"IT-34","DestCityName":"Warsaw","FlightTimeHour":4.1031640688895905,"FlightDelayMin":195}},{"_index":"kibana_sample_data_flights","_type":"_doc","_id":"qydNvnEBopXhqstgZuyw","_score":4.5983024,"_source":{"FlightNum":"2NK83A8","DestCountry":"CH","OriginWeather":"Rain","OriginCityName":"Venice","AvgTicketPrice":492.5151774095099,"DistanceMiles":226.30612123483198,"FlightDelay":false,"DestWeather":"Cloudy","Dest":"Zurich
+        Airport","FlightDelayType":"No Delay","OriginCountry":"IT","dayOfWeek":0,"DistanceKilometers":364.20439837254946,"timestamp":"2020-04-20T09:41:02","DestLocation":{"lat":"47.464699","lon":"8.54917"},"DestAirportID":"ZRH","Carrier":"Kibana
+        Airlines","Cancelled":false,"FlightTimeMin":19.168652545923656,"Origin":"Venice
+        Marco Polo Airport","OriginLocation":{"lat":"45.505299","lon":"12.3519"},"DestRegion":"CH-ZH","OriginAirportID":"VE05","OriginRegion":"IT-34","DestCityName":"Zurich","FlightTimeHour":0.31947754243206095,"FlightDelayMin":0}},{"_index":"kibana_sample_data_flights","_type":"_doc","_id":"CCdNvnEBopXhqstgZu2w","_score":4.5983024,"_source":{"FlightNum":"17FI3RA","DestCountry":"CA","OriginWeather":"Rain","OriginCityName":"Venice","AvgTicketPrice":288.06352528756855,"DistanceMiles":4626.99617471961,"FlightDelay":false,"DestWeather":"Cloudy","Dest":"Winnipeg
+        / James Armstrong Richardson International Airport","FlightDelayType":"No
+        Delay","OriginCountry":"IT","dayOfWeek":1,"DistanceKilometers":7446.4285318079565,"timestamp":"2020-04-21T04:54:24","DestLocation":{"lat":"49.90999985","lon":"-97.23989868"},"DestAirportID":"YWG","Carrier":"Logstash
+        Airways","Cancelled":false,"FlightTimeMin":354.5918348479979,"Origin":"Venice
+        Marco Polo Airport","OriginLocation":{"lat":"45.505299","lon":"12.3519"},"DestRegion":"CA-MB","OriginAirportID":"VE05","OriginRegion":"IT-34","DestCityName":"Winnipeg","FlightTimeHour":5.9098639141332985,"FlightDelayMin":0}},{"_index":"kibana_sample_data_flights","_type":"_doc","_id":"eidNvnEBopXhqstga-2O","_score":4.5983024,"_source":{"FlightNum":"7M1VX0L","DestCountry":"AT","OriginWeather":"Thunder
+        & Lightning","OriginCityName":"Venice","AvgTicketPrice":461.8345060868976,"DistanceMiles":268.99172653633303,"FlightDelay":false,"DestWeather":"Damaging
+        Wind","Dest":"Vienna International Airport","FlightDelayType":"No Delay","OriginCountry":"IT","dayOfWeek":1,"DistanceKilometers":432.90022115088834,"timestamp":"2020-04-21T22:44:22","DestLocation":{"lat":"48.11029816","lon":"16.56970024"},"DestAirportID":"VIE","Carrier":"JetBeats","Cancelled":false,"FlightTimeMin":33.3000170116068,"Origin":"Venice
+        Marco Polo Airport","OriginLocation":{"lat":"45.505299","lon":"12.3519"},"DestRegion":"AT-9","OriginAirportID":"VE05","OriginRegion":"IT-34","DestCityName":"Vienna","FlightTimeHour":0.55500028352678,"FlightDelayMin":0}},{"_index":"kibana_sample_data_flights","_type":"_doc","_id":"zidNvnEBopXhqstga-2O","_score":4.5983024,"_source":{"FlightNum":"NKUW7QD","DestCountry":"CA","OriginWeather":"Damaging
+        Wind","OriginCityName":"Venice","AvgTicketPrice":306.8051084260633,"DistanceMiles":4626.99617471961,"FlightDelay":false,"DestWeather":"Heavy
+        Fog","Dest":"Winnipeg / James Armstrong Richardson International Airport","FlightDelayType":"No
+        Delay","OriginCountry":"IT","dayOfWeek":1,"DistanceKilometers":7446.4285318079565,"timestamp":"2020-04-21T10:54:34","DestLocation":{"lat":"49.90999985","lon":"-97.23989868"},"DestAirportID":"YWG","Carrier":"ES-Air","Cancelled":false,"FlightTimeMin":496.4285687871971,"Origin":"Venice
+        Marco Polo Airport","OriginLocation":{"lat":"45.505299","lon":"12.3519"},"DestRegion":"CA-MB","OriginAirportID":"VE05","OriginRegion":"IT-34","DestCityName":"Winnipeg","FlightTimeHour":8.273809479786618,"FlightDelayMin":0}},{"_index":"kibana_sample_data_flights","_type":"_doc","_id":"_idNvnEBopXhqstga-2P","_score":4.5983024,"_source":{"FlightNum":"90GH3WE","DestCountry":"CN","OriginWeather":"Sunny","OriginCityName":"Venice","AvgTicketPrice":275.3604793650273,"DistanceMiles":4860.473272889239,"FlightDelay":true,"DestWeather":"Sunny","Dest":"Xi''an
+        Xianyang International Airport","FlightDelayType":"NAS Delay","OriginCountry":"IT","dayOfWeek":2,"DistanceKilometers":7822.173498884659,"timestamp":"2020-04-22T00:36:31","DestLocation":{"lat":"34.447102","lon":"108.751999"},"DestAirportID":"XIY","Carrier":"Logstash
+        Airways","Cancelled":false,"FlightTimeMin":903.7266784917614,"Origin":"Venice
+        Marco Polo Airport","OriginLocation":{"lat":"45.505299","lon":"12.3519"},"DestRegion":"SE-BD","OriginAirportID":"VE05","OriginRegion":"IT-34","DestCityName":"Xi''an","FlightTimeHour":15.062111308196023,"FlightDelayMin":345}}]}}'
+    http_version: null
+  recorded_at: Mon, 04 May 2020 03:13:23 GMT
+- request:
+    method: put
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/questions
+    body:
+      encoding: UTF-8
+      string: '{"mappings":{"properties":{"id":{"type":"keyword"},"subject":{"type":"text","analyzer":"english"},"content":{"type":"text","analyzer":"english"}}}}'
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200504T031817Z
+      X-Amz-Content-Sha256:
+      - ee869a3aec558405b3058ff4c6294af6d8659166c61f4526eb04672546b7a095
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200504/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=0f03c7bca1fb8d7d87175e6241eab68d7c5b7894fb5870d0e7ffa0c246d73cbf
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 May 2020 03:18:18 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '68'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"acknowledged":true,"shards_acknowledged":true,"index":"questions"}'
+    http_version: null
+  recorded_at: Mon, 04 May 2020 03:18:18 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/questions/_mappings
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200504T031937Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200504/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=ed7b3f30ce9484ba16c7ff32d9754067699b9768829060e4577ab69b39231683
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 May 2020 03:19:38 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '161'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"questions":{"mappings":{"properties":{"content":{"type":"text","analyzer":"english"},"id":{"type":"keyword"},"subject":{"type":"text","analyzer":"english"}}}}}'
+    http_version: null
+  recorded_at: Mon, 04 May 2020 03:19:38 GMT
+- request:
+    method: put
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/answers
+    body:
+      encoding: UTF-8
+      string: '{"mappings":{"properties":{"id":{"type":"keyword"},"content":{"type":"text","analyzer":"english"}}}}'
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200504T032310Z
+      X-Amz-Content-Sha256:
+      - f4d8357214a43406e3f035f98684924a1c0c18cf71314298252993b5eed8f941
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200504/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=8d1ed828967b6dd719f90b4b7068cbdfd37773d58a1100d1dbb65a14c71c5a1b
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 May 2020 03:23:10 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '66'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"acknowledged":true,"shards_acknowledged":true,"index":"answers"}'
+    http_version: null
+  recorded_at: Mon, 04 May 2020 03:23:10 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/answers/_mappings
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200504T032322Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200504/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=c1bbb00342750d6e7272f943c7e03a2ea3fc588da01523744c43db7dd7c85ffe
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 May 2020 03:23:22 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '112'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"answers":{"mappings":{"properties":{"content":{"type":"text","analyzer":"english"},"id":{"type":"keyword"}}}}}'
+    http_version: null
+  recorded_at: Mon, 04 May 2020 03:23:22 GMT
+recorded_with: VCR 5.1.0

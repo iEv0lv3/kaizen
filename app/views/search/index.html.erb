@@ -8,12 +8,10 @@
   </div>
 </div>
 
-<% @results.sorted.each do |result| %>
-  <% if result.class == Answer %>
+<% @response.results.each do |result| %>
+  <% if result.class.name == 'Answer' %>
     <div id='question-<%= result.question.id %>' class='row justify-content-center rowSpace'>
       <div class="col-sm-2 themed-grid-col activityBox effect7">
-
-
         <p><%= image_tag 'upvote.png' %> :: <%= result.upvotes %></p>
         <% if result.verified? %>
           <%= image_tag 'green-check-small.png', class: 'green_verify' %>
@@ -72,7 +70,6 @@
         </div>
       </div>
     </div>
+
   <% end %>
 <% end %>
-
-

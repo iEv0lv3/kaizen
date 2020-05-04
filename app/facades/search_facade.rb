@@ -1,11 +1,13 @@
 class SearchFacade
-  attr_reader :sorted
+  attr_reader :results
 
-  def initialize(search_results)
-    @sorted = sort_results(search_results)
+  def initialize(query)
+    @results = search_connection(query)
   end
 
-  def sort_results(search_results)
-    search_results.sort_by(&:upvotes).reverse
+  private
+
+  def search_connection(query)
+    Elasticsearch::Model.search(query, [Question, Answer]).records.to_a
   end
 end

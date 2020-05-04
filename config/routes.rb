@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     sessions: 'sessions'
   }
 
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+
   devise_scope :user do
     get '/profile', to: 'users/profile#show'
     get '/profile/edit', to: 'users/profile#edit'

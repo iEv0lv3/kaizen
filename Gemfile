@@ -30,7 +30,7 @@ gem 'will_paginate'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Elasticsearch gems
-gem 'elasticsearch', '~> 7.6.0'
+gem 'elasticsearch', '~> 7.1.0'
 gem 'elasticsearch-model', '~> 7.1.0'
 gem 'elasticsearch-rails', '~> 7.1.0'
 

@@ -73,7 +73,7 @@ class AwsEsService
   private
 
   def conn
-    Elasticsearch::Model.client = Faraday.new(url: ENV['AWS_ES']) do |faraday|
+    Faraday.new(url: ENV['AWS_ES']) do |faraday|
       faraday.request :aws_sigv4,
                       service: 'es',
                       region: 'us-west-2',

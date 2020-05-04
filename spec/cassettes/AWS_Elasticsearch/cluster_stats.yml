@@ -295,4 +295,229 @@ http_interactions:
       string: '{"answers":{"mappings":{"properties":{"content":{"type":"text","analyzer":"english"},"id":{"type":"keyword"}}}}}'
     http_version: null
   recorded_at: Mon, 04 May 2020 03:23:22 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_cluster/stats
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200504T043708Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200504/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=fb84fc463c8d4caebe0de9ebc1d8d5dcfe4c44d1bcb14891632522ae44462437
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 May 2020 04:37:08 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '2048'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"_nodes":{"total":7,"successful":7,"failed":0},"cluster_name":"218497580724:kaizen","cluster_uuid":"l0iW_jwWQUiqyZh6c1VcRQ","timestamp":1588567028426,"status":"green","indices":{"count":9,"shards":{"total":44,"primaries":21,"replication":1.0952380952380953,"index":{"shards":{"min":2,"max":10,"avg":4.888888888888889},"primaries":{"min":1,"max":5,"avg":2.3333333333333335},"replication":{"min":1.0,"max":3.0,"avg":1.2222222222222223}}},"docs":{"count":13224,"deleted":0},"store":{"size_in_bytes":13984903},"fielddata":{"memory_size_in_bytes":0,"evictions":0},"query_cache":{"memory_size_in_bytes":0,"total_count":0,"hit_count":0,"miss_count":0,"cache_size":0,"cache_count":0,"evictions":0},"completion":{"size_in_bytes":0},"segments":{"count":56,"memory_in_bytes":232000,"terms_memory_in_bytes":161424,"stored_fields_memory_in_bytes":19312,"term_vectors_memory_in_bytes":0,"norms_memory_in_bytes":9856,"points_memory_in_bytes":0,"doc_values_memory_in_bytes":41408,"index_writer_memory_in_bytes":0,"version_map_memory_in_bytes":0,"fixed_bit_set_memory_in_bytes":576,"max_unsafe_auto_id_timestamp":1588035684207,"file_sizes":{}}},"nodes":{"count":{"total":7,"coordinating_only":0,"data":4,"ingest":4,"master":3},"versions":["7.4.2"],"os":{"available_processors":14,"allocated_processors":14,"names":[{"count":7}],"pretty_names":[{"count":7}],"mem":{"total_in_bytes":115607654400,"free_in_bytes":10113269760,"used_in_bytes":105494384640,"free_percent":9,"used_percent":91}},"process":{"cpu":{"percent":0},"open_file_descriptors":{"min":1458,"max":1657,"avg":1536}},"jvm":{"max_uptime_in_millis":123890015,"mem":{"heap_used_in_bytes":2555239488,"heap_max_in_bytes":66449965056},"threads":941},"fs":{"total_in_bytes":64452354048,"free_in_bytes":56869396480,"available_in_bytes":56751955968},"network_types":{"transport_types":{"com.amazon.opendistroforelasticsearch.security.ssl.http.netty.OpenDistroSecuritySSLNettyTransport":7},"http_types":{"filter-jetty":7}},"discovery_types":{"zen":7},"packaging_types":[{"flavor":"oss","type":"tar","count":7}]}}'
+    http_version: null
+  recorded_at: Mon, 04 May 2020 04:37:08 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/questions,answers//_search?q=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - 'elasticsearch-ruby/7.6.0 (RUBY_VERSION: 2.7.1; darwin x86_64; Faraday v1.0.1)'
+      Content-Type:
+      - application/json
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200504T044000Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200504/us-west-2/es/aws4_request,
+        SignedHeaders=content-type;host;user-agent;x-amz-content-sha256;x-amz-date,
+        Signature=0fc7410c26ff0b1c2cec17327ae693ce335cd26c86a8420e9702d80bbc797763
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Date:
+      - Mon, 04 May 2020 04:40:00 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '192'
+      Connection:
+      - keep-alive
+      X-Amzn-Requestid:
+      - 9b7fe2bd-f3ff-4b7b-98be-749e4c40ae66
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"message":"The request signature we calculated does not match the
+        signature you provided. Check your AWS Secret Access Key and signing method.
+        Consult the service documentation for details."}'
+    http_version: null
+  recorded_at: Mon, 04 May 2020 04:40:00 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search?q=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200504T053409Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200504/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=1cddb3876072385ea7a9b26dbc9d242b2c508ccd6ac7a453fb63d00e57721c56
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 May 2020 05:34:10 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '601'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"took":81,"timed_out":false,"_shards":{"total":21,"successful":21,"skipped":0,"failed":0},"hits":{"total":{"value":2,"relation":"eq"},"max_score":1.0494217,"hits":[{"_index":"answers","_type":"_doc","_id":"1","_score":1.0494217,"_source":{"id":"1","content":"To
+        get pride to work in ruby you need to put ''require ''minitest/pride'' either
+        at the top of all your tests or in your test_helper."}},{"_index":"questions","_type":"_doc","_id":"1","_score":1.0024122,"_source":{"id":"1","subject":"How
+        do I use pride in Ruby?","content":"I am not sure how to get the pretty rainbow
+        dots in my test run?"}}]}}'
+    http_version: null
+  recorded_at: Mon, 04 May 2020 05:34:10 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search?q=carvana
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200504T060016Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200504/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=bcaeab2d67641c841a81dc3ff4dd93cd0c99c2a12a8b288eaff7b04f1041ec32
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 May 2020 06:00:17 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '163'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"took":34,"timed_out":false,"_shards":{"total":21,"successful":21,"skipped":0,"failed":0},"hits":{"total":{"value":0,"relation":"eq"},"max_score":null,"hits":[]}}'
+    http_version: null
+  recorded_at: Mon, 04 May 2020 06:00:17 GMT
+- request:
+    method: get
+    uri: https://search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com/_search?q=ruby
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Host:
+      - search-kaizen-bnz2vfctyqunfmcvryeiw7pfx4.us-west-2.es.amazonaws.com
+      X-Amz-Date:
+      - 20200504T060104Z
+      X-Amz-Content-Sha256:
+      - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+      Authorization:
+      - AWS4-HMAC-SHA256 Credential=AKIATFX3YP22KDAJ6MOJ/20200504/us-west-2/es/aws4_request,
+        SignedHeaders=host;user-agent;x-amz-content-sha256;x-amz-date, Signature=d721672801b5fd2f8cf1d997e8dd34e1bfeb6b9ae88ae2108247eaf620a979c8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 May 2020 06:01:05 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '601'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: '{"took":28,"timed_out":false,"_shards":{"total":21,"successful":21,"skipped":0,"failed":0},"hits":{"total":{"value":2,"relation":"eq"},"max_score":1.0494217,"hits":[{"_index":"answers","_type":"_doc","_id":"1","_score":1.0494217,"_source":{"id":"1","content":"To
+        get pride to work in ruby you need to put ''require ''minitest/pride'' either
+        at the top of all your tests or in your test_helper."}},{"_index":"questions","_type":"_doc","_id":"1","_score":1.0024122,"_source":{"id":"1","subject":"How
+        do I use pride in Ruby?","content":"I am not sure how to get the pretty rainbow
+        dots in my test run?"}}]}}'
+    http_version: null
+  recorded_at: Mon, 04 May 2020 06:01:05 GMT
 recorded_with: VCR 5.1.0

@@ -1,3 +1,5 @@
+require 'elasticsearch'
+require 'elasticsearch/api'
 require 'elasticsearch/model'
 require 'sidekiq'
 require 'redis'

@@ -20,7 +20,7 @@
 </p>
 
 # <span style="color: #ef3852">Table of Contents ::</span>
-
+[![Build Status](https://travis-ci.org/iEv0lv3/kaizen.svg?branch=master)](https://travis-ci.org/iEv0lv3/kaizen)
 * <span style="color: #343a40">[Production](#production)</span>
   * <span style="color: #343a40">[Signing Up](#signing-up)</span>
   * <span style="color: #343a40">[Logging In](#logging-in)</span>

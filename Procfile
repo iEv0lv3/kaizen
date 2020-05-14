@@ -1,2 +1,2 @@
-web: bin/rails server -p ${PORT:-5000} -e $RAILS_ENV
-worker: bundle exec sidekiq -t 25
+web: bundle exec rails server -p $PORT
+searchworker: bundle exec sidekiq -t 25

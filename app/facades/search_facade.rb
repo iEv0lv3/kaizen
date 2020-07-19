@@ -10,10 +10,6 @@ class SearchFacade
 
   private
 
-  # def search_connection(query)
-  #   Elasticsearch::Model.search(query, [Question, Answer]).records.to_a
-  # end
-
   def aws_search(query)
     results = @aws_es.search(query)
     if results[:hits][:total][:value] > 0
